@@ -24,6 +24,7 @@ if(isset($_SESSION['username'])){
                                             <ul>
                                                 <?php
                                                 $result=$conn->query("SELECT * FROM notfic where for_user='".$_SESSION['username']."' order by id DESC");
+                                                if($result->num_rows > 0){
                                                 while ($row=mysqli_fetch_assoc($result)){
                                                     $user=$conn->query("SELECT * FROM user where username='".$row['user']."'");
                                                     while ($us=mysqli_fetch_assoc($user)){
@@ -82,7 +83,11 @@ if(isset($_SESSION['username'])){
                                                             ?></p>
                                                     </div>
                                                 </li>
-                                                        <?php }}?>
+                                                        <?php }}
+                                                }else{
+                                                    echo "<div class='alert alert-info'>No new notifications found</div>";
+                                                }
+                                                ?>
                                             </ul>
                                         </div>
                                     </div>
