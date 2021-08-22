@@ -103,6 +103,8 @@ if(isset($_POST['cover_sub'])){
 	<div class="topbar stick">
 		<div class="logo">
 
+            <span class="ti-menu main-menu" style="cursor: pointer" data-ripple=""></span>
+
 			<a title="" href="/"><img src="images/logo.png" alt=""></a>
 		</div>
 		
@@ -205,18 +207,18 @@ if(isset($_POST['cover_sub'])){
 
 </script>
 				</li>
-				<li><a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>
-					<div class="dropdowns languages">
-					<form action="" method="post" id="en">
-					<input type="hidden" name="en"/>
-					</form>
-					<form action="" method="post" id="gm">
-					<input type="hidden" name="gm"/>
-					</form>
-						<a href="#" title="" onclick="document.getElementById('en').submit();"><?php if(isset($_SESSION['lang'])&&$_SESSION['lang']=='en'){?><i class="ti-check"></i><?php } ?>English</a>
-						<a href="#" title="" onclick="document.getElementById('gm').submit();"><?php if(isset($_SESSION['lang'])&&$_SESSION['lang']=='gm'){?><i class="ti-check"></i><?php } ?>Deutsche</a>
-					</div>
-				</li>
+<!--				<li><a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>-->
+<!--					<div class="dropdowns languages">-->
+<!--					<form action="" method="post" id="en">-->
+<!--					<input type="hidden" name="en"/>-->
+<!--					</form>-->
+<!--					<form action="" method="post" id="gm">-->
+<!--					<input type="hidden" name="gm"/>-->
+<!--					</form>-->
+<!--						<a href="#" title="" onclick="document.getElementById('en').submit();">--><?php //if(isset($_SESSION['lang'])&&$_SESSION['lang']=='en'){?><!--<i class="ti-check"></i>--><?php //} ?><!--English</a>-->
+<!--						<a href="#" title="" onclick="document.getElementById('gm').submit();">--><?php //if(isset($_SESSION['lang'])&&$_SESSION['lang']=='gm'){?><!--<i class="ti-check"></i>--><?php //} ?><!--Deutsche</a>-->
+<!--					</div>-->
+<!--				</li>-->
 			</ul>
 			<div class="user-img" >
                 <!--            style="right:35px"-->
@@ -231,6 +233,6 @@ while ($row=mysqli_fetch_assoc($result)){?>
 					<a href="logout.php" title=""><i class="ti-power-off"></i><?php echo $lang['logout'];?></a>
 				</div>
 			</div>
-            <span class="ti-menu main-menu" data-ripple=""></span>
+
         </div>
 	</div><!-- topbar -->	

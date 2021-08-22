@@ -252,7 +252,7 @@ section {
 }
 
 .pattern:before {
-    background: #088dcd url("../images/dot-pattern.png") repeat scroll 0 0;
+    background: #5451d7 url("../images/dot-pattern.png") repeat scroll 0 0;
     opacity: 0.45;
 }
 
@@ -261,7 +261,7 @@ section {
 }
 
 .bluesh:before {
-    background: #088dcd;
+    background: #5451d7;
 }
 
 .exthigh-opacity:before {
@@ -512,10 +512,14 @@ header.sticky {
 .log-reg-area > h2 {
     font-weight: 500;
     text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+.log-reg-area > p {
+    margin-bottom: 0;
 }
 
 .land-featurearea {
-    background: #1fb6ff none repeat scroll 0 0;
+    background: #7567e5 none repeat scroll 0 0;
     color: #fff;
     float: left;
     height: 100vh;
@@ -549,27 +553,29 @@ header.sticky {
 .friend-logo {
     display: inline-block;
     width: 100%;
+    margin-bottom: 3rem;
 }
 
 .friend-logo > span {
     font-family: hobo std;
-    font-size: 200px;
+    font-size: 120px;
     position: relative;
 }
 
 .friend-logo > span::before,
 .friend-logo > span::after {
-    background: #0a98dc none repeat scroll 0 0;
-    border: 16px solid rgba(255, 255, 255, 0.1);
+    background: #d0d9e3 none repeat scroll 0 0;
+    border: 16px solid #b6c4d3;
     border-radius: 100%;
     content: "";
-    height: 180px;
-    left: -42px;
+    height: 165px;
+    left: -36px;
     position: absolute;
-    top: 20px;
-    width: 180px;
+    top: 0px;
+    width: 165px;
     z-index: -1;
 }
+
 
 .land-meta > a.folow-me:hover {
     text-shadow: 0 1px 1px #454545;
@@ -599,6 +605,8 @@ header.sticky {
 .log-reg-area form .checkbox {
     display: inline-block;
     width: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .log-reg-area form .forgot-pwd,
@@ -660,20 +668,29 @@ header.sticky {
 
 .topbar {
     background: #fff;
-    display: block;
+    display: flex; /* replaced with block */
     height: 60px;
     padding: 0 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    z-index: 999;
+    z-index: 99999;
     position: relative;
 }
 
 .logo {
-    display: inline-block;
+    display: flex; /* replaced with block */
     vertical-align: inherit;
     width: 15%;
     position: relative;
     z-index: 10;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.logo .ti-menu{
+    padding-right: 5px;
+    margin-right: 10px;
 }
 
 .topbar > form {
@@ -695,7 +712,7 @@ header.sticky {
     line-height: 56px;
     list-style: outside none none;
     margin-bottom: 0;
-    margin-right: 35px;
+    margin-right: 0;
     padding-left: 0;
     vertical-align: middle;
 }
@@ -878,7 +895,7 @@ header.sticky {
 }
 
 .timeline-info .admin-name > h5 {
-    color: #088dcd;
+    color: #5451d7;
     display: inline-block;
     font-size: 20px;
     font-weight: 500;
@@ -1221,19 +1238,38 @@ header.sticky {
     width: 20%;
 }
 
-.sidebar .widget li {
+.sidebar .widget li{
     display: inline-block;
     margin-bottom: 20px;
     position: relative;
     width: 100%;
 }
 
-.sidebar .widget li:last-child {
+.side-panel ul{
+    padding-left: 0;
+}
+
+.side-panel ul li{
+    display: block;
+    padding: 10px 5px;
+    position: relative;
+    width: 100%;
+
+    transition: box-shadow ease .25s;
+}
+.side-panel ul li:hover{
+    box-shadow: 0px 0px 2px rgba(84, 81, 215, 0.29);
+}
+
+/*.side-panel ul li:hover a , .side-panel ul li:hover i{*/
+/*    color : #efefef;*/
+/*}*/
+.sidebar .widget li:last-child , .side-panel ul li:last-child{
     margin-bottom: 0;
 }
 
-.sidebar .widget li i {
-    color: #999;
+.sidebar .widget li i, .side-panel li i {
+    color: #5451d7;
     display: inline-block;
     font-size: 11px;
     margin-right: 5px;
@@ -1242,8 +1278,12 @@ header.sticky {
     vertical-align: middle;
     white-space: nowrap;
 }
+.side-panel li i{
+    color : #5451d7;
+}
 
-.sidebar .widget li > a {
+.sidebar .widget li > a , .side-panel li a{
+    width: 100%;
     font-size: 14px;
     text-transform: capitalize;
     display: inline-block;
@@ -1253,16 +1293,16 @@ header.sticky {
     vertical-align: top;
 }
 
-.sidebar .widget li > a i {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    color: #fff;
-    font-size: 25px;
-}
+/*.sidebar .widget li > a i{*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    left: 50%;*/
+/*    color: #fff;*/
+/*    font-size: 25px;*/
+/*}*/
 
-.sidebar .widget ul.naves li i {
+.sidebar .widget ul.naves li i , .side-panel li i {
     display: inline-block;
     font-size: 16px;
     vertical-align: baseline;
@@ -2527,7 +2567,7 @@ footer .logo {
     float: left;
     padding: 20px 15px;
     position: fixed;
-    right: -100%;
+    left: -100%;
     top: 60px;
     width: 280px;
     z-index: 9999;
@@ -2536,7 +2576,7 @@ footer .logo {
 }
 
 .side-panel.active {
-    right: 0;
+    left: 0;
 }
 
 .panel-title {
@@ -2933,7 +2973,7 @@ li.google {
 }
 
 .g-map::before {
-    background: #088dcd none repeat scroll 0 0;
+    background: #5451d7 none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
@@ -2951,7 +2991,7 @@ li.google {
 }
 
 .map-meta {
-    background: #088dcd none repeat scroll 0 0;
+    background: #5451d7 none repeat scroll 0 0;
     color: #fff;
     left: 10%;
     padding: 20px;
@@ -3880,6 +3920,7 @@ form .dob .form-group:last-child {
 a.forgot-pwd {
     float: right;
     font-size: 14px;
+    color : #21D1FF !important;
 }
 
 .editing-interest > form {
@@ -6767,7 +6808,7 @@ a.reply {
 }
 
 .menu-container {
-    background-color: #088dcd;
+    background-color: #5451d7;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
