@@ -7,14 +7,12 @@
                         <div class="logo">
                             <a href="index.php" title=""><img src="images/logo.png" alt=""></a>
                         </div>
-                        <p>
-                            Delldate is a social media website dedicated to people all around the globe.
-                        </p>
+                        <p><?php echo $lang['Footer_description']; ?></p>
                     </div>
                     <ul class="location">
                         <li>
                             <i class="ti-map-alt"></i>
-                            <p>Germany - Berlin</p>
+                            <p><?php echo $lang['Footer_data_location']; ?></p>
                         </li>
                         <li>
                             <i class="ti-mobile"></i>
@@ -25,18 +23,18 @@
             </div>
             <div class="col-lg-3 col-md-4">
                 <div class="widget">
-                    <div class="widget-title"><h4>useful links</h4></div>
+                    <div class="widget-title"><h4><?php echo $lang['Footer_title_links']; ?></h4></div>
                     <ul class="list-style">
-                        <li><a href="post.php" title="posts">home</a></li>
-                        <li><a href="people.php" title="explore">people</a></li>
-                        <li><a href="faq.php" title="faq">Faq</a></li>
-                        <li><a href="contact-us.php" title="contact us">Contact</a></li>
+                        <li><a href="index.php" title=""><?php echo $lang['home']; ?></a></li>
+                        <li><a href="people.php" title=""><?php echo $lang['People']; ?></a></li>
+                        <li><a href="faq.php" title=""><?php echo $lang['FAQ']; ?></a></li>
+                        <li><a href="contact-us.php" title=""><?php echo $lang['Contact_Us']; ?></a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-5 col-md-4">
                 <div class="widget">
-                    <div class="widget-title"><h4>Our location</h4></div>
+                    <div class="widget-title"><h4><?php echo $lang['Footer_title_location']; ?></h4></div>
                     <img src="images/world.svg" class="img-fluid">
                 </div>
             </div>

@@ -41,6 +41,8 @@ $lang=array(
     'bio'=>'bio',
     'People_post'=>'People post',
     'My_pages'=>'Profile',
+    'FAQ' => 'faq',
+    'Contact_Us' => 'contact us',
     'messages'=>'Messages',
     'People_my_sickness'=>'People my sickness',
     'People'=>'Explore',
@@ -64,7 +66,17 @@ $lang=array(
     'view_more'=>'view more',
     'like'=>'like your post',
     'please_selected'=>'please selected',
-    'You_are_deleting_a_post'=>'You are deleting a post.',
+    'You_are_deleting_a_post'=>'This action can not be undone.',
     'Are_you_sure?'=>'Are you sure?',
-    'Deletion_was_successful'=>'Deletion was successful'
+    'Deletion_was_successful'=>'Deletion was successful',
+
+
+    'Footer_description' => 'Delldate is a social media website dedicated to people all around the globe.',
+    'Footer_data_location' => 'Germany - Berlin',
+    'Footer_title_links' => 'useful links',
+    'Footer_title_location' => 'Our location',
+
+    'Alert_no_friends' => 'You don\'t have any friends yet. ',
+    'Alert_no_friends_link' => 'Explore now.',
+    'Alert_no_notification' => 'No new notifications found'
 );

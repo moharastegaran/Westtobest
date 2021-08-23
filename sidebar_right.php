@@ -10,7 +10,8 @@
 											$p=$_SESSION['username'];
 											}
 											$result=$conn->query("SELECT * FROM friend where user_1='".$p."' and acc='1' LIMIT 10");
-											while ($row=mysqli_fetch_assoc($result)){
+											if($result->num_rows > 0 ){
+								         	while ($row=mysqli_fetch_assoc($result)){
 												$result=$conn->query("SELECT * FROM user where username='".$row['user_2']."'");
 												while ($row=mysqli_fetch_assoc($result)){
 											?>
@@ -20,7 +21,13 @@
 													<h4><a href="profile.php?p=<?php echo $row['username'];?>" title=""><?php echo $row['name'];?></a></h4>
 												</div>
 											</li>
-											<?php } }?>
+											<?php } }
+                                            }else{
+											    ?>
+                                                <div class="alert alert-info"><?php echo $lang['Alert_no_friends'];?> <i><ins><a href="people.php"><?php echo $lang['Alert_no_friends_link'];?></a></ins></i> </div>
+                                            <?php
+                                            }
+                                            ?>
 										</ul>
 									</div><!-- who's friend -->
 								</aside>
