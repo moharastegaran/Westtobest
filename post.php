@@ -5,6 +5,7 @@ if(!isset($_SESSION['username'])){
 }else{
     include "config/config.php";
     include "header.php";
+//    include "top_area.php";
     ?>
     	<section>
 		<div class="gap gray-bg">
