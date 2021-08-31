@@ -38,11 +38,11 @@ if (!isset($_SESSION['username'])) {
                         $_SESSION['username'] = $row['username'];
                         header("location:index.php");
                     } else {
-                        $error = "username or password invalid";
+                        $error = $lang['errors']['invalid_usrnmpwd'];
                     }
                 }
             } else {
-                $error = "please select recaptcha";
+                $error = $lang['errors']['invalid_captcha'];
             }
         }
     }
@@ -67,16 +67,16 @@ if (!isset($_SESSION['username'])) {
                         $_SESSION['username'] = $_POST['username'];
                         header("location:index.php");
                     } else {
-                        $error = "Please agree to the terms";
+                        $error = $lang['errors']['accept_terms'];
                     }
                 } else {
-                    $error = "email is have";
+                    $error = $lang['errors']['email_exists'];
                 }
             } else {
-                $error = "username is have";
+                $error = $lang['errors']['username_terms'];
             }
         } else {
-            $error = "please select recaptcha";
+            $error = $lang['errors']['invalid_captcha'];
         }
     }
     ?>
@@ -99,7 +99,7 @@ if (!isset($_SESSION['username'])) {
 
 
     </head>
-    <body <?php echo (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fa') ? 'class=\'rtl\'' : '' ?>>
+    <body <?php echo (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fa') ? 'class=\'rtl\'' : '' ?> style="overflow-y: hidden">
     <!--<div class="se-pre-con"></div>-->
     <div class="theme-layout">
         <div class="container-fluid pdng0">
@@ -124,8 +124,9 @@ if (!isset($_SESSION['username'])) {
                             });
                         }, 2000);
                     </script>
+
                     <?php if (isset($error)) { ?>
-                        <div class="alert alert-danger" id="danger-alert"><i
+                        <div class="alert alert-danger mb-0" id="danger-alert"><i
                                     class="fa fa-exclamation-triangle"></i> <?php echo $error; ?></div>
                     <?php } ?>
 
@@ -134,11 +135,11 @@ if (!isset($_SESSION['username'])) {
                             <a href="#" data-ripple="" class="dropdown-toggle" data-toggle="dropdown">
                                 <!--                        <i class="fa fa-globe"></i>-->
                                 <?php if ($current_lang === 'en') { ?>
-                                    <img src="images/flags/flag_america_rounded.png" width="25"> English<?php } ?>
+                                    <img src="images/flags/flag_en_rounded.png" width="25"> <?php echo $lang['languages']['en']; } ?>
                                 <?php if ($current_lang === 'de') { ?>
-                                    <img src="images/flags/flag_germany_rounded.png" width="25"> Germany<?php } ?>
+                                    <img src="images/flags/flag_de_rounded.png" width="25"> <?php echo $lang['languages']['de']; } ?>
                                 <?php if ($current_lang === 'fa') { ?>
-                                    <img src="images/flags/flag_iran_rounded.png" width="25"> Persian<?php } ?>
+                                    <img src="images/flags/flag_ir_rounded.png" width="25"> <?php echo $lang['languages']['fa']; } ?>
 
                             </a>
                             <div class="dropdown-menu">
@@ -154,23 +155,23 @@ if (!isset($_SESSION['username'])) {
 
                                 <?php if ($current_lang !== 'en') { ?>
                                 <li class="dropdown-item text-center" style="font-size: 13px"><a href="#" onclick="document.getElementById('en').submit();">
-                                        <img src="images/flags/flag_america_rounded.png"
-                                             width="25"> English</a>
+                                        <img src="images/flags/flag_en_rounded.png"
+                                             width="25"> <?php echo $lang['languages']['en'];?></a>
                                     <?php } ?>
                                 </li>
 
 
                                 <?php if ($current_lang !== 'de') { ?>
                                 <li class="dropdown-item text-center" style="font-size: 13px"><a href="#" onclick="document.getElementById('de').submit();">
-                                        <img src="images/flags/flag_germany_rounded.png"
-                                             width="25"> Germany</a>
+                                        <img src="images/flags/flag_de_rounded.png"
+                                             width="25"> <?php echo $lang['languages']['de'];?></a>
                                     <?php } ?>
                                 </li>
 
                                 <?php if ($current_lang !== 'fa') { ?>
                                 <li class="dropdown-item text-center" style="font-size: 13px"><a href="#" onclick="document.getElementById('fa').submit();">
-                                            <img src="images/flags/flag_iran_rounded.png"
-                                                 width="25"> Persian</a>
+                                            <img src="images/flags/flag_ir_rounded.png"
+                                                 width="25"> <?php echo $lang['languages']['fa'];?></a>
                                     <?php } ?>
                                 </li>
                             </div>

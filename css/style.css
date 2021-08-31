@@ -2027,6 +2027,13 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
     position: absolute;
     content: '';
 }
+.rtl .we-comment::before,
+.rtl .peoples-mesg-box > ul > li p:before {
+    left: auto;
+    right: -11px;
+    border-right: none;
+    border-left: 11px solid #ede9e9;;
+}
 
 .we-comment::after,
 .peoples-mesg-box > ul > li p:after {
@@ -2037,6 +2044,13 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
     top: 12px;
     position: absolute;
     content: '';
+}
+.rtl .we-comment::after,
+.rtl .peoples-mesg-box > ul > li p:after {
+    border-left: 9px solid #fff;
+    border-right: none;
+    right: -9px;
+    left: auto;
 }
 
 .we-comet > li ul {

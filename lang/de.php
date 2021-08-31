@@ -77,6 +77,21 @@ $lang=array(
     'like'=>'like your post',
     'please_selected'=>'please selected',
 
+    'errors' => [
+        'invalid_captcha' => 'please select recaptcha',
+        'accept_terms' => 'please agree to the terms',
+        'email_exists' => 'A user already registered with this email',
+        'username_exists' => 'username is already taken',
+
+        'invalid_usrnmpwd' => 'username or password is invalid',
+    ] ,
+
+    'languages' => [
+        'en' => 'english',
+        'de' => 'deutsch',
+        'fa' => 'persian',
+    ],
+
     'titles' => [
         'shortcuts' => 'shortcuts',
 
@@ -86,7 +101,7 @@ $lang=array(
         'setting' => 'setting',
         'notifications' => 'notifications',
         'profile' => 'profile',
-        'messages' => 'profile',
+        'messages' => 'messages',
         'explore' => 'explore',
     ],
 

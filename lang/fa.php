@@ -74,11 +74,27 @@ $lang = array(
     'like' => 'پست شما را پسندید',
     'please_selected' => 'لطفا انتخاب کنید',
 
+    'errors' => [
+        'invalid_captcha' => 'کد امنیتی را تایید کنید.',
+        'accept_terms' => 'شرایط و ضوابط را بپذیرید.',
+        'email_exists' => 'ایمیل در سایت ثبت شده است.',
+        'username_exists' => 'نام کاربری آزاد نیست.',
+
+        'invalid_usrnmpwd' => 'نام کاربری یا رمز عبور نادرست است',
+
+    ] ,
+
+    'languages' => [
+        'en' => 'انگلیسی',
+        'de' => 'آلمانی',
+        'fa' => 'فارسی',
+    ],
+
     'titles' => [
         'shortcuts' => 'میانبرها',
 
         'posts' => 'پست‌ها',
-        'friends' => 'دنبال‌کننده‌ها',
+        'friends' => 'دوستان',
         'bio' => 'معرفی',
         'setting' => 'تنظیمات',
         'notifications' => 'اعلان‌ها',

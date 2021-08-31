@@ -247,11 +247,11 @@ if (isset($_POST['cover_sub'])) {
                 <li><a href="#" data-ripple="">
                         <!--                        <i class="fa fa-globe"></i>-->
                         <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'en') { ?>
-                            <img src="images/flags/flag_america_rounded.png" width="25"><?php } ?>
+                            <img src="images/flags/flag_en_rounded.png" width="25"><?php } ?>
                         <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') { ?>
-                            <img src="images/flags/flag_germany_rounded.png" width="25"><?php } ?>
+                            <img src="images/flags/flag_de_rounded.png" width="25"><?php } ?>
                         <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') { ?>
-                            <img src="images/flags/flag_iran_rounded.png" width="25"><?php } ?>
+                            <img src="images/flags/flag_ir_rounded.png" width="25"><?php } ?>
 
                     </a>
                     <div class="dropdowns languages">
@@ -266,14 +266,14 @@ if (isset($_POST['cover_sub'])) {
                         </form>
                         <a href="#" title=""
                            onclick="document.getElementById('en').submit();"><img
-                                    src="images/flags/flag_america_rounded.png" width="30"> English</a>
+                                    src="images/flags/flag_en_rounded.png" width="30"> English</a>
                         <a href="#" title=""
                            onclick="document.getElementById('de').submit();"><?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') { ?>
-                                <i class="ti-check"></i><?php } ?><img src="images/flags/flag_germany_rounded.png"
+                                <i class="ti-check"></i><?php } ?><img src="images/flags/flag_de_rounded.png"
                                                                        width="30"> Germany</a>
                         <a href="#" title=""
                            onclick="document.getElementById('fa').submit();"><?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') { ?>
-                                <i class="ti-check"></i><?php } ?><img src="images/flags/flag_iran_rounded.png"
+                                <i class="ti-check"></i><?php } ?><img src="images/flags/flag_ir_rounded.png"
                                                                        width="30"> Persian</a>
                     </div>
                 </li>
