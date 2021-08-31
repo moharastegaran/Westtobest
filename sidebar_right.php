@@ -1,7 +1,7 @@
 <div class="col-lg-3">
 								<aside class="sidebar static">
 								<div class="widget">
-										<h4 class="widget-title"><?php echo $lang['friend'];?></h4>
+										<h4 class="widget-title"><?php echo $lang['titles']['friends'];?></h4>
 										<ul class="followers">
 											<?php 
 								         	if(isset($_GET['p'])){

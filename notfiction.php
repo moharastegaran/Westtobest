@@ -85,7 +85,7 @@ if(isset($_SESSION['username'])){
                                                 </li>
                                                         <?php }}
                                                 }else{
-                                                    echo "<div class='alert alert-info'>No new notifications found</div>";
+                                                    echo "<div class='alert alert-info'>".$lang['Alert_no_notification']."</div>";
                                                 }
                                                 ?>
                                             </ul>

@@ -13,6 +13,14 @@ $lang=array(
     'or'=>'',
     'join'=>'join',
     'now'=>'now',
+    'login_aside_title' => 'Human',
+    'login_aside_subtitle' => 'for human',
+    'login_aside_follow' => 'Follow Us',
+    'haven\'t_signed_up_yet' => 'Don’t use our social network Yet?',
+    'read_terms_and_conditions' => 'Read terms',
+    'login_or' => 'or',
+    'login_join_us_now' => 'join us now',
+
     'male'=>'Male',
     'female'=>'Female',
     'Cancer'=>'Cancer',
@@ -35,6 +43,7 @@ $lang=array(
     'Edit_Cover_Photo'=>'Edit Cover Photo',
     'Edit_avatar_Photo'=>'Edit avatar Photo',
     'post'=>'post',
+    'post_created_at'=>'published at',
     'following'=>'following',
     'notification'=>'notification',
     'Shortcuts'=>'Shortcuts',
@@ -48,6 +57,7 @@ $lang=array(
     'People'=>'Explore',
     'profile'=>'profile',
     'info'=>'Info',
+    'messages_title'=>'Messages',
     'old-password'=>'old-password',
     'new-password'=>'new-password',
     'old_password_invaild'=>'old password invaild',
@@ -66,9 +76,28 @@ $lang=array(
     'view_more'=>'view more',
     'like'=>'like your post',
     'please_selected'=>'please selected',
-    'You_are_deleting_a_post'=>'This action can not be undone.',
-    'Are_you_sure?'=>'Are you sure?',
-    'Deletion_was_successful'=>'Deletion was successful',
+
+    'titles' => [
+        'shortcuts' => 'shortcuts',
+
+        'posts' => 'posts',
+        'friends' => 'friends',
+        'bio' => 'bio',
+        'setting' => 'setting',
+        'notifications' => 'notifications',
+        'profile' => 'profile',
+        'messages' => 'profile',
+        'explore' => 'explore',
+    ],
+
+    'delete_post' => [
+        'You_are_deleting_a_post'=>'This action can not be undone.',
+        'Are_you_sure?'=>'Are you sure?',
+        'Deletion_was_successful'=>'Deletion was successful',
+        'btn_confirm' => 'Delete',
+        'btn_cancel' => 'Cancel',
+        'btn_ok' => 'Ok'
+    ],
 
     'Footer_description' => 'Delldate is a social media website dedicated to people all around the globe.',
     'Footer_data_location' => 'Germany - Berlin',
@@ -77,5 +106,17 @@ $lang=array(
 
     'Alert_no_friends' => 'You don\'t have any friends yet. ',
     'Alert_no_friends_link' => 'Explore now.',
-    'Alert_no_notification' => 'No new notifications found'
+    'Alert_no_notification' => 'No new notifications found',
+
+    'write_something' => 'write something',
+
+    'btn_save_profile_settings' => 'Save',
+
+    'footer_rights' => '© human 2021. All rights reserved.',
+
+    'night_mode' => [
+        'label_off' => 'off',
+        'label_on' => 'on',
+        'title' => 'night mode',
+    ],
 );

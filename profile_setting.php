@@ -104,7 +104,7 @@
                                             </div>
 											<div class="form-group">	
 											  <input type="date" name="birthday" id="birthday" value="<?php echo $row['birthday'];?>"/>
-											  <label class="control-label" for="birthday"><i class="ti-calendar"></i> <?php echo $lang['birthday'];?></label><i class="mtrl-select"></i>
+<!--											  <label class="control-label" for="birthday"><i class="ti-calendar"></i> --><?php //echo $lang['birthday'];?><!--</label><i class="mtrl-select"></i>-->
 											</div>
 											
 											<h5 class="f-title ext-margin"><i class="ti-info-alt"></i> <?php echo $lang['bio'];?></h5>
@@ -136,7 +136,7 @@
 											</div>
 											</div>
 											<div class="submit-btns">
-												<button type="submit" name="submit" class="mtr-btn"><span>Save</span></button>
+												<button type="submit" name="submit" class="mtr-btn"><span><?php echo $lang['btn_save_profile_settings'] ?></span></button>
 											</div>
 										</form>
 									</div>

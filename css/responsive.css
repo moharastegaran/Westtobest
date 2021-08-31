@@ -68,6 +68,9 @@
         left: 315px;
         bottom: 125px;
     }
+    .rtl .edit-phto{
+        left: auto;
+    }
     .add-btn {
         bottom: 125px;
     }
@@ -474,7 +477,7 @@
         width: 92%;
     }
     .central-meta {
-        margin: 10px 10px 10px 0;
+        /*margin: 10px 10px 10px 0;*/
         width: 100%;
     }
     .advertisment-box {
@@ -1438,6 +1441,16 @@
 }
 
 @media screen and (max-width: 420px) and (min-width: 361px) {
+    .new-postbox{
+        display: block;
+    }
+    .new-postbox figure{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .new-postbox .newpst-input{
+        width: 100%;
+    }
     .post-meta .detail {
         width: 100%;
     }
@@ -1543,6 +1556,16 @@
 }
 
 @media screen and (max-width: 360px) {
+    .new-postbox{
+        display: block;
+    }
+    .new-postbox figure{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .new-postbox .newpst-input{
+        width: 100%;
+    }
     .user-avatar {
         width: 40%;
     }

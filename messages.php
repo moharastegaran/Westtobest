@@ -49,7 +49,7 @@ if(isset($_SESSION['username'])){
 <!--                                        setInterval(getMessages, 100);-->
 <!--                                    </script>-->
                                     <div class="messages" style="min-height: 500px;height:auto">
-                                        <h5 class="f-title"><i class="ti-bell"></i>All Messages
+                                        <h5 class="f-title"><i class="ti-bell"></i><?php echo $lang['messages_title'] ?>
 <!--                                            <span class="more-options"><i class="fa fa-ellipsis-h"></i></span>-->
                                         </h5>
                                         <div class="message-box">

@@ -413,5 +413,17 @@ $(".new-postbox").click(function () {
 
 
 
+/* nightmoed form */
+$("#night_mode").on("change",function (){
+	$(this).val($(this).is(":checked") ? 0 : 1);
+	$("#nightmode-form").submit();
+});
 
 
+/* init emojis */
+
+$("#newpst-description").emojioneArea();
+
+$('i.em').on("click",function () {
+	$('.emojionearea-button').click()
+})

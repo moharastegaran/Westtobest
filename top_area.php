@@ -53,10 +53,10 @@ while ($row=mysqli_fetch_assoc($result)){
                             img.onload = function() {
                                 // alert(this.width + " " + this.height);
                                 var width = this.width;
-                                if( this.width>=1800&&this.width<=1980){
+                                if( this.width>=1600&&this.width<=2000){
                                     document.getElementById('form-cover-send').submit();
                                 }else {
-                                    alert('Please select a photo with a width of 1800 to 1980 pixels');
+                                    alert('Please select a photo with a width of 1600 to 2000 pixels');
                                 }
                             };
                             img.onerror = function() {
@@ -80,7 +80,7 @@ while ($row=mysqli_fetch_assoc($result)){
 								<?php
 								if ($_SESSION['username']==$_GET['p']){
 									?>
-								<form action=""  class="edit-phto" method="post" enctype="multipart/form-data"   >
+								<form action=""  class="edit-phto" method="post" enctype="multipart/form-data">
 								<input type="hidden" name="avatar_sub">
 									<i class="fa fa-camera-retro"></i>
 									<label class="fileContainer">
@@ -100,12 +100,12 @@ while ($row=mysqli_fetch_assoc($result)){
 								  <span>@<?php echo $row['username'];?></span>
 								</li>
 								<li>
-									<a  <?php if(!isset($_GET['page'])){?> class="active"<?php }?> href="profile.php?p=<?php echo $_GET['p'];?>" title="" data-ripple=""><?php echo $lang['post'];?></a>
-									<a <?php if(isset($_GET['page'])&&$_GET['page']=='follower'){?> class="active"<?php }?> href="profile.php?p=<?php echo $_GET['p'];?>&page=follower" title="" data-ripple=""><?php echo $lang['friend'];?></a>
-									<a <?php if(isset($_GET['page'])&&$_GET['page']=='bio'){?> class="active"<?php }?> href="profile.php?p=<?php echo $_GET['p'];?>&page=bio" title="" data-ripple=""><?php echo $lang['bio'];?></a>
+									<a  <?php if(!isset($_GET['page'])){?> class="active"<?php }?> href="profile.php?p=<?php echo $_GET['p'];?>" title="" data-ripple=""><?php echo $lang['titles']['posts'];?></a>
+									<a <?php if(isset($_GET['page'])&&$_GET['page']=='follower'){?> class="active"<?php }?> href="profile.php?p=<?php echo $_GET['p'];?>&page=follower" title="" data-ripple=""><?php echo $lang['titles']['friends'];?></a>
+									<a <?php if(isset($_GET['page'])&&$_GET['page']=='bio'){?> class="active"<?php }?> href="profile.php?p=<?php echo $_GET['p'];?>&page=bio" title="" data-ripple=""><?php echo $lang['titles']['bio'];?></a>
 									<?php if($_SESSION['username']==$_GET['p']){?>
-									<a <?php if(isset($_GET['page'])&&$_GET['page']=='setting'){?> class="active"<?php }?> href="setting.php" title="" data-ripple=""><?php echo $lang['setting'];?></a>
-									<a <?php if(isset($_GET['page'])&&$_GET['page']=='not'){?> class="active"<?php }?> href="notfiction.php" title="" data-ripple=""><?php echo $lang['notification'];?></a>
+									<a <?php if(isset($_GET['page'])&&$_GET['page']=='setting'){?> class="active"<?php }?> href="setting.php" title="" data-ripple=""><?php echo $lang['titles']['setting'];?></a>
+									<a <?php if(isset($_GET['page'])&&$_GET['page']=='not'){?> class="active"<?php }?> href="notfiction.php" title="" data-ripple=""><?php echo $lang['titles']['notifications'];?></a>
 								<?php } ?>
 								</li>
 							</ul>

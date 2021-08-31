@@ -1,14 +1,17 @@
 <script>
     function delete_post(id){
         swal({
-            title: "<?php echo $lang['Are_you_sure?'];?>",
-            text: "<?php echo $lang['You_are_deleting_a_post'];?>",
-            icon: "warning",
-            buttons: true,
+            title: "<?php echo $lang['delete_post']['Are_you_sure?'];?>",
+            text: "<?php echo $lang['delete_post']['You_are_deleting_a_post'];?>",
+            type : "warning",
+            showCloseButton: true,
+            showCancelButton: true,
+            confirmButtonText: "<?php echo $lang['delete_post']['btn_confirm']; ?>",
+            cancelButtonText: "<?php echo $lang['delete_post']['btn_cancel']; ?>",
             dangerMode: true,
         })
             .then((willDelete) => {
-                if (willDelete) {
+                if (willDelete.value) {
                     $.ajax({
                         type:'post',
                         url:'ajax/delete_post.php',
@@ -17,8 +20,10 @@
                         },
                         success:function (response){
                             document.getElementById('post'+id).innerHTML='';
-                            swal("<?php echo $lang['Deletion_was_successful'];?>", {
-                                icon: "success",
+                            swal({
+                                text: "<?php echo $lang['delete_post']['Deletion_was_successful'];?>",
+                                type: "success",
+                                confirmButtonText: "<?php echo $lang['delete_post']['btn_ok']; ?>"
                             });
                         }
                     });
@@ -117,7 +122,8 @@ function post<?php echo $row['id'];?>()
 												</figure>
 												<div class="friend-name">
 													<ins><a href="profile.php?p=<?php echo $rosw['username'];?>" title=""><?php echo $rosw['name'];?></a></ins>
-													<?php }?>
+                                                    <span><?php echo $lang['post_created_at'].": ".date_format(date_create($row['created_at']),"Y M j, H:i") ?></span>
+                                                    <?php }?>
 												</div>
 												<div class="post-meta">
 												<?php	if($row['cover']!=0){?>
