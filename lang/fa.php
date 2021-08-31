@@ -112,6 +112,11 @@ $lang = array(
         'btn_ok' => 'باشه'
     ],
 
+    'tooltip' => [
+        'comments' => 'نظر',
+        'likes' => 'بازدید',
+    ],
+
 
     'Footer_description' => 'Delldate یک وب سایت رسانه های اجتماعی است که به مردم در سراسر جهان اختصاص داده شده است.',
     'Footer_data_location' => 'آلمان - برلین',

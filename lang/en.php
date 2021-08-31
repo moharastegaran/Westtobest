@@ -114,6 +114,11 @@ $lang=array(
         'btn_ok' => 'Ok'
     ],
 
+    'tooltip' => [
+        'comments' => 'comments',
+        'likes' => 'likes',
+    ],
+
     'Footer_description' => 'Delldate is a social media website dedicated to people all around the globe.',
     'Footer_data_location' => 'Germany - Berlin',
     'Footer_title_links' => 'useful links',

@@ -139,14 +139,14 @@ function post<?php echo $row['id'];?>()
 																</span>
 															</li>
 															<li>
-																<span class="comment" data-toggle="tooltip" title="Comments">
+																<span class="comment" data-toggle="tooltip" title="<?php echo $lang['tooltip']['comments']; ?>">
 																	<i class="fa fa-comments-o"></i>
 																	<ins id="comment_num<?php echo $row['id'];?>"><?php echo mysqli_num_rows($conn->query("SELECT * FROM comment where post_id='".$row['id']."'"));?></ins>
 																</span>
 															</li>
 															<li>
                                                                 <a onclick="like<?php echo $row['id'];?>()">
-                                                                    <span class="like" id="like_post<?php echo $row['id'];?>" data-toggle="tooltip" title="like">
+                                                                    <span class="like" id="like_post<?php echo $row['id'];?>" data-toggle="tooltip" title="<?php echo $lang['tooltip']['likes']; ?>">
                                                                         <?php $num_user= mysqli_num_rows($conn->query("SELECT * FROM like_post where post_id='".$row['id']."' and user='".$_SESSION['username']."'")); ?>
 																	<i class="ti-heart" <?php if($num_user!=0){echo 'style="color: #ff0000"';}?>></i>
 																	<ins><?php echo mysqli_num_rows($conn->query("SELECT * FROM like_post where post_id='".$row['id']."'"));?></ins>
