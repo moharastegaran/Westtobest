@@ -24,7 +24,7 @@ if (!isset($_SESSION['night_mode']))
 //echo ($_SESSION['night_mode']);
 if(isset($_POST['theme_dark'])){
     $_SESSION['night_mode'] = $_SESSION['night_mode']==="true" ? "false" : "true";
-//    header("Refresh:0");
+    header("Refresh:0");
 //    die($_SESSION['night_mode'] ? "ss" : "tt");
 //    $_SESSION['night_mode']=false;
 }
@@ -116,15 +116,21 @@ if (isset($_POST['cover_sub'])) {
             <ul>
                 <li><a href="index.php" title=""><i class="ti-home"></i> <?php echo $lang['home']; ?></a>
                 </li>
-                <li><a href="post.php" title=""><i class="ti-clipboard"></i> <?php echo $lang['post']; ?></a></li>
+                <li><a href="post.php" title=""><i class="ti-clipboard"></i> <?php echo $lang['titles']['posts']; ?></a></li>
                 <li><a href="profile.php?p=<?php echo $_SESSION['username']; ?>" title=""><i
-                                class="ti-files"></i> <?php echo $lang['My_pages']; ?></a></li>
-                <li><a href="notfiction.php" title=""><i class="ti-bell"></i> <?php echo $lang['notification']; ?></a>
+                                class="ti-files"></i> <?php echo $lang['titles']['profile']; ?></a></li>
+                <li><a href="notfiction.php" title=""><i class="ti-bell"></i> <?php echo $lang['titles']['notifications']; ?></a>
                 </li>
-                <li><a href="messages.php" title=""><i class="ti-comments-smiley"></i> <?php echo $lang['messages']; ?>
+                <li><a href="messages.php" title=""><i class="ti-comments-smiley"></i> <?php echo $lang['titles']['messages']; ?>
                     </a></li>
-                <li><a href="setting.php" title=""><i class="ti-settings"></i> <?php echo $lang['setting']; ?></a></li>
-                <li><a href="people.php" title=""><i class="ti-user"></i> <?php echo $lang['People']; ?></a></li>
+                <li><a href="setting.php" title=""><i class="ti-settings"></i> <?php echo $lang['titles']['setting']; ?></a></li>
+                <li><a href="people.php" title=""><i class="ti-user"></i> <?php echo $lang['titles']['explore']; ?></a></li>
+                <li class="setting-row text-center">
+                       <?php echo $lang['night_mode']['title'] ?>
+                        <input type="checkbox" id="night_mode" name="night_mode"
+                               value="nightmodeinput" <?php echo (isset($_SESSION['night_mode']) && $_SESSION['night_mode'] === "true") ? 'checked' : ''; ?>>
+                        <label for="night_mode" data-on-label="<?php echo $lang['night_mode']['label_on'] ?>" data-off-label="<?php echo $lang['night_mode']['label_off'] ?>"></label>
+                    </li>
             </ul>
         </nav>
     </div>
@@ -284,7 +290,7 @@ if (isset($_POST['cover_sub'])) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     ?>
                     <img src="images/resources/<?php if (empty($row['avatar'])) {
-                        echo 'admin.jpg';
+                        echo 'avatar-default.png';
                     } else {
                         echo $row['avatar'];
                     } ?>" alt="" style="width:60px;height:60px">
@@ -293,7 +299,7 @@ if (isset($_POST['cover_sub'])) {
                 <div class="user-setting">
                     <a href="profile.php?p=<?php echo $_SESSION['username']; ?>" title=""><i
                                 class="ti-user"></i> <?php echo $lang['view_profile']; ?></a>
-                    <a href="setting.php" title=""><i class="ti-settings"></i><?php echo $lang['setting']; ?></a>
+                    <a href="setting.php" title=""><i class="ti-settings"></i><?php echo $lang['titles']['setting']; ?></a>
                     <a href="logout.php" title=""><i class="ti-power-off"></i><?php echo $lang['logout']; ?></a>
                 </div>
             </div>

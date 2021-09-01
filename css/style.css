@@ -884,6 +884,12 @@ header.sticky {
     position: relative;
     width: 100%;
 }
+.feature-photo .cover-photo-bg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height : 350px;
+}
 
 .feature-photo > figure {
     margin-bottom: 0;
@@ -899,7 +905,7 @@ header.sticky {
     border-radius: 100%;
     box-shadow: 0 1px 0 #e1e8ed;
     float: right;
-    margin-top: -138px;
+    margin-top: -118px;
     overflow: hidden;
     position: relative;
     width: auto;
@@ -1303,7 +1309,7 @@ header.sticky {
     display: inline-block;
     list-style: outside none none;
     margin-bottom: 0;
-    padding: 0 25px 10px;
+    padding: 0 10px 10px;
     width: 100%;
 }
 
@@ -1545,9 +1551,16 @@ textarea {
     border-bottom: 0;
 }
 
-form button {
+form button , .btn-acc-user{
     border: medium none;
     color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 20px;
+    border-radius: 4px;
+}
+.btn-rej-user{
+    border: .2px solid;
     font-size: 13px;
     font-weight: 500;
     padding: 4px 20px;
@@ -2559,12 +2572,17 @@ footer .logo {
 .followers > li figure {
     display: inline-block;
     margin-bottom: 0;
-    max-width: 45px;
-    min-width: 45px;
     vertical-align: middle;
     width: 45px;
 }
-
+.followers > li figure , .followers> li img{
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    min-width: 50px;
+    max-height: 50px;
+    max-height: 50px;
+}
 .friend-meta {
     display: inline-block;
     padding-left: 10px;
@@ -2577,6 +2595,9 @@ footer .logo {
     font-size: 13.5px;
     margin-bottom: 0;
     width: 100%;
+    /*text-overflow: ellipsis;*/
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
 }
 
 .friend-meta > h4 a {
@@ -4343,7 +4364,10 @@ a.forgot-pwd {
 
 .notification-box > ul > li {
     border-bottom: 1px solid #e1e8ed;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
     padding-bottom: 20px;
     width: 100%;
@@ -4358,12 +4382,23 @@ a.forgot-pwd {
     min-width: 45px;
     vertical-align: top;
 }
+.rtl .notification-box > ul li figure{
+    margin-right: 0;
+    margin-left: 10px;
+}
 
 .notifi-meta {
+    flex-grow: 1;
     display: inline-block;
     line-height: initial;
     vertical-align: middle;
     width: 86%;
+}
+.notifi-meta button.btn-acc-user, .notifi-meta button.btn-rej-user{
+    float: right;
+}
+.rtl .notifi-meta button.btn-acc-user,.rtl .notifi-meta button.btn-rej-user{
+    float : left;
 }
 
 .notifi-meta > p {
@@ -4429,6 +4464,10 @@ a.forgot-pwd {
     padding-left: 0;
     position: relative;
     width: 160px;
+}
+.rtl .peoples{
+    border-right: none;
+    border-left: 1px solid #e1e8ed;
 }
 
 .peoples > li {
@@ -4510,6 +4549,9 @@ a.forgot-pwd {
     position: relative;
     overflow-x: hidden;
 }
+.rtl .peoples-mesg-box > ul.chatting-area {
+    padding: 40px 0 10px 15px;
+}
 
 .peoples-mesg-box > ul li {
     display: inline-block;
@@ -4539,6 +4581,10 @@ a.forgot-pwd {
     color: #434343;
     background: rgba(39, 170, 225, 0.1);
 }
+.rtl .peoples-mesg-box > ul > li p {
+    margin-left: 4px;
+    margin-right: 10px;
+}
 
 .peoples-mesg-box > ul > li p::before {
     top: 4px;
@@ -4556,6 +4602,12 @@ a.forgot-pwd {
     left: auto;
     right: -11px;
 }
+.peoples-mesg-box > ul > li.you p::before {
+    border-right: 11px solid transparent;
+    border-left: initial;
+    right: -11px;
+    left: auto;
+}
 
 .peoples-mesg-box > ul > li.you p {
     background: rgba(202, 239, 142, .65);
@@ -4567,10 +4619,21 @@ a.forgot-pwd {
     left: auto;
     right: -10px;
 }
+.peoples-mesg-box > ul > li.you p::after {
+    border-right: 10px solid rgba(39, 170, 225, 0.1);
+    border-left: initial;
+    left: -10px;
+    right: auto;
+}
 
 .peoples-mesg-box > ul li.me {
     direction: rtl;
     text-align: right;
+}
+
+.peoples-mesg-box > ul li.you {
+    direction: ltr;
+    text-align: left;
 }
 
 .peoples-mesg-box > ul li.me p {
@@ -4578,6 +4641,9 @@ a.forgot-pwd {
     margin-right: 10px;
     text-align: left;
     direction: ltr;
+}
+.rtl .peoples-mesg-box > ul li.me p , .rtl .peoples-mesg-box > ul li.you p {
+    text-align: right;
 }
 
 .conversation-head {
@@ -4627,7 +4693,10 @@ a.forgot-pwd {
     display: inline-block;
     width: 93.5%;
 }
-
+.rtl .message-text-container textarea{
+    padding-right: 40px;
+    font-size: 15px;
+}
 .message-text-container > form {
     display: inline-block;
     position: relative;
@@ -4635,15 +4704,17 @@ a.forgot-pwd {
 }
 
 .message-text-container form button {
-    border-radius: 100%;
-    height: 30px;
     padding: 0;
     position: absolute;
-    right: 13px;
+    right: 0;
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    bottom: 9px;
     width: 30px;
+}
+.message-text-container form button i{
+    vertical-align: middle;
+    font-size: 17px;
 }
 
 .x_panel {
@@ -4935,7 +5006,7 @@ canvas {
 }
 
 .mh-head {
-    background: #4bb5ef;
+    background: #7567e5;
     color: #fff;
     height: auto;
 }
@@ -10591,3 +10662,19 @@ aside.sidebar.full-style {
         height: auto;
     }
 }
+
+/* swal dark theme */
+.theme-dark .swal2-popup{
+    background: #343434;
+}
+.theme-dark .swal2-icon.swal2-warning{
+    border : 5px solid #444 !important;
+}
+.theme-dark .swal2-content, .theme-dark #swal2-content{
+    color : #eee;
+}
+.theme-dark .swal2-popup .swal2-styled.swal2-cancel{
+    background-color: #343434;
+    border : 1px solid #444;
+}
+

@@ -56,7 +56,7 @@
 
 @media screen and (max-width: 1600px) and (min-width: 1400px) {
     .user-avatar {
-        top: -33px;
+        top: -27px;
     }
     #people-list figure {
         width: 18.5%;
@@ -73,6 +73,15 @@
     }
     .add-btn {
         bottom: 125px;
+    }
+}
+
+@media screen and (max-width: 1136px){
+    .friend-meta {
+        width: 67%;
+    }
+    .feature-photo .cover-photo-bg{
+        height : 290px;
     }
 }
 
@@ -97,7 +106,8 @@
         font-size: 14px;
     }
     .user-avatar {
-        width: 80.2%
+        /*width: 100%*/
+        margin-top: -118px;
     }
     .chat-box {
         right: 230px;
@@ -233,7 +243,7 @@
         margin-right: 38px;
     }
     .user-avatar {
-        margin-top: -90px;
+        margin-top: -117px;
     }
     .chat-box {
         bottom: 0;
@@ -246,7 +256,10 @@
     .user-avatar .edit-phto {
         padding: 5px;
         top: auto;
-        left: 0 !important;
+        left: 12px !important;
+    }
+    .user-avatar .edit-phto{
+        width: 85%;
     }
     .photos > li {
         min-width: 31.9%;
@@ -330,6 +343,13 @@
 }
 
 
+@media screen and (min-width: 900px) and (max-width: 1024px){
+    .user-avatar, .user-avatar figure, .user-avatar figure img {
+        width: 190px !important;
+        height: 190px !important;
+    }
+}
+
 /*--- tablet view ---*/
 
 @media screen and (max-width: 980px) {
@@ -361,7 +381,7 @@
     }
     .user-avatar {
         width: 90%;
-        margin-top: -87px;
+        margin-top: -127px;
     }
     .edit-phto {
         padding: 5px 10px;
@@ -614,10 +634,16 @@
 }
 
 @media screen and (max-width: 768px) {
+    .feature-photo .cover-photo-bg{
+        height : 230px;
+    }
     .edit-phto {
         bottom: auto;
-        left: 20px !important;
+        left: 16px !important;
         top: 20px;
+    }
+    .user-avatar .edit-phto {
+        width: 100%;
     }
     .add-btn {
         bottom: 90px;
@@ -628,9 +654,15 @@
         font-size: 12px;
         margin-right: 11px;
     }
+    .feature-photo .cover-photo-bg{
+        height : 205px;
+    }
 }
 
 @media screen and (max-width: 640px) {
+    .user-avatar .edit-phto {
+        width: 100%;
+    }
     p {
         font-size: 13px;
     }
@@ -1083,6 +1115,19 @@
     .job-detail > ul li span{width: 94%;}
 }
 
+@media screen and (min-width: 480px) and (max-width: 575px){
+    .user-avatar > figure {
+        width: 50%;
+    }
+    .user-avatar .edit-phto {
+        left: 12px !important;
+    }
+    .timeline-info > ul li.admin-name {
+        left: 235px;
+        top: -110px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .user-avatar {
         width: 30%;
@@ -1149,7 +1194,7 @@
     .timeline-info > ul li.admin-name {
         left: 190px;
         position: absolute;
-        top: -95px;
+        top: -112px;
     }
     .timeline-info .admin-name > h5 {
         color: #424242;
@@ -1553,6 +1598,15 @@
     .sociaz-media > li {
         margin: 0 0 4px;
     }
+    .user-avatar figure, .user-avatar figure > img{
+        width: 116px;
+        height: 116px;
+        max-width: 116px;
+        border-right: 150px;
+        max-height: 116px;
+        min-width: 116px;
+        min-height: 116px;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -1778,8 +1832,9 @@
 }
 
 @media screen and (max-width: 320px) {
-    .user-avatar {
-        width: 40%;
+    .user-avatar , .user-avatar figure, .user-avatar figure >img {
+        width: 135px !important;
+        height: 135px !important;
     }
     #people-list figure {
         width: 20%;
@@ -1796,8 +1851,8 @@
         margin-right: 15px;
     }
     .timeline-info > ul li.admin-name {
-        left: 128px;
-        top: -95px;
+        left: 150px;
+        top: -109px;
     }
     .add-btn {
         right: 6px;

@@ -64,7 +64,7 @@ if(isset($_SESSION['username'])){
                                                 <li>
                                                     <a onclick="<?php echo $us['username'];?>()">
                                                         <figure>
-                                                            <img src="images/resources/<?php if(empty($us['avatar'])){ echo 'admin.jpg'; }else { echo $us['avatar'];}?>" style="width: 30px;height: 30px" alt="">
+                                                            <img src="images/resources/<?php if(empty($us['avatar'])){ echo 'avatar-default.png'; }else { echo $us['avatar'];}?>" style="width: 30px;height: 30px" alt="">
                                                             <span class="status f-online"></span>
                                                         </figure>
                                                         <div class="people-name">
@@ -86,7 +86,7 @@ if(isset($_SESSION['username'])){
                                                                     }
                                                                 });
 
-                                                                    setInterval(function(){
+                                                                setInterval(function(){
                                                                         if(name=='<?php echo $us['username'];?>') {
                                                                             $.ajax({
                                                                                 type: 'post',

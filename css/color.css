@@ -36,7 +36,6 @@
 .theme-light .friend-meta > h4 a:hover,
 .theme-light .x_title > h2,
 .theme-light .post-meta .detail > span,
-.theme-light .add-btn > a:hover,
 .theme-light .top-area > ul.main-menu > li > ul li a:hover,
 .theme-light .dropdowns.active > a i,
 .theme-light .user-setting > a i,
@@ -83,9 +82,14 @@
 .theme-light .help-list > ul li a:hover,
 .theme-light .employer-info h2,
 .theme-light .job-detail > ul li i,
-.theme-light .company-intro > a
+.theme-light .company-intro > a,
+.theme-light .btn-rej-user
 {
 	color: #5451d7;
+}
+
+.theme-light .add-btn > a:hover{
+	color : #555;
 }
 svg{
 stroke: #fff;
@@ -149,7 +153,8 @@ path.icon{
 .theme-light .proceed .button,
 .theme-light .amount-area .update-cart,
 .theme-light a.addnewforum,
-.theme-light .apply-bttons > a
+.theme-light .apply-bttons > a,
+.theme-light .btn-acc-user
 {
 	background: #5451d7;
 }
@@ -172,6 +177,7 @@ path.icon{
 .theme-light .help-list > a:hover,
 .theme-light a.btn2:hover,
 .theme-light .single-btn > li > a.active
+.theme-light .btn-rej-user
 {
 	border-color: #5451d7;
 }
@@ -278,7 +284,9 @@ path.icon{
 {
 	color: #088dcd;
 }
-
+.theme-dark .btn-rej-user{
+	color : #088dcd;
+}
 /*=========================
 	BACKGROUND COLOR
 =========================*/
@@ -330,7 +338,8 @@ path.icon{
 .theme-dark .proceed .button,
 .theme-dark .amount-area .update-cart,
 .theme-dark a.addnewforum,
-.theme-dark .apply-bttons > a
+.theme-dark .apply-bttons > a,
+.theme-dark .btn-acc-user
 {
 	background: #088dcd;
 }
@@ -352,7 +361,8 @@ path.icon{
 .theme-dark .g-post-classic:hover > figure > i,
 .theme-dark .help-list > a:hover,
 .theme-dark a.btn2:hover,
-.theme-dark .single-btn > li > a.active
+.theme-dark .single-btn > li > a.active,
+.theme-dark .btn-rej-user
 {
 	border-color: #088dcd;
 }

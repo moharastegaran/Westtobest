@@ -118,7 +118,7 @@ function post<?php echo $row['id'];?>()
 											<?php
 											$results=$conn->query("SELECT * FROM user where username='".$row['user']."'");
 											while ($rosw=mysqli_fetch_assoc($results)){?>
-												<img src="images/resources/<?php if(empty($rosw['avatar'])){ echo 'user-avatar.jpg';}else{echo $rosw['avatar'];}?>" alt="" style="width:50px;height:50px">
+												<img src="images/resources/<?php if(empty($rosw['avatar'])){ echo 'avatar-default.png';}else{echo $rosw['avatar'];}?>" alt="" style="width:50px;height:50px">
 												</figure>
 												<div class="friend-name">
 													<ins><a href="profile.php?p=<?php echo $rosw['username'];?>" title=""><?php echo $rosw['name'];?></a></ins>
@@ -195,7 +195,7 @@ function post<?php echo $row['id'];?>()
 
 													<li>
 														<div class="comet-avatar">
-															<img src="images/resources/<?php if(empty($us['avatar'])){ echo 'user-avatar.jpg';}else{echo $us['avatar'];}?>" alt="">
+															<img src="images/resources/<?php if(empty($us['avatar'])){ echo 'avatar-default.png';}else{echo $us['avatar'];}?>" alt="">
 														</div>
 														<div class="we-comment">
 															<div class="coment-head">

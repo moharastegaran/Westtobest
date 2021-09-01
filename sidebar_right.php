@@ -16,9 +16,13 @@
 												while ($row=mysqli_fetch_assoc($result)){
 											?>
 											<li>
-												<figure><img src="images/resources/<?php if(empty($row['avatar'])){ echo 'user-avatar.jpg';}else{echo $row['avatar'];}?>" alt=""></figure>
+												<figure><img src="images/resources/<?php if(empty($row['avatar'])){ echo 'avatar-default.png';}else{echo $row['avatar'];}?>" alt=""></figure>
 												<div class="friend-meta">
-													<h4><a href="profile.php?p=<?php echo $row['username'];?>" title=""><?php echo $row['name'];?></a></h4>
+													<h4>
+                                                        <a href="profile.php?p=<?php echo $row['username'];?>" title="<?php echo $row['name'];?>">
+                                                            <?php echo $row['name'];?>
+                                                        </a>
+                                                    </h4>
 												</div>
 											</li>
 											<?php } }

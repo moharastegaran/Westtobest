@@ -3,7 +3,7 @@ include "../config/config.php";
 $result=$conn->query("SELECT * FROM user where username LIKE '%".$_POST['name']."%' or name LIKE '%".$_POST['name']."%'");
 while ($row=mysqli_fetch_assoc($result)){
 if (empty($row['avatar'])) {
-    $avatar= 'admin.jpg';
+    $avatar= 'avatar-default.png';
 } else {
     $avatar= $row['avatar'];
 }

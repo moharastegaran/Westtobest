@@ -15,7 +15,7 @@ include "../config/config.php";
 
 													<li>
 														<div class="comet-avatar">
-															<img src="images/resources/<?php if(empty($us['avatar'])){ echo 'user-avatar.jpg';}else{echo $us['avatar'];}?>" alt="">
+															<img src="images/resources/<?php if(empty($us['avatar'])){ echo 'avatar-default.png';}else{echo $us['avatar'];}?>" alt="">
 														</div>
 														<div class="we-comment">
 															<div class="coment-head">

@@ -4,7 +4,9 @@ while ($row=mysqli_fetch_assoc($result)){
 	?>
 <section>
 		<div class="feature-photo">
-			<figure><img  style="height:350px" src="images/resources/<?php if($row['header_img']==0){ echo "timeline-1.jpg";}else{ echo $row['header_img']; }?>" alt=""></figure>
+            <div class="cover-photo-bg"
+            style="background-image: url(images/resources/<?php if(trim($row['header_img'])===""){ echo "cover-default.jpg";}else{ echo $row['header_img']; }?>)">
+            </div>
 			<div class="add-btn">
 				<span><?php echo mysqli_num_rows($conn->query("SELECT * FROM friend where user_2='".$_SESSION['username']."' and acc='1'"))." ". $lang['followers'];?></span>
 				<?php 
@@ -76,7 +78,7 @@ while ($row=mysqli_fetch_assoc($result)){
 					<div class="col-lg-2 col-sm-3">
 						<div class="user-avatar">
 							<figure>
-								<img id="avatar_profile" src="images/resources/<?php if($row['avatar']==0){ echo "user-avatar.jpg";}else{ echo $row['avatar']; }?>" alt="" ">
+								<img id="avatar_profile" src="images/resources/<?php if($row['avatar']==0){ echo "avatar-default.png";}else{ echo $row['avatar']; }?>" alt="" ">
 								<?php
 								if ($_SESSION['username']==$_GET['p']){
 									?>

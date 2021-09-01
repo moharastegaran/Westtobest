@@ -30,7 +30,7 @@
                             ?>
                             <div class="central-meta">
 									<div class="editing-info">
-										<h5 class="f-title"><i class="ti-user"></i><?php echo $lang['profile']." ".$lang['setting'];?></h5>
+										<h5 class="f-title"><i class="ti-user"></i><?php echo $lang['titles']['setting']; ?></h5>
 										<form method="post" action="">
 											<div class="form-group half">	
 											  <input type="text" id="name" name="name" value="<?php echo $row['name'];?>"/>
@@ -107,7 +107,7 @@
 <!--											  <label class="control-label" for="birthday"><i class="ti-calendar"></i> --><?php //echo $lang['birthday'];?><!--</label><i class="mtrl-select"></i>-->
 											</div>
 											
-											<h5 class="f-title ext-margin"><i class="ti-info-alt"></i> <?php echo $lang['bio'];?></h5>
+											<h5 class="f-title ext-margin"><i class="ti-info-alt"></i> <?php echo $lang['titles']['bio'];?></h5>
 											<div class="page-viewers">
                                             <div class="form-group">
                                 <select name="sickness">

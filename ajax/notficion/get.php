@@ -22,7 +22,7 @@ include "../../lang/en.php";
                     case '1':
                       ?>
                         <a href="notfiction.php" title="">
-                            <img src="images/resources/<?php if($us['avatar']==0){ echo "user-avatar.jpg";}else{ echo $us['avatar']; }?>" alt="">
+                            <img src="images/resources/<?php if($us['avatar']==0){ echo "avatar-default.png";}else{ echo $us['avatar']; }?>" alt="">
                             <div class="mesg-meta">
                                 <h6><?php echo $us['name'];?></h6>
                                 <span><?php echo $lang['friend_request']; ?></span>
@@ -33,7 +33,7 @@ include "../../lang/en.php";
                     case '2':
                         ?>
                         <a href="post.php?id=<?php echo $row['pro'];?>" title="">
-                            <img src="images/resources/<?php if($us['avatar']==0){ echo "user-avatar.jpg";}else{ echo $us['avatar']; }?>" alt="">
+                            <img src="images/resources/<?php if($us['avatar']==0){ echo "avatar-default.png";}else{ echo $us['avatar']; }?>" alt="">
                             <div class="mesg-meta">
                                 <h6><?php echo $us['name'];?></h6>
                                 <span><?php echo $lang['comment_post']; ?></span>
@@ -45,7 +45,7 @@ include "../../lang/en.php";
                     case '3':
                         ?>
                         <a href="post.php?id=<?php echo $row['pro'];?>" title="">
-                            <img src="images/resources/<?php if($us['avatar']==0){ echo "user-avatar.jpg";}else{ echo $us['avatar']; }?>" alt="">
+                            <img src="images/resources/<?php if($us['avatar']==0){ echo "avatar-default.png";}else{ echo $us['avatar']; }?>" alt="">
                             <div class="mesg-meta">
                                 <h6><?php echo $us['name'];?></h6>
                                 <span><?php echo$lang['like']; ?></span>

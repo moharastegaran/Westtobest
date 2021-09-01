@@ -7,7 +7,7 @@ while ($user=mysqli_fetch_assoc($users)){
     ?>
 
     <div class="conversation-head" >
-        <figure><img src="images/resources/<?php if($user['avatar']==0){ echo "user-avatar.jpg";}else{ echo $user['avatar']; }?>" alt="" style="width: 50px;height: 50px"></figure>
+        <figure><img src="images/resources/<?php if($user['avatar']==0){ echo "avatar-default.png";}else{ echo $user['avatar']; }?>" alt="" style="width: 50px;height: 50px"></figure>
         <span><?php echo $user['name']?></span>
     </div>
     <ul class="chatting-area" id="massages" style="height: 400px">

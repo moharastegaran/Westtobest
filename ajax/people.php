@@ -20,7 +20,7 @@ if($_POST['sickness']!='off'||$_POST['country']!='off'||$_POST['city']!='off' ){
         <li>
             <div class="nearly-pepls">
                 <figure>
-                    <a href="profile.php?p=<?php echo $row['username'];?>" title=""><img src="images/resources/<?php if(empty($row['avatar'])){ echo 'user-avatar.jpg';}else{echo $row['avatar'];}?>" style="width:60px;height:60px" alt=""></a>
+                    <a href="profile.php?p=<?php echo $row['username'];?>" title=""><img src="images/resources/<?php if(empty($row['avatar'])){ echo 'avatar-default.png';}else{echo $row['avatar'];}?>" style="width:60px;height:60px" alt=""></a>
                 </figure>
                 <div class="pepl-info">
                     <h4><a href="profile.php?p=<?php echo $row['username'];?>" title=""><?php echo $row['name'];?></a></h4>

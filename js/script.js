@@ -257,13 +257,28 @@ if ($.isFunction($.fn.loadMoreResults)) {
 $(function() {
 
 	//	create the menus
-	$('#menu').mmenu();
+	$('body:not(.rtl) #menu').mmenu({
+		navbar: {
+			title: 'Shortcuts'
+		},
+		offCanvas: {
+			position: 'right'
+		}
+	});
+	$('body.rtl #menu').mmenu({
+		navbar: {
+			title: 'منو'
+		},
+		offCanvas: {
+			position: 'left'
+		}
+	});
 	$('#shoppingbag').mmenu({
 		navbar: {
 			title: 'General Setting'
 		},
 		offCanvas: {
-			position: 'right'
+			position: 'left'
 		}
 	});
 
@@ -418,12 +433,3 @@ $("#night_mode").on("change",function (){
 	$(this).val($(this).is(":checked") ? 0 : 1);
 	$("#nightmode-form").submit();
 });
-
-
-/* init emojis */
-
-$("#newpst-description").emojioneArea();
-
-$('i.em').on("click",function () {
-	$('.emojionearea-button').click()
-})

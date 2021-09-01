@@ -21,6 +21,7 @@ $lang=array(
     'login_or' => 'or',
     'login_join_us_now' => 'join us now',
 
+
     'male'=>'Male',
     'female'=>'Female',
     'Cancer'=>'Cancer',
@@ -38,6 +39,8 @@ $lang=array(
     'setting'=>'setting',
     'logout'=>'log out',
     'follow'=>'follow',
+    'accept_request' => 'accept',
+    'reject_request' => 'reject',
     'unfollow'=>'unfollow',
     'followers'=>'followers',
     'Edit_Cover_Photo'=>'Edit Cover Photo',
@@ -47,7 +50,6 @@ $lang=array(
     'following'=>'following',
     'notification'=>'notification',
     'Shortcuts'=>'Shortcuts',
-    'bio'=>'bio',
     'People_post'=>'People post',
     'My_pages'=>'Profile',
     'FAQ' => 'faq',

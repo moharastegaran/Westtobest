@@ -23,7 +23,7 @@ if (isset($_POST['post'])) {
             while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                 <img src="images/resources/<?php if (empty($row['avatar'])) {
-                    echo 'user-avatar.jpg';
+                    echo 'avatar-default.png';
                 } else {
                     echo $row['avatar'];
                 } ?>" alt="" style="width:50px;height:50px">
