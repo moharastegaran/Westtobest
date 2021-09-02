@@ -33,6 +33,10 @@
 
 </script>
 <?php
+
+require "vendor/autoload.php";
+use Carbon\Carbon;
+
 global $conn;
 if(isset($_GET['p'])){
                 $result=$conn->query("SELECT * FROM post where user='".$_GET['p']."' ORDER BY id DESC");
@@ -122,7 +126,7 @@ function post<?php echo $row['id'];?>()
 												</figure>
 												<div class="friend-name">
 													<ins><a href="profile.php?p=<?php echo $rosw['username'];?>" title=""><?php echo $rosw['name'];?></a></ins>
-                                                    <span><?php echo $lang['post_created_at'].": ".date_format(date_create($row['created_at']),"Y M j, H:i") ?></span>
+                                                    <span><?php echo $lang['post_created_at'].": ".Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->translatedFormat('D j M, H:i') ?></span>
                                                     <?php }?>
 												</div>
 												<div class="post-meta">

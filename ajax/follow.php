@@ -1,7 +1,16 @@
 <?php
 session_start();
 include "../config/config.php";
-include "../lang/en.php";
+
+if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'fa') {
+    include "../lang/fa.php";
+} else if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'de') {
+    include "../lang/de.php";
+} else {
+    include "../lang/en.php";
+    $_SESSION['lang']='en';
+}
+
 global $lang;
 global $conn;
 if(isset($_POST['follow'])){

@@ -1149,6 +1149,10 @@ header.sticky {
     right: 0;
     top: 0;
 }
+.rtl .drops-menu > li > .tag {
+    right: auto;
+    left: 0;
+}
 
 .drops-menu > li:nth-child(2n) > a {
     background: whitesmoke none repeat scroll 0 0;
@@ -1167,6 +1171,9 @@ header.sticky {
     padding-left: 10px;
     vertical-align: middle;
     width: 81%;
+}
+.rtl .mesg-meta {
+    text-align: right;
 }
 
 .mesg-meta > h6 {
@@ -3807,7 +3814,7 @@ nav.breadcrumb {
     padding-left: 15px;
     position: relative;
     vertical-align: middle;
-    width: 85%;
+    width: 100%;
 }
 
 .pepl-info > h4 {
@@ -3823,10 +3830,10 @@ a.add-butn {
     font-size: 13px;
     line-height: initial;
     padding: 5px 10px;
-    position: absolute;
-    right: 0;
+    /*position: absolute;*/
+    /*right: 0;*/
     text-transform: capitalize;
-    top: 10px;
+    /*top: 10px;*/
     border-radius: 4px;
 }
 
@@ -4029,11 +4036,11 @@ a.add-butn {
 
 a.add-butn.more-action {
     background: lightslategray none repeat scroll 0 0;
-    right: 74px;
+    /*right: 74px;*/
 }
 
 #frends a.add-butn.more-action {
-    right: 89px;
+    /*right: 89px;*/
 }
 
 .nav-tabs--vertical {
@@ -4455,10 +4462,10 @@ a.forgot-pwd {
     vertical-align: middle;
     width: 86%;
 }
-.notifi-meta button.btn-acc-user, .notifi-meta button.btn-rej-user{
+.notifi-meta a.btn-acc-user, .notifi-meta a.btn-rej-user, .notifi-meta a.add-butn{
     float: right;
 }
-.rtl .notifi-meta button.btn-acc-user,.rtl .notifi-meta button.btn-rej-user{
+.rtl .notifi-meta a.btn-acc-user,.rtl .notifi-meta a.btn-rej-user, .rtl .notifi-meta a.add-butn{
     float : left;
 }
 

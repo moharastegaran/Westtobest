@@ -1729,7 +1729,7 @@
         width: 82%;
     }
     #frends a.add-butn.more-action {
-        right: 65px;
+        right: 0px;
     }
     .frnds .nav-tabs .nav-item > span {
         font-size: 11px;
@@ -1739,7 +1739,7 @@
     }
     #frends a.add-butn.more-action,
     a.add-butn.more-action {
-        position: unset;
+        position: relative;
     }
     nav.breadcrumb {
         width: 47%;

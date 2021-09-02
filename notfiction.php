@@ -1,6 +1,12 @@
 <?php
+
+require "vendor/autoload.php";
+
+use Carbon\Carbon;
+
 session_start();
 if (isset($_SESSION['username'])) {
+
     include "config/config.php";
     include "header.php";
     global $conn;
@@ -71,57 +77,65 @@ if (isset($_SESSION['username'])) {
                                                                                         }
                                                                                     });
                                                                                 }
-                                                                                function rejects(reject){
+
+                                                                                function rejects(reject) {
                                                                                     $.ajax({
-                                                                                        type:'post',
-                                                                                        url:'ajax/reject.php',
-                                                                                        data:{
+                                                                                        type: 'post',
+                                                                                        url: 'ajax/reject.php',
+                                                                                        data: {
                                                                                             reject: reject
                                                                                         },
-                                                                                        success:function (response){
+                                                                                        success: function (response) {
                                                                                             console.log(response);
-                                                                                        },error:function (error){
+                                                                                        }, error: function (error) {
                                                                                             console.log(error);
                                                                                         }
                                                                                     });
                                                                                 }
                                                                             </script>
-<!--                                                                            <div class="d-inline" style="width: auto">-->
-                                                                            <button type="button" class="btn-acc-user mx-1"
-                                                                                    id="follow_get<?php echo $us['id']; ?>"
-                                                                                    data-ripple=""
-                                                                                    onclick="follows('<?php echo $us['username']; ?>','<?php echo $us['id']; ?>')">
+                                                                            <!--                                                                            <div class="d-inline" style="width: auto">-->
+                                                                            <a href="javascript:void(0)" type="button"
+                                                                               class="btn-acc-user add-butn"
+                                                                               id="follow_get<?php echo $us['id']; ?>"
+                                                                               data-ripple=""
+                                                                               onclick="follows('<?php echo $us['username']; ?>','<?php echo $us['id']; ?>')">
                                                                                 <?php if (mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='" . $_SESSION['username'] . "'and user_2='" . $us['username'] . "'")) == 0) {
                                                                                     echo $lang['accept_request'];
                                                                                 } elseif (mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='" . $_SESSION['username'] . "'and user_2='" . $us['username'] . "' and acc='1'")) != 0) {
                                                                                     echo $lang['unfollow'];
                                                                                 } else {
                                                                                     echo $lang['accept_request'];
-                                                                                } ?></button>
+                                                                                } ?></a>
 
-                                                                            <button type="button" class="btn-rej-user"
-                                                                                    style="display: <?php echo (mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='" . $_SESSION['username'] . "'and user_2='" . $us['username'] . "' and acc='1'")) > 0) ? 'none' : '' ?>"
-                                                                                    id="reject_get<?php echo $us['id']; ?>"
-                                                                                    data-ripple=""
-                                                                                    onclick="rejects('<?php echo $us['username']; ?>','<?php echo $us['id']; ?>')">
+                                                                            <a href="javascript:void(0)" type="button"
+                                                                               class="btn-rej-user add-butn"
+                                                                               style="display: <?php echo (mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='" . $_SESSION['username'] . "'and user_2='" . $us['username'] . "' and acc='1'")) > 0) ? 'none' : '' ?>"
+                                                                               id="reject_get<?php echo $us['id']; ?>"
+                                                                               data-ripple=""
+                                                                               onclick="rejects('<?php echo $us['username']; ?>','<?php echo $us['id']; ?>')">
                                                                                 <?php echo $lang['reject_request']; ?>
-                                                                            </button>
-<!--                                                                </div>-->
+                                                                            </a>
+                                                                            <!--                                                                </div>-->
                                                                             <?php
                                                                             break;
+
                                                                         case "2":
-                                                                            if ($row['user'] != $_SESSION['username']) {
-                                                                                echo $us['name'] . ' ' . $lang['comment_post'] . ' ' . '
-                                                                        <a href="post.php?id=' . $row['pro'] . '">' . $lang['post'] . '</a>
-                                                                        ';
-                                                                            }
+//                                                                            if ($row['user'] != $_SESSION['username']) {
+                                                                            echo '<a href="profile.php?p=' . $row['user'] . '"><strong><i>' . $us['name'] . '</i></strong></a>' . ' ' . $lang['comment_post'];
+
+                                                                            echo '<a href="post.php?id=' . $row['pro'] . '" type="button" class="add-butn more-action" data-ripple="">' . $lang['go_to_post'] . '</a>';
+//                                                                            }
                                                                             break;
-                                                                        case '3':
-                                                                            echo $us['name'] . ' ' . $lang['comment_post'] . ' ' . '
-                                                                        <a href="post.php?id=' . $row['pro'] . '">' . $lang['like'] . '</a>';
+                                                                        case
+                                                                        '3':
+                                                                            echo '<a href="profile.php?p=' . $row['user'] . '"><strong><i>' . $us['name'] . '</i></strong></a>' . ' ' . $lang['like'];
+
+                                                                            echo '<a href="post.php?id=' . $row['pro'] . '" type="button" class="add-butn more-action" data-ripple="">' . $lang['go_to_post'] . '</a>';
                                                                             break;
                                                                     }
                                                                     ?></p>
+                                                                <?php date_default_timezone_set('UTC'); ?>
+                                                                <span><?php echo Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->translatedFormat('D j M, H:i'); ?></span>
                                                             </div>
                                                             </li>
                                                         <?php }

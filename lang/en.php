@@ -69,7 +69,7 @@ $lang = array(
     'england' => 'england',
     'request' => 'request',
     'friend_request' => 'has asked you for friendship',
-    'comment_post' => 'comment your post',
+    'comment_post' => 'commented your post',
     'all_notification' => 'all notification',
     'new_notification' => 'new notification',
     'New' => 'New',
@@ -78,6 +78,7 @@ $lang = array(
     'view_more' => 'view more',
     'like' => 'like your post',
     'please_selected' => 'please selected',
+    'go_to_post'=>'go to post',
 
     'errors' => [
         'invalid_captcha' => 'please select recaptcha',
