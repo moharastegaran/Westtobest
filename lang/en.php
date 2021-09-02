@@ -1,18 +1,18 @@
 <?php
-$lang=array(
-    'login'=>'login',
-    'Register'=>'Register',
-    'username'=>'user name',
-    'password'=>'password',
-    'first_and_last_name'=>'first & last name',
-    'birthday'=>'birthday',
-    'Always_Remember_Me'=>'Always Remember Me',
-    'Forgot_Password?'=>'Forgot Password?',
-    'Don’t_use_Winku_Yet?'=>'Don’t have an account yet?',
-    'Take_the_tour'=>'',
-    'or'=>'',
-    'join'=>'join',
-    'now'=>'now',
+$lang = array(
+    'login' => 'login',
+    'Register' => 'Register',
+    'username' => 'user name',
+    'password' => 'password',
+    'first_and_last_name' => 'first & last name',
+    'birthday' => 'birthday',
+    'Always_Remember_Me' => 'Always Remember Me',
+    'Forgot_Password?' => 'Forgot Password?',
+    'Don’t_use_Winku_Yet?' => 'Don’t have an account yet?',
+    'Take_the_tour' => '',
+    'or' => '',
+    'join' => 'join',
+    'now' => 'now',
     'login_aside_title' => 'Human',
     'login_aside_subtitle' => 'for human',
     'login_aside_follow' => 'Follow Us',
@@ -22,62 +22,62 @@ $lang=array(
     'login_join_us_now' => 'join us now',
 
 
-    'male'=>'Male',
-    'female'=>'Female',
-    'Cancer'=>'Cancer',
-    'AIDS'=>'AIDS',
-    'Deaf'=>'Deaf',
-    'physical_disability'=>'physical disability',
-    'Trans'=>'Trans',
-    'short'=>'short',
-    'sickness'=>'sickness',
-    'email'=>'email',
-    'Accept_Terms_&_Conditions_?'=>'Accept Terms & Conditions ?',
-    'Already_have_an_account'=>'Already have an account',
-    'Search_Friend'=>'Search Friend',
-    'view_profile'=>'view profile',
-    'setting'=>'setting',
-    'logout'=>'log out',
-    'follow'=>'follow',
+    'male' => 'Male',
+    'female' => 'Female',
+    'Cancer' => 'Cancer',
+    'AIDS' => 'AIDS',
+    'Deaf' => 'Deaf',
+    'physical_disability' => 'physical disability',
+    'Trans' => 'Trans',
+    'short' => 'short',
+    'sickness' => 'sickness',
+    'email' => 'email',
+    'Accept_Terms_&_Conditions_?' => 'Accept Terms & Conditions ?',
+    'Already_have_an_account' => 'Already have an account',
+    'Search_Friend' => 'Search Friend',
+    'view_profile' => 'view profile',
+    'setting' => 'setting',
+    'logout' => 'log out',
+    'follow' => 'follow',
     'accept_request' => 'accept',
     'reject_request' => 'reject',
-    'unfollow'=>'unfollow',
-    'followers'=>'followers',
-    'Edit_Cover_Photo'=>'Edit Cover Photo',
-    'Edit_avatar_Photo'=>'Edit avatar Photo',
-    'post'=>'post',
-    'post_created_at'=>'published at',
-    'following'=>'following',
-    'notification'=>'notification',
-    'Shortcuts'=>'Shortcuts',
-    'People_post'=>'People post',
-    'My_pages'=>'Profile',
+    'unfollow' => 'unfollow',
+    'followers' => 'followers',
+    'Edit_Cover_Photo' => 'Edit Cover Photo',
+    'Edit_avatar_Photo' => 'Edit avatar Photo',
+    'post' => 'post',
+    'post_created_at' => 'published at',
+    'following' => 'following',
+    'notification' => 'notification',
+    'Shortcuts' => 'Shortcuts',
+    'People_post' => 'People post',
+    'My_pages' => 'Profile',
     'FAQ' => 'faq',
     'Contact_Us' => 'contact us',
-    'messages'=>'Messages',
-    'People_my_sickness'=>'People my sickness',
-    'People'=>'Explore',
-    'profile'=>'profile',
-    'info'=>'Info',
-    'messages_title'=>'Messages',
-    'old-password'=>'old-password',
-    'new-password'=>'new-password',
-    'old_password_invaild'=>'old password invaild',
-    'comment'=>'comment',
-    'country'=>'country',
-    'city'=>'city',
-    'england'=>'england',
-    'request'=>'request',
-    'friend_request'=>'has asked you for friendship',
-    'comment_post'=>'comment your post',
-    'all_notification'=>'all notification',
-    'new_notification'=>'new notification',
-    'New'=>'New',
-    'friend'=>'friend',
-    'home'=>'home',
-    'view_more'=>'view more',
-    'like'=>'like your post',
-    'please_selected'=>'please selected',
+    'messages' => 'Messages',
+    'People_my_sickness' => 'People my sickness',
+    'People' => 'Explore',
+    'profile' => 'profile',
+    'info' => 'Info',
+    'messages_title' => 'Messages',
+    'old-password' => 'old-password',
+    'new-password' => 'new-password',
+    'old_password_invaild' => 'old password invaild',
+    'comment' => 'comment',
+    'country' => 'country',
+    'city' => 'city',
+    'england' => 'england',
+    'request' => 'request',
+    'friend_request' => 'has asked you for friendship',
+    'comment_post' => 'comment your post',
+    'all_notification' => 'all notification',
+    'new_notification' => 'new notification',
+    'New' => 'New',
+    'friend' => 'friend',
+    'home' => 'home',
+    'view_more' => 'view more',
+    'like' => 'like your post',
+    'please_selected' => 'please selected',
 
     'errors' => [
         'invalid_captcha' => 'please select recaptcha',
@@ -86,7 +86,7 @@ $lang=array(
         'username_exists' => 'username is already taken',
 
         'invalid_usrnmpwd' => 'username or password is invalid',
-    ] ,
+    ],
 
     'languages' => [
         'en' => 'english',
@@ -109,62 +109,60 @@ $lang=array(
         'faq2' => 'Frequently Asked Questions'
     ],
 
-    'faq'=>[
+    'faq' => [
         [
-            'q'=>'What are proper dimensions for my banner ?',
-            'answer'=>
+            'q' => 'What are proper dimensions for my banner ?',
+            'answer' =>
                 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 <br>suggestion : 1980 * 1200
 <br>others : 1900 * 1080
 <br>or any other landscape image'
         ],
         [
-            'q'=>'How to edit my page setting?',
-            'answer'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+            'q' => 'How to edit my page setting?',
+            'answer' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
         ],
         [
-            'q'=>'How to change password ?',
-            'answer'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+            'q' => 'How to change password ?',
+            'answer' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
         ],
         [
-            'q'=>'How to search people nearby with location ?',
-            'answer'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+            'q' => 'How to search people nearby with location ?',
+            'answer' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
         ],
         [
-            'q'=>'How to create my first post?',
-            'answer'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+            'q' => 'How to create my first post?',
+            'answer' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
         ]
     ],
 
-    'contact_us'=>[
-        [
-            'map_meta'=>[
-                'title'=>'Get In Touch',
-                'description'=>'هر سوالی دارید از ما بپرسید. ما سوالات مهم پاسخ داده شده را در صفحه پرسش و پاسخ خود آماده کرده ایم. اکنون بازدید کنید.',
-                'link' => 'Visit now'
-            ],
-            'form'=>[
-                'title'=>'Send Us A Message',
-                'label'=>[
-                    'fullname'=> 'Fullname',
-                    'email' => '@Email',
-                    'Message'=>'Message',
-                ]
-            ],
-            'contact_info'=>[
-                'title'=>'Contact info',
-                'location'=>'Germany - Berlin',
-                'phone'=>'+49 200 100300555',
-                'email' => 'info@delldate.com'
-            ],
-            'effected_text'=>'Delldate'
-        ]
+    'contact_us' => [
+        'map_meta' => [
+            'title' => 'Get In Touch',
+            'description' => 'Ask us anything you want. We also have prepared answered questions in our FAQ page',
+            'link' => 'Visit now'
+        ],
+        'form' => [
+            'title' => 'Send Us A Message',
+            'label' => [
+                'fullname' => 'Fullname',
+                'email' => '@Email',
+                'message' => 'Message',
+            ]
+        ],
+        'contact_info' => [
+            'title' => 'Contact info',
+            'location' => 'Germany - Berlin',
+            'phone' => '+49 200 100300555',
+            'email' => 'info@delldate.com'
+        ],
+        'effected_text' => 'Delldate'
     ],
 
     'delete_post' => [
-        'You_are_deleting_a_post'=>'This action can not be undone.',
-        'Are_you_sure?'=>'Are you sure?',
-        'Deletion_was_successful'=>'Deletion was successful',
+        'You_are_deleting_a_post' => 'This action can not be undone.',
+        'Are_you_sure?' => 'Are you sure?',
+        'Deletion_was_successful' => 'Deletion was successful',
         'btn_confirm' => 'Delete',
         'btn_cancel' => 'Cancel',
         'btn_ok' => 'Ok'
@@ -196,9 +194,9 @@ $lang=array(
         'title' => 'night mode',
     ],
 
-    '404'=>[
-        'title'=>'Whoops! 404',
-        'description'=>'We Couldn\'t Find That Page Go Back Home',
-        'link'=>'Go Back Home'
+    '404' => [
+        'title' => 'Whoops! 404',
+        'description' => 'We Couldn\'t Find That Page Go Back Home',
+        'link' => 'Go Back Home'
     ]
 );
