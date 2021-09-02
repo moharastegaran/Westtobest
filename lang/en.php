@@ -105,6 +105,60 @@ $lang=array(
         'profile' => 'profile',
         'messages' => 'messages',
         'explore' => 'explore',
+        'faq' => 'faq',
+        'faq2' => 'Frequently Asked Questions'
+    ],
+
+    'faq'=>[
+        [
+            'q'=>'What are proper dimensions for my banner ?',
+            'answer'=>
+                'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+<br>suggestion : 1980 * 1200
+<br>others : 1900 * 1080
+<br>or any other landscape image'
+        ],
+        [
+            'q'=>'How to edit my page setting?',
+            'answer'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+        ],
+        [
+            'q'=>'How to change password ?',
+            'answer'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+        ],
+        [
+            'q'=>'How to search people nearby with location ?',
+            'answer'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+        ],
+        [
+            'q'=>'How to create my first post?',
+            'answer'=>'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+        ]
+    ],
+
+    'contact_us'=>[
+        [
+            'map_meta'=>[
+                'title'=>'Get In Touch',
+                'description'=>'هر سوالی دارید از ما بپرسید. ما سوالات مهم پاسخ داده شده را در صفحه پرسش و پاسخ خود آماده کرده ایم. اکنون بازدید کنید.',
+                'link' => 'Visit now'
+            ],
+            'form'=>[
+                'title'=>'Send Us A Message',
+                'label'=>[
+                    'fullname'=> 'Fullname',
+                    'email' => '@Email',
+                    'Message'=>'Message',
+                ]
+            ],
+            'contact_info'=>[
+                'title'=>'Contact info',
+                'location'=>'Germany - Berlin',
+                'phone'=>'+49 200 100300555',
+                'email' => 'info@delldate.com'
+            ],
+            'effected_text'=>'Delldate'
+        ]
     ],
 
     'delete_post' => [
@@ -141,4 +195,10 @@ $lang=array(
         'label_on' => 'on',
         'title' => 'night mode',
     ],
+
+    '404'=>[
+        'title'=>'Whoops! 404',
+        'description'=>'We Couldn\'t Find That Page Go Back Home',
+        'link'=>'Go Back Home'
+    ]
 );

@@ -68,7 +68,7 @@
         left: 315px;
         bottom: 125px;
     }
-    .rtl .edit-phto{
+    .rtl .feature-photo > .edit-phto{
         left: auto;
     }
     .add-btn {
@@ -375,7 +375,7 @@
     .timeline-info .admin-name > h5 {
         font-size: 17px;
     }
-    .timeline-info > ul li a {
+    .timeline-info > ul li a, .rtl .timeline-info > ul li a:last-child {
         font-size: 11px;
         margin-right: 13px;
     }
@@ -393,7 +393,7 @@
     .add-btn {
         bottom: 140px;
     }
-    .timeline-info > ul li a {
+    .timeline-info > ul li a, .rtl .timeline-info > ul li a:last-child{
         font-size: 13px;
         margin-right: 30px;
     }
@@ -448,7 +448,7 @@
         width: 30px;
     }
     .message-text-container form button {
-        right: 25px;
+        right: 0;
     }
     .liked-pages > li {
         width: 32.5%;
@@ -650,7 +650,7 @@
     right: 15px;
     top: auto;
     }
-    .timeline-info > ul li a {
+    .timeline-info > ul li a, .rtl .timeline-info > ul li a:last-child {
         font-size: 12px;
         margin-right: 11px;
     }
@@ -871,7 +871,7 @@
         font-size: 12px;
     }
     .message-text-container form button {
-        right: 15px;
+        right: 0;
     }
     .photos > li {
         border: 2px solid #fff;
@@ -945,7 +945,7 @@
     .feature-photo .container-fluid {
         padding: 0 30px;
     }
-    .timeline-info > ul li a {
+    .timeline-info > ul li a , .rtl .timeline-info > ul li a:last-child {
         font-size: 13px;
         margin-right: 33px;
     }
@@ -1171,11 +1171,11 @@
         margin-bottom: 40px;
     }
     .peoples-mesg-box {
-        background: #fff none repeat scroll 0 0;
+        background: repeat scroll 0 0;
         padding: 20px;
     }
     .message-text-container form button {
-        right: 15px;
+        right: 0;
     }
     .friend-logo > span::before,
     .friend-logo > span::after {
@@ -1263,6 +1263,9 @@
     .timeline-info > ul li a {
         margin-right: 17px;
         margin-bottom: 8px;
+    }
+    .rtl .timeline-info > ul li a:last-child{
+        margin-right: 17px;
     }
     .feature-photo .container-fluid {
         padding: 0 15px;
@@ -1509,7 +1512,7 @@
     .we-video-info > ul {
         padding-left: 0;
     }
-    .timeline-info > ul li a {
+    .timeline-info > ul li a , .rtl .timeline-info > ul li a:last-child {
         margin-right: 20px;
     }
     .shop-filter-sec > span {
@@ -1631,7 +1634,7 @@
         width: 32.2%;
     }
     .message-text-container form button {
-        right: 5px;
+        right: 0;
     }
     .peoples-mesg-box {
         padding: 10px;

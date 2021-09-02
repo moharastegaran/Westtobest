@@ -159,15 +159,12 @@ if (!isset($_SESSION['username'])) {
                                              width="25"> <?php echo $lang['languages']['en'];?></a>
                                     <?php } ?>
                                 </li>
-
-
                                 <?php if ($current_lang !== 'de') { ?>
                                 <li class="dropdown-item text-center" style="font-size: 13px"><a href="#" onclick="document.getElementById('de').submit();">
                                         <img src="images/flags/flag_de_rounded.png"
                                              width="25"> <?php echo $lang['languages']['de'];?></a>
                                     <?php } ?>
                                 </li>
-
                                 <?php if ($current_lang !== 'fa') { ?>
                                 <li class="dropdown-item text-center" style="font-size: 13px"><a href="#" onclick="document.getElementById('fa').submit();">
                                             <img src="images/flags/flag_ir_rounded.png"

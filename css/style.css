@@ -187,6 +187,12 @@ section {
     float: left;
     width: 100%;
 }
+.gap70 {
+    padding: 70px 0;
+    position: relative;
+    float: left;
+    width: 100%;
+}
 
 .gap100.no-gap {
     padding: 0;
@@ -1030,8 +1036,7 @@ header.sticky {
     display: flex;
     align-items: center;
 }
-
-.rtl .edit-phto {
+.rtl .feature-photo > .edit-phto {
     left: auto;
     right: 275px;
 }
@@ -1242,7 +1247,7 @@ header.sticky {
 }
 
 .dropdowns.languages {
-    width: 100px;
+    width: auto;
 }
 
 .dropdowns.active > a:hover {
@@ -2589,6 +2594,10 @@ footer .logo {
     vertical-align: middle;
     width: 72%;
 }
+.rtl .friend-meta{
+    padding-left: auto;
+    padding-right: 10px;
+}
 
 .friend-meta > h4 {
     display: inline-block;
@@ -3599,11 +3608,17 @@ nav.breadcrumb {
     background: #fff;
     white-space: normal;
 }
+.rtl .accordion .card h5 button{
+    text-align: right;
+}
 
 .accordion .card h5 button::before {
     content: "";
     float: right;
     font-family: fontawesome;
+}
+.rtl .accordion .card h5 button::before{
+    float: left;
 }
 
 .accordion .card h5 button[aria-expanded="true"]::before {
@@ -3624,11 +3639,19 @@ nav.breadcrumb {
     line-height: 30px;
     color: #888888;
 }
+.rtl .card-body{
+    text-align: right;
+}
 
 .card-body ol,
 .card-body ul {
     margin-top: 20px;
     padding-left: 40px;
+}
+.rtl .card-body ol,
+.rtl .card-body ul{
+    padding-left: auto;
+    padding-right: 40px;
 }
 
 
@@ -8193,12 +8216,13 @@ a.main-btn {
 .page-eror > img {
     display: block;
     margin: 0 auto;
-    max-width: 60%;
+    max-width: 50%;
 }
 
 .page-eror .error-meta > h1 {
     font-size: 50px;
     font-weight: 300;
+    margin-bottom: 5px;
 }
 
 .page-eror .error-meta > span {

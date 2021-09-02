@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
-    header("loction:login.php");
+    header("location:login.php");
 }else{
     if(!isset($_GET['p'])){
         header("location:?p=".$_SESSION['username']);

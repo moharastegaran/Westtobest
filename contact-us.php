@@ -15,9 +15,10 @@ if (!isset($_SESSION['username'])) {
                     <div class="col-lg-12">
                         <div id="map-canvas" style="position: relative; overflow: hidden;">
                             <div class="map-meta">
-                                <h1>get in touch</h1>
-                                <p>Ask us any question. We have prepared important answered questions in our FAQ page.
-                                    <a href="faq.php" style="text-decoration: underline">visited now</a></p>
+                                <h1><?php echo $lang['contact_us']['map_meta']['title']; ?></h1>
+                                <p><?php echo $lang['contact_us']['map_meta']['description']; ?>
+                                    <a href="faq.php" style="text-decoration: underline"><?php echo $lang['contact_us']['map_meta']['link']; ?></a>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -34,18 +35,18 @@ if (!isset($_SESSION['username'])) {
                         <div class="contct-info">
                             <div class="contact-form">
                                 <div class="cnt-title">
-                                    <span>Send us a message</span>
+                                    <span><?php echo $lang['contact_us']['form']['title']; ?></span>
                                     <i><img src="images/envelop.png" alt=""></i>
                                 </div>
                                 <form method="post">
                                     <div class="form-group">
                                         <input type="text" id="input" required="required">
-                                        <label class="control-label" for="input">Full Name</label><i
+                                        <label class="control-label" for="input"><?php echo $lang['contact_us']['form']['label']['fullname']; ?></label><i
                                                 class="mtrl-select"></i>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" required="required">
-                                        <label class="control-label" for="input">Email@</label><i
+                                        <input type="email" required="required">
+                                        <label class="control-label" for="input"><?php echo $lang['contact_us']['form']['label']['email']; ?></label><i
                                                 class="mtrl-select"></i>
                                     </div>
                                     <!--                                <div class="form-group">-->
@@ -59,7 +60,7 @@ if (!isset($_SESSION['username'])) {
                                     <!--                                </div>-->
                                     <div class="form-group">
                                         <textarea rows="3" id="textarea" required="required"></textarea>
-                                        <label class="control-label" for="textarea">Message</label><i
+                                        <label class="control-label" for="textarea"><?php echo $lang['contact_us']['form']['label']['message']; ?></label><i
                                                 class="mtrl-select"></i>
                                     </div>
                                     <div class="submit-btns">
@@ -69,23 +70,23 @@ if (!isset($_SESSION['username'])) {
                                 </form>
                             </div>
                             <div class="cntct-adres">
-                                <h3>contact info</h3>
+                                <h3><?php echo $lang['contact_us']['contact_info']['title']; ?></h3>
                                 <ul>
                                     <li>
                                         <i class="ti-location-pin"></i>
-                                        <span>Germany - Berlin</span>
+                                        <span><?php echo $lang['contact_us']['contact_info']['location']; ?></span>
                                     </li>
                                     <li>
                                         <i class="fa fa-mobile-phone"></i>
-                                        <span>+49 200 100300555</span>
+                                        <span><?php echo $lang['contact_us']['contact_info']['phone']; ?></span>
                                     </li>
                                     <li>
                                         <i class="fa fa-envelope-o"></i>
-                                        <span>info@delldate.com</span>
+                                        <span><?php echo $lang['contact_us']['contact_info']['email']; ?></span>
                                     </li>
                                 </ul>
 
-                                <h1 class="bg-cntct">Delldate</h1>
+                                <h1 class="bg-cntct"><?php echo $lang['contact_us']['effected_text']; ?></h1>
                             </div>
                         </div>
                     </div>

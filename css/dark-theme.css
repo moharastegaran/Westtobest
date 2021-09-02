@@ -327,9 +327,19 @@ footer:before{
 }
 
 
+.mm-menu{
+    background: #505050;
+}
+.mm-menu .mm-navbar a{
+    color: #ececec;
+}
+.mm-listview>li,.mm-listview>li>a, .mm-listview>li>span {
+    color : #efefef;
+}
 
-
-
+.page-eror .error-meta > h1 {
+    color: #999;
+}
 
 
 

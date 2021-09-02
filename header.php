@@ -1,9 +1,11 @@
-<?php if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'en') {
-    include "lang/en.php";
+<?php
+if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'fa') {
+    include "lang/fa.php";
 } else if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'de') {
     include "lang/de.php";
 } else {
-    include "lang/fa.php";
+    include "lang/en.php";
+//    $_SESSION['lang']='en';
 }
 if (isset($_POST['en'])) {
     $_SESSION['lang'] = 'en';
@@ -125,7 +127,7 @@ if (isset($_POST['cover_sub'])) {
                     </a></li>
                 <li><a href="setting.php" title=""><i class="ti-settings"></i> <?php echo $lang['titles']['setting']; ?></a></li>
                 <li><a href="people.php" title=""><i class="ti-user"></i> <?php echo $lang['titles']['explore']; ?></a></li>
-                <li class="setting-row text-center">
+                <li class="setting-row text-center mt-5">
                        <?php echo $lang['night_mode']['title'] ?>
                         <input type="checkbox" id="night_mode" name="night_mode"
                                value="nightmodeinput" <?php echo (isset($_SESSION['night_mode']) && $_SESSION['night_mode'] === "true") ? 'checked' : ''; ?>>
@@ -250,6 +252,7 @@ if (isset($_POST['cover_sub'])) {
 
                     </script>
                 </li>
+<!--                --><?php //die($_SESSION['lang']) ;?>
                 <li><a href="#" data-ripple="">
                         <!--                        <i class="fa fa-globe"></i>-->
                         <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'en') { ?>
@@ -270,17 +273,23 @@ if (isset($_POST['cover_sub'])) {
                         <form action="" method="post" id="fa">
                             <input type="hidden" name="fa"/>
                         </form>
+                        <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] !== 'en') { ?>
                         <a href="#" title=""
                            onclick="document.getElementById('en').submit();"><img
-                                    src="images/flags/flag_en_rounded.png" width="30"> English</a>
+                                    src="images/flags/flag_en_rounded.png" width="30"> <?php echo $lang['languages']['en']?></a>
+                        <?php } ?>
+                        <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] !== 'de') { ?>
                         <a href="#" title=""
                            onclick="document.getElementById('de').submit();"><?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') { ?>
                                 <i class="ti-check"></i><?php } ?><img src="images/flags/flag_de_rounded.png"
-                                                                       width="30"> Germany</a>
+                                                                       width="30"> <?php echo $lang['languages']['de']?></a>
+                        <?php } ?>
+                        <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] !== 'fa') { ?>
                         <a href="#" title=""
                            onclick="document.getElementById('fa').submit();"><?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') { ?>
                                 <i class="ti-check"></i><?php } ?><img src="images/flags/flag_ir_rounded.png"
-                                                                       width="30"> Persian</a>
+                                                                       width="30"> <?php echo $lang['languages']['fa']?></a>
+                        <?php } ?>
                     </div>
                 </li>
             </ul>
