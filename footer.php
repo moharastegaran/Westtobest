@@ -69,10 +69,10 @@
     <ul class="naves-bottom">
 
         <div class="setting-row text-center">
-            <span><?php echo $lang['night_mode']['title'] ?></span>
+            <span><?php echo $lang['onoff_option']['night_mode'] ?></span>
             <input type="checkbox" id="night_mode" name="night_mode"
                    value="nightmodeinput" <?php echo (isset($_SESSION['night_mode']) && $_SESSION['night_mode'] === "true") ? 'checked' : ''; ?>>
-            <label for="night_mode" data-on-label="<?php echo $lang['night_mode']['label_on'] ?>" data-off-label="<?php echo $lang['night_mode']['label_off'] ?>"></label>
+            <label for="night_mode" data-on-label="<?php echo $lang['onoff_option']['label_on'] ?>" data-off-label="<?php echo $lang['onoff_option']['label_off'] ?>"></label>
         </div>
     </ul>
 
@@ -80,8 +80,13 @@
 
 <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="js/main.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/block-ui/jQuery.blockui.min.js"></script>
+<script src="js/emoji-picker/config.js"></script>
+<script src="js/emoji-picker/util.js"></script>
+<script src="js/emoji-picker/jquery.emojiarea.js"></script>
+<script src="js/emoji-picker/emoji-picker.js"></script>
 <script src="js/script.js"></script>
-
 </body>
 
 </html>

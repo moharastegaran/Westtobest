@@ -22,8 +22,10 @@ $lang = array(
     'login_join_us_now' => 'join us now',
 
 
+    'gender' => 'gender',
     'male' => 'Male',
     'female' => 'Female',
+    'sickness_undefined'=>'undefined',
     'Cancer' => 'Cancer',
     'AIDS' => 'AIDS',
     'Deaf' => 'Deaf',
@@ -46,7 +48,7 @@ $lang = array(
     'Edit_Cover_Photo' => 'Edit Cover Photo',
     'Edit_avatar_Photo' => 'Edit avatar Photo',
     'post' => 'post',
-    'post_created_at' => 'published at',
+    'post_created_at' => 'published',
     'following' => 'following',
     'notification' => 'notification',
     'Shortcuts' => 'Shortcuts',
@@ -79,6 +81,20 @@ $lang = array(
     'like' => 'like your post',
     'please_selected' => 'please selected',
     'go_to_post'=>'go to post',
+    'member_from' => 'member from',
+
+    'notifications' => [
+        'type' => [
+            'friend_request' => 'follow request',
+            'like' => 'like',
+            'comment' => 'comment'
+        ],
+        'message' => [
+            'friend_request' => 'has asked for your friendship',
+            'like' => 'liked your post',
+            'comment' => 'commented on your post'
+        ]
+    ],
 
     'errors' => [
         'invalid_captcha' => 'please select recaptcha',
@@ -189,15 +205,24 @@ $lang = array(
 
     'footer_rights' => '© human 2021. All rights reserved.',
 
-    'night_mode' => [
+    'onoff_option' => [
         'label_off' => 'off',
         'label_on' => 'on',
-        'title' => 'night mode',
+        'night_mode' => 'night mode',
     ],
 
     '404' => [
         'title' => 'Whoops! 404',
         'description' => 'We Couldn\'t Find That Page Go Back Home',
         'link' => 'Go Back Home'
+    ],
+
+    'explore'=>[
+        'undefined_city'=>'To search people, select city from setting map.',
+        'undefined_country'=>'To search people, select country from setting map.',
+        'undefined_sickness'=>'To find people your sickness, choose your sickness from setting.',
     ]
 );
+//require_once '../seeder.php';
+//$f = new seeder();
+//$f->run();

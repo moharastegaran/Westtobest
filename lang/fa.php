@@ -21,10 +21,11 @@ $lang = array(
     'login_or' => 'یا',
     'login_join_us_now' => 'به اینجا ملحق شوید',
 
+    'gender'=>'جنسیت',
     'male' => 'مرد',
     'female' => 'زن',
 
-    'bio' => 'معرفی',
+    'sickness_undefined'=>'مشخص نشده',
     'Cancer' => 'سرطان',
     'AIDS' => 'ایدز',
     'Deaf' => 'ناشنوا',
@@ -77,6 +78,7 @@ $lang = array(
     'like' => 'پست شما را پسندید',
     'please_selected' => 'لطفا انتخاب کنید',
     'go_to_post' => 'رفتن به پست',
+    'member_from' => 'عضویت از ',
 
     'notifications' => [
         'type' => [
@@ -205,15 +207,21 @@ $lang = array(
     'footer_rights' => '© انسان 1400. تمامی حقوق این سایت محفوظ می‌باشد.',
 
 
-    'night_mode' => [
+    'onoff_option' => [
         'label_off' => 'خاموش',
         'label_on' => 'روشن',
-        'title' => 'حالت شب',
+        'night_mode' => 'حالت شب',
     ],
 
     '404' => [
         'title' => 'ارور 404',
         'description' => 'صفحه مورد نظر یافت نشد.',
         'link' => 'بازگشت به صفحه اصلی'
+    ],
+
+    'explore'=>[
+        'undefined_city'=>'برای جستوجوی افراد نزدیک، شهر را از تنظیمات انتخاب کنید.',
+        'undefined_country'=>'برای جستوجوی افراد نزدیک، کشور را از تنظیمات انتخاب کنید.',
+        'undefined_sickness'=>'برای پیدا کردن افراد با بیماری مشابه، بیماری خود را از تنظیمات انتخاب کنید.',
     ]
 );

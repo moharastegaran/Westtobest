@@ -3,7 +3,7 @@ $current_page = $_SERVER['REQUEST_URI'];
 $current_page = substr($current_page, strrpos($current_page, '/') + 1);
 ?>
 
-<div class="col-lg-3" id="sidebar-left">
+<div class="col-lg-3 d-lg-block d-none" id="sidebar-left">
     <aside class="sidebar static">
         <div class="widget stick-widget">
             <h4 class="widget-title"><?php echo $lang['titles']['shortcuts']; ?></h4>

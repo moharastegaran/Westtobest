@@ -10,7 +10,7 @@ if (isset($_POST['post'])) {
         } else {
             $img = '';
         }
-        $conn->query("INSERT INTO post (user,cover,description) values ('" . $_SESSION['username'] . "','" . $img . "','" . $_POST['description'] . "')");
+        $conn->query('INSERT INTO post (user,cover,description,created_at) values ("' . $_SESSION['username'] . '","' . $img . '","' . $_POST['description'] . '","'.date("Y-m-d H:i:s").'")');
     }
 }
 
@@ -42,7 +42,13 @@ if (isset($_POST['post'])) {
                         reader.readAsDataURL(event.target.files[0]);
                     };
                 </script>
-                <textarea rows="2" placeholder="<?php echo $lang['write_something']; ?>" name="description" id="newpst-description"></textarea>
+                <!--                <textarea type="textbox" data-emoji-input="unicode" class="form-control"-->
+                <!--                          placeholder="Input field" data-emojiable="true"></textarea>-->
+                <div class="w-100 position-relative">
+                <textarea rows="2" data-emoji-input="unicode" data-emojiable="true" maxlength="1500"
+                          placeholder="<?php echo $lang['write_something']; ?>"
+                          name="description" id="newpst-description"></textarea>
+                </div>
                 <div class="attachments">
                     <ul>
                         <li>

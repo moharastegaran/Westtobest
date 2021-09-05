@@ -1,11 +1,11 @@
 <?php
-if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'fa') {
+if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') {
     include "lang/fa.php";
-} else if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'de') {
+} else if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') {
     include "lang/de.php";
 } else {
     include "lang/en.php";
-//    $_SESSION['lang']='en';
+    $_SESSION['lang'] = 'en';
 }
 if (isset($_POST['en'])) {
     $_SESSION['lang'] = 'en';
@@ -21,11 +21,11 @@ if (isset($_POST['en'])) {
 //unset($_SESSION['night_mode']);
 
 if (!isset($_SESSION['night_mode']))
-    $_SESSION['night_mode']="false";
+    $_SESSION['night_mode'] = "false";
 
 //echo ($_SESSION['night_mode']);
-if(isset($_POST['theme_dark'])){
-    $_SESSION['night_mode'] = $_SESSION['night_mode']==="true" ? "false" : "true";
+if (isset($_POST['theme_dark'])) {
+    $_SESSION['night_mode'] = $_SESSION['night_mode'] === "true" ? "false" : "true";
     header("Refresh:0");
 //    die($_SESSION['night_mode'] ? "ss" : "tt");
 //    $_SESSION['night_mode']=false;
@@ -77,22 +77,25 @@ if (isset($_POST['cover_sub'])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/color.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <?php if(isset($_SESSION['night_mode']) && $_SESSION['night_mode']==="true"){ ?>
+    <?php if (isset($_SESSION['night_mode']) && $_SESSION['night_mode'] === "true") { ?>
         <link rel="stylesheet" href="css/dark-theme.css">
     <?php } ?>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet/v0.7.7/leaflet.css"/>
     <script src="https://d19vzq90twjlae.cloudfront.net/leaflet/v0.7.7/leaflet.js"></script>
-<!--    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+    <!--    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
     <link rel="stylesheet" href="css/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/animate/animate.css">
+    <link rel="stylesheet" href="css/emoji-picker/font-awesome.min.css">
+    <link rel="stylesheet" href="css/emoji-picker/emoji.css">
     <script src="js/sweetalert.js"></script>
 
     <!--    <link rel="stylesheet" href="css/sweetalert/sweetalert2.css">-->
 
 
 </head>
-<body class="<?php echo (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fa') ? 'rtl' : '' ?> <?php echo (isset($_SESSION['night_mode']) ? ($_SESSION['night_mode']==="true" ? 'theme-dark' : 'theme-light') : 'theme-light'); ?>">
+<body class="<?php echo (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fa') ? 'rtl' : '' ?> <?php echo(isset($_SESSION['night_mode']) ? ($_SESSION['night_mode'] === "true" ? 'theme-dark' : 'theme-light') : 'theme-light'); ?>">
 <!--<div class="se-pre-con"></div>-->
 <div class="theme-layout">
     <div class="postoverlay"></div>
@@ -116,23 +119,28 @@ if (isset($_POST['cover_sub'])) {
         </div>
         <nav id="menu" class="res-menu">
             <ul>
-                <li><a href="index.php" title=""><i class="ti-home"></i> <?php echo $lang['home']; ?></a>
+                <li><a href="index.php" title=""><i class="ti-home"></i> <?php echo $lang['home']; ?></a></li>
+                <li><a href="post.php" title=""><i class="ti-clipboard"></i> <?php echo $lang['titles']['posts']; ?></a>
                 </li>
-                <li><a href="post.php" title=""><i class="ti-clipboard"></i> <?php echo $lang['titles']['posts']; ?></a></li>
                 <li><a href="profile.php?p=<?php echo $_SESSION['username']; ?>" title=""><i
                                 class="ti-files"></i> <?php echo $lang['titles']['profile']; ?></a></li>
-                <li><a href="notfiction.php" title=""><i class="ti-bell"></i> <?php echo $lang['titles']['notifications']; ?></a>
+                <li><a href="notfiction.php" title=""><i
+                                class="ti-bell"></i> <?php echo $lang['titles']['notifications']; ?></a>
                 </li>
-                <li><a href="messages.php" title=""><i class="ti-comments-smiley"></i> <?php echo $lang['titles']['messages']; ?>
+                <li><a href="messages.php" title=""><i
+                                class="ti-comments-smiley"></i> <?php echo $lang['titles']['messages']; ?>
                     </a></li>
-                <li><a href="setting.php" title=""><i class="ti-settings"></i> <?php echo $lang['titles']['setting']; ?></a></li>
-                <li><a href="people.php" title=""><i class="ti-user"></i> <?php echo $lang['titles']['explore']; ?></a></li>
+                <li><a href="setting.php" title=""><i class="ti-settings"></i> <?php echo $lang['titles']['setting']; ?>
+                    </a></li>
+                <li><a href="people.php" title=""><i class="ti-user"></i> <?php echo $lang['titles']['explore']; ?></a>
+                </li>
                 <li class="setting-row text-center mt-5">
-                       <?php echo $lang['night_mode']['title'] ?>
-                        <input type="checkbox" id="night_mode" name="night_mode"
-                               value="nightmodeinput" <?php echo (isset($_SESSION['night_mode']) && $_SESSION['night_mode'] === "true") ? 'checked' : ''; ?>>
-                        <label for="night_mode" data-on-label="<?php echo $lang['night_mode']['label_on'] ?>" data-off-label="<?php echo $lang['night_mode']['label_off'] ?>"></label>
-                    </li>
+                    <?php echo $lang['onoff_option']['night_mode'] ?>
+                    <input type="checkbox" id="night_mode" name="night_mode"
+                           value="nightmodeinput" <?php echo (isset($_SESSION['night_mode']) && $_SESSION['night_mode'] === "true") ? 'checked' : ''; ?>>
+                    <label for="night_mode" data-on-label="<?php echo $lang['onoff_option']['label_on'] ?>"
+                           data-off-label="<?php echo $lang['onoff_option']['label_off'] ?>"></label>
+                </li>
             </ul>
         </nav>
     </div>
@@ -191,10 +199,9 @@ if (isset($_POST['cover_sub'])) {
                             <input type="text" onkeyup="search(this.value)"
                                    placeholder="<?php echo $lang['Search_Friend']; ?>">
                             <button data-ripple type="button"><i class="ti-search"></i></button>
-                            <div id="search_result"
-                                 style="background-color:#FFFFFF;width: 300px;text-align: left;box-shadow: -3px 2px #eeeeee;margin-top: 7px;border-radius: 10px;overflow-y: scroll;max-height: 200px "></div>
+                            <div id="search_result"></div>
+                        </form>
                     </div>
-                    </form>
                 </li>
                 <li><a href="#" id="home" onclick="lets_home()" data-ripple=""><i class="ti-home"></i></a>
                 </li>
@@ -252,7 +259,7 @@ if (isset($_POST['cover_sub'])) {
 
                     </script>
                 </li>
-<!--                --><?php //die($_SESSION['lang']) ;?>
+                <!--                --><?php //die($_SESSION['lang']) ;?>
                 <li><a href="#" data-ripple="">
                         <!--                        <i class="fa fa-globe"></i>-->
                         <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'en') { ?>
@@ -274,21 +281,24 @@ if (isset($_POST['cover_sub'])) {
                             <input type="hidden" name="fa"/>
                         </form>
                         <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] !== 'en') { ?>
-                        <a href="#" title=""
-                           onclick="document.getElementById('en').submit();"><img
-                                    src="images/flags/flag_en_rounded.png" width="30"> <?php echo $lang['languages']['en']?></a>
+                            <a href="#" title=""
+                               onclick="document.getElementById('en').submit();"><img
+                                        src="images/flags/flag_en_rounded.png"
+                                        width="30"> <?php echo $lang['languages']['en'] ?></a>
                         <?php } ?>
                         <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] !== 'de') { ?>
-                        <a href="#" title=""
-                           onclick="document.getElementById('de').submit();"><?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') { ?>
-                                <i class="ti-check"></i><?php } ?><img src="images/flags/flag_de_rounded.png"
-                                                                       width="30"> <?php echo $lang['languages']['de']?></a>
+                            <a href="#" title=""
+                               onclick="document.getElementById('de').submit();"><?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') { ?>
+                                    <i class="ti-check"></i><?php } ?><img src="images/flags/flag_de_rounded.png"
+                                                                           width="30"> <?php echo $lang['languages']['de'] ?>
+                            </a>
                         <?php } ?>
                         <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] !== 'fa') { ?>
-                        <a href="#" title=""
-                           onclick="document.getElementById('fa').submit();"><?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') { ?>
-                                <i class="ti-check"></i><?php } ?><img src="images/flags/flag_ir_rounded.png"
-                                                                       width="30"> <?php echo $lang['languages']['fa']?></a>
+                            <a href="#" title=""
+                               onclick="document.getElementById('fa').submit();"><?php if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') { ?>
+                                    <i class="ti-check"></i><?php } ?><img src="images/flags/flag_ir_rounded.png"
+                                                                           width="30"> <?php echo $lang['languages']['fa'] ?>
+                            </a>
                         <?php } ?>
                     </div>
                 </li>
@@ -308,7 +318,8 @@ if (isset($_POST['cover_sub'])) {
                 <div class="user-setting">
                     <a href="profile.php?p=<?php echo $_SESSION['username']; ?>" title=""><i
                                 class="ti-user"></i> <?php echo $lang['view_profile']; ?></a>
-                    <a href="setting.php" title=""><i class="ti-settings"></i><?php echo $lang['titles']['setting']; ?></a>
+                    <a href="setting.php" title=""><i class="ti-settings"></i><?php echo $lang['titles']['setting']; ?>
+                    </a>
                     <a href="logout.php" title=""><i class="ti-power-off"></i><?php echo $lang['logout']; ?></a>
                 </div>
             </div>

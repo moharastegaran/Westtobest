@@ -744,7 +744,7 @@
         width: 21%;
     }
     .post-comt-box {
-        width: 90%;
+        width: 100%;
     }
     li.post-comment .comet-avatar {
         max-width: 8%;
@@ -793,10 +793,10 @@
         margin-bottom: 0;
     }
     .friend-name {
-        width: 86%;
+        width: 85%;
     }
     .friend-info > figure {
-        width: 11.6%;
+        width: 14%;
     }
     .editing-interest form input {
         width: 100%;
@@ -1129,6 +1129,12 @@
 }
 
 @media screen and (max-width: 480px) {
+    .newpst-input{
+        margin-left: 0;
+    }
+    .newpst-input form > img{
+        width: 100%;
+    }
     .user-avatar {
         width: 30%;
     }

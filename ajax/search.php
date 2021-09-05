@@ -8,6 +8,6 @@ if (empty($row['avatar'])) {
     $avatar= $row['avatar'];
 }
     echo
-        '<a href="profile.php?p='.$row['username'].'"><img src="images/resources/'.$avatar.'" alt="" style="width:30px;height:30px;border-radius:20px;margin: 5px"><span>'.
-        $row['name'].'</span></a><br>';
+        '<a href="profile.php?p='.$row['username'].'"><img src="images/resources/'.$avatar.'" alt="">
+            <div><p>'.$row["name"].'</p><span>@'.$row['username'].'</span></div></a>';
 }

@@ -4,14 +4,12 @@
 
     function _formatDate($time)
     {
-        if ($time >= strtotime("today 00:00") && $time < strtotime("today 12:00")) {
-            return date("h:i", $time) . " قبل از ظهر";
-        } elseif ($time >= strtotime("today 12:00") && $time < strtotime("tomorrow 00:00")) {
-            return date("h:i", $time) . " بعد از ظهر";
+        if ($time >= strtotime("today 00:00") && $time < strtotime("tomorrow 00:00")) {
+            return date("G:i", $time) . " امروز";
         } elseif ($time >= strtotime("yesterday 00:00")) {
             return "Yesterday at " . date("g:i A", $time);
         } elseif ($time >= strtotime("-6 day 00:00")) {
-            return date("l \\a\\t g:i A", $time);
+            return date("l G:i", $time);
         } else {
             return date("M j, Y", $time);
         }

@@ -16,7 +16,7 @@
                                         $password=$row['password'];
                                     }
                                     if(!isset($paserror)){
-                                        $sql=("UPDATE user SET name='".$_POST['name']."', mail='".$_POST['mail']."', birthday='".$_POST['birthday']."' , sickness='".$_POST['sickness']."' , bio='".$_POST['bio']."', password='".$password."',country='".$data->countryName."',city='".$data->city."'
+                                        $sql=("UPDATE user SET name='".$_POST['name']."', mail='".$_POST['mail']."', gender='".$_POST['gender']."', birthday='".$_POST['birthday']."' , sickness='".$_POST['sickness']."' , bio='".$_POST['bio']."', password='".$password."',country='".$data->countryName."',city='".$data->city."'
                                          , lng='".$_POST['long']."' , lat='".$_POST['lat']."' WHERE username='".$_SESSION['username']."'");
                                          if($conn->query($sql)){
                                          }else{
@@ -44,6 +44,24 @@
 											  <input type="text" name="mail" id="mail" value="<?php echo $row['mail'];?>"/>
 											  <label class="control-label" for="mail"><a href="http://www.wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2f7dfd3dbdef2"><?php echo $lang['email'];?></a></label><i class="mtrl-select"></i>
 											</div>
+                                            <div class="form-radio">
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="gender" value="male"
+                                                            <?php echo !empty($row['gender']) && $row['gender']==='male' ? 'checked' : ''?>>
+                                                        <i class="check-box"></i>
+                                                        <?php echo $lang['male']; ?>
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="gender" value="female"
+                                                            <?php echo !empty($row['gender']) && $row['gender']==='female' ? 'checked' : ''?>>
+                                                        <i class="check-box"></i>
+                                                        <?php echo $lang['female']; ?>
+                                                    </label>
+                                                </div>
+                                            </div>
 <!--                                            <div class="form-group half">-->
 <!--                                                <select name="country" id="country">-->
 <!--                                                    <option>--><?php //echo $row['country'];?><!--</option>-->
@@ -65,7 +83,7 @@
                                                     var options = {
                                                         center: [<?php if(!empty($row['lat'])&&!empty($row['lng'])){echo $row['lat'].','.$row['lng'];}else{ echo '35.69827, 51.34099';}
                                                             ?>],
-                                                        zoom: <?php if(!empty($row['lat'])&&!empty($row['lng'])){echo '13';}else{ echo '3';}
+                                                        zoom: <?php if(!empty($row['lat'])&&!empty($row['lng'])){echo '7';}else{ echo '3';}
                                                         ?>
                                                     }
 

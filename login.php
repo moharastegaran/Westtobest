@@ -2,15 +2,15 @@
 session_start();
 
 $current_lang = "";
-if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'en') {
-    include "lang/en.php";
-    $current_lang = "en";
-} else if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'de') {
+if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') {
+    include "lang/fa.php";
+    $current_lang = "fa";
+} else if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') {
     include "lang/de.php";
     $current_lang = "de";
 } else {
-    include "lang/fa.php";
-    $current_lang = "fa";
+    include "lang/en.php";
+    $current_lang = "en";
 }
 if (isset($_POST['en'])) {
     $_SESSION['lang'] = 'en';
@@ -73,7 +73,7 @@ if (!isset($_SESSION['username'])) {
                     $error = $lang['errors']['email_exists'];
                 }
             } else {
-                $error = $lang['errors']['username_terms'];
+                $error = $lang['errors']['username_exists'];
             }
         } else {
             $error = $lang['errors']['invalid_captcha'];
@@ -95,8 +95,8 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/color.css">
         <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/loaders/custom-loader.css">
         <script src="https://www.google.com/recaptcha/api.js?hl=<?php echo $current_lang; ?>" async defer></script>
-
 
     </head>
     <body <?php echo (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fa') ? 'class=\'rtl\'' : '' ?> style="overflow-y: hidden">
@@ -203,9 +203,9 @@ if (!isset($_SESSION['username'])) {
                                 <div class="submit-btns">
                                     <div class="g-recaptcha"
                                          data-sitekey="6LesSsgbAAAAAEda6Xw88TIrFZ-OTBe8GJYPgSpi"></div>
-                                    <button class="mtr-btn signin" name="login" type="submit">
+                                    <button class="mtr-btn signin btn-loader rounded-0" name="login" type="submit">
                                         <span><?php echo $lang['login']; ?></span></button>
-                                    <button class="mtr-btn signup" type="button">
+                                    <button class="mtr-btn signup rounded-0" type="button">
                                         <span><?php echo $lang['Register']; ?></span></button>
                                 </div>
                             </form>
@@ -267,7 +267,7 @@ if (!isset($_SESSION['username'])) {
                                 <div class="submit-btns">
                                     <div class="g-recaptcha"
                                          data-sitekey="6LesSsgbAAAAAEda6Xw88TIrFZ-OTBe8GJYPgSpi"></div>
-                                    <button class="mtr-btn" name="signup"><span><?php echo $lang['Register']; ?></span>
+                                    <button class="mtr-btn btn-loader rounded-0" name="signup"><span><?php echo $lang['Register']; ?></span>
                                     </button>
                                 </div>
                             </form>

@@ -39,7 +39,7 @@ if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'fa') {
                             <div class="mesg-meta">
                                 <h6><?php echo $us['name'];?></h6>
                                 <span><?php echo $lang['notifications']['message']['friend_request']; ?></span>
-                                <i><?php echo Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->translatedFormat('D j M, H:i'); ?></i>
+                                <i><?php echo Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->ago(); ?></i>
                             </div>
                         </a>
                         <span class="tag green"><?php echo $lang['notifications']['type']['friend_request'] ?></span>
@@ -52,7 +52,7 @@ if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'fa') {
                             <div class="mesg-meta">
                                 <h6><?php echo $us['name'];?></h6>
                                 <span><?php echo $lang['notifications']['message']['comment']; ?></span>
-                                <i><?php echo Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->translatedFormat('D j M, H:i'); ?></i>
+                                <i><?php echo Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->ago(); ?></i>
                             </div>
                         </a>
                         <span class="tag blue"><?php echo $lang['notifications']['type']['comment'] ?></span>
@@ -65,7 +65,7 @@ if (!isset($_SESSION['lang']) || $_SESSION['lang'] == 'fa') {
                             <div class="mesg-meta">
                                 <h6><?php echo $us['name'];?></h6>
                                 <span><?php echo $lang['notifications']['message']['like']; ?></span>
-                                <i><?php echo Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->translatedFormat('D j M, H:i'); ?></i>
+                                <i><?php echo Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->ago(); ?></i>
                             </div>
                         </a>
                         <span class="tag red"><?php echo $lang['notifications']['type']['like'] ?></span>

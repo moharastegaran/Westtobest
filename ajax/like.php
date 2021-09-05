@@ -5,7 +5,7 @@ $num=mysqli_num_rows($conn->query("SELECT * FROM like_post where post_id='".$_PO
 if($num==0){
     $conn->query("INSERT INTO like_post (user,post_id) values ('".$_SESSION['username']."','".$_POST['post_id']."')");
     if($_SESSION['username']!=$_POST['for_user']){
-        $conn->query("INSERT INTO notfic (user,for_user,notfic,pro) values ('".$_SESSION['username']."','".$_POST['for_user']."','3','".$_POST['post_id']."')");
+        $conn->query("INSERT INTO notfic (user,for_user,notfic,pro,created_at) values ('".$_SESSION['username']."','".$_POST['for_user']."','3','".$_POST['post_id']."','".date("Y-m-d H:i:s")."')");
     }
     echo '<i class="ti-heart" style="color: #ff0000"></i>';
 }else{
