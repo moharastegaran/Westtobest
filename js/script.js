@@ -71,7 +71,7 @@ jQuery(document).ready(function ($) {
                 input = $("<input>").attr({
                     "class": "filterinput",
                     "type": "text",
-                    "placeholder": "Search Contacts..."
+                    "placeholder": "..."
                 });
             $(form).append(input).appendTo(searchDir);
 
