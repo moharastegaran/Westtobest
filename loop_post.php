@@ -119,10 +119,10 @@ if (!isset($accerr)) {
                                 $results = $conn->query("SELECT * FROM user where username='" . $row['user'] . "'");
                                 while ($rosw = mysqli_fetch_assoc($results)){
                                 ?>
-                                <img src="images/resources/<?php if (empty($rosw['avatar'])) {
-                                    echo 'avatar-default.png';
+                                <img src="<?php if (empty($rosw['avatar'])) {
+                                    echo 'images/resources/avatar-default.png';
                                 } else {
-                                    echo $rosw['avatar'];
+                                    echo AVATAR_DIR.$rosw['avatar'];
                                 } ?>" alt="" style="width:50px;height:50px">
                             </figure>
                             <div class="friend-name">
@@ -229,10 +229,10 @@ if (!isset($accerr)) {
 
                                         <li>
                                             <div class="comet-avatar">
-                                                <img src="images/resources/<?php if (empty($us['avatar'])) {
-                                                    echo 'avatar-default.png';
+                                                <img src="<?php if (empty($us['avatar'])) {
+                                                    echo 'images/resources/avatar-default.png';
                                                 } else {
-                                                    echo $us['avatar'];
+                                                    echo AVATAR_DIR.$us['avatar'];
                                                 } ?>" alt="">
                                             </div>
                                             <div class="we-comment">
