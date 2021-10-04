@@ -23,6 +23,7 @@ if(isset($_POST['follow'])){
         $conn->query("INSERT INTO notfic (user,for_user,notfic,created_at) values ('".$_SESSION['username']."','".$_POST['follow']."','1','".date("Y-m-d H:i:s")."')");
     }elseif(mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='".$_SESSION['username']."'and user_2='".$_POST['follow']."' and acc='1'"))>0){
         $conn->query("DELETE FROM friend where user_1='".$_SESSION['username']."' or user_1='".$_POST['follow']."' and user_2='".$_POST['follow']."' or user_2='".$_SESSION['username']."'");
+        $conn->query("DELETE FROM pm_cha where user_1='".$_SESSION['username']."' or user_1='".$_POST['follow']."' and user_2='".$_POST['follow']."' or user_2='".$_SESSION['username']."'");
 
     }
 
