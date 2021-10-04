@@ -35,9 +35,15 @@ if (isset($_POST['theme_dark'])) {
 if (isset($_POST['avatar_sub'])) {
     $filename = $_FILES['avatar']['name'];
     $tmpname = $_FILES['avatar']['tmp_name'];
-    $img = rand('100', '100000') . $filename;
-    $folder = 'images/resources/' . $img;
+    $img = data_now() . $filename;
+    $folder = AVATAR_DIR . $img;
     if (move_uploaded_file($tmpname, $folder)) {
+        //delte old file
+        $result = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "' ");
+        $row = mysqli_fetch_assoc($result);
+        if(!empty($row['avatar'])){
+            unlink(AVATAR_DIR.$row['avatar']);
+        }
         header("Refresh:0");
         $msg = "Image uploaded successfully";
         $conn->query("UPDATE user set avatar='" . $img . "' WHERE username='" . $_SESSION['username'] . "'");
@@ -46,17 +52,24 @@ if (isset($_POST['avatar_sub'])) {
 
     }
 }
+
 if (isset($_POST['cover_sub'])) {
     $filename = $_FILES['cover']['name'];
     $tmpname = $_FILES['cover']['tmp_name'];
-    $img = rand('100', '100000') . $filename;
-    $folder = 'images/resources/' . $img;
+    $img = data_now() . $filename;
+    $folder = COVERS_DIR. $img;
     if (move_uploaded_file($tmpname, $folder)) {
-        $msg = "Image uploaded successfully";
+        $result = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "' ");
+        $row = mysqli_fetch_assoc($result);
+        if(!empty($row['header_img'])){
+            unlink(COVERS_DIR.$row['header_img']);
+        }
         header("Refresh:0");
+        $msg = "Image uploaded successfully";
         $conn->query("UPDATE user set header_img='" . $img . "' WHERE username='" . $_SESSION['username'] . "'");
     } else {
         $msg = "Failed to upload image";
+
     }
 }
 
