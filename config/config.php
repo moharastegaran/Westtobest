@@ -1,7 +1,7 @@
 <?php
 const DB_HOST = 'localhost';
 const DB_USERNAME = 'root';
-const DB_PWD = '';
+const DB_PWD = '78188124';
 const DB_NAME = 'human';
 
 const UPLOAD_DIR = 'uploads/';
@@ -14,4 +14,10 @@ if($conn->connect_error){
     die("connection error:".$conn->connect_error);
 }
 mysqli_set_charset($conn,"utf8mb4");
+function data_now(){
+    $now = DateTime::createFromFormat('U.u', microtime(true));
+   
+    return  $now->format("m-d-Y H:i:s.u");
+}
+
 ?>
