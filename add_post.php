@@ -3,7 +3,7 @@
 if (isset($_POST['post'])) {
     if (!empty($_POST['description']) || !empty($_FILES['file']['name'])) {
         if (!empty($_FILES['file']['name'])) {
-            $img = rand('100', '10000') . $_FILES['file']['name'];
+            $img = data_now() . $_FILES['file']['name'];
             $path = IMAGE_POST_DIR . $img;
             $tmp = $_FILES['file']['tmp_name'];
             move_uploaded_file($tmp, $path);
