@@ -5,7 +5,7 @@ while ($row=mysqli_fetch_assoc($result)){
 <section>
 		<div class="feature-photo">
             <div class="cover-photo-bg"
-            style="background-image: url(images/resources/<?php if(trim($row['header_img'])===""){ echo "cover-default.jpg";}else{ echo $row['header_img']; }?>)">
+            style="background-image: url(<?php if(trim($row['header_img'])===""){ echo "images/resources/cover-default.jpg";}else{ echo COVERS_DIR.$row['header_img']; }?>)">
             </div>
 			<div class="add-btn">
 				<span><?php echo mysqli_num_rows($conn->query("SELECT * FROM friend where user_2='".$_SESSION['username']."' and acc='1'"))." ". $lang['followers'];?></span>
