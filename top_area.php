@@ -78,7 +78,7 @@ while ($row=mysqli_fetch_assoc($result)){
 					<div class="col-lg-2 col-sm-3">
 						<div class="user-avatar">
 							<figure>
-								<img id="avatar_profile" src="images/resources/<?php if($row['avatar']==0){ echo "avatar-default.png";}else{ echo $row['avatar']; }?>" alt="" ">
+								<img id="avatar_profile" src="<?php if($row['avatar']==0){ echo "images/resources/avatar-default.png";}else{ echo AVATAR_DIR.$row['avatar']; }?>" alt="" ">
 								<?php
 								if ($_SESSION['username']==$_GET['p']){
 									?>
