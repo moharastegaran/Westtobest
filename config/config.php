@@ -7,7 +7,7 @@ const DB_NAME = 'human';
 const UPLOAD_DIR = 'file/';
 const AVATAR_DIR = UPLOAD_DIR."profile_file/avatar/";
 const COVERS_DIR =  UPLOAD_DIR."profile_file/cover/";
-const IMAGE_POST_DIR=UPLOAD_DIR."post_file/image_post/";
+const IMAGE_POST_DIR=UPLOAD_DIR."post/images/";
 
 $conn=new mysqli(DB_HOST,DB_USERNAME,DB_PWD,DB_NAME);
 if($conn->connect_error){
