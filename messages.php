@@ -64,7 +64,7 @@ if(isset($_SESSION['username'])){
                                                 <li>
                                                     <a onclick="<?php echo $us['username'];?>()">
                                                         <figure>
-                                                            <img src="images/resources/<?php if(empty($us['avatar'])){ echo 'avatar-default.png'; }else { echo $us['avatar'];}?>" style="width: 30px;height: 30px" alt="">
+                                                            <img src="<?php if(empty($us['avatar'])){ echo 'images/resources/avatar-default.png'; }else { echo AVATAR_DIR.$us['avatar'];}?>" style="width: 30px;height: 30px" alt="">
                                                             <span class="status f-online"></span>
                                                         </figure>
                                                         <div class="people-name">
