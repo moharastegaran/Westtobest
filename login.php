@@ -63,9 +63,14 @@ if (!isset($_SESSION['username'])) {
                         $sql = "INSERT INTO user (name,birthday,username,mail,password) values
                   ('" . $_POST['name'] . "','" . $_POST['birthday'] . "','" . $_POST['username'] . "','" . $_POST['mail'] . "'
                   ,'" . $password . "')";
-                        $conn->query($sql);
-                        $_SESSION['username'] = $_POST['username'];
-                        header("location:index.php");
+                  if ($conn->query($sql) === TRUE) {
+           
+                    $_SESSION['username'] = $_POST['username'];
+                    header("location:index.php");
+                  } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                  }
+                        
                     } else {
                         $error = $lang['errors']['accept_terms'];
                     }
