@@ -36,10 +36,10 @@ if ($_POST['sickness'] != 'off' || $_POST['country'] != 'off' || $_POST['city'] 
                         <div class="col-lg-2 col-md-3">
                             <figure>
                                 <a href="profile.php?p=<?php echo $row['username']; ?>" title=""><img
-                                            src="images/resources/<?php if (empty($row['avatar'])) {
-                                                echo 'avatar-default.png';
+                                            src="<?php if (empty($row['avatar'])) {
+                                                echo 'images/resources/avatar-default.png';
                                             } else {
-                                                echo $row['avatar'];
+                                                echo AVATAR_DIR.$row['avatar'];
                                             } ?>" style="width:60px;height:60px" alt=""></a>
                             </figure>
                         </div>
