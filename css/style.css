@@ -1495,7 +1495,7 @@ header.sticky {
 
 .sidebar .widget li > a, .side-panel li a {
     width: 100%;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: capitalize;
     display: flex;
     flex-direction: row;

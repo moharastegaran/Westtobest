@@ -1,33 +1,36 @@
 <?php
 session_start();
 
-$current_lang = "";
-if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') {
-    include "lang/fa.php";
-    $current_lang = "fa";
-} else if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') {
-    include "lang/de.php";
-    $current_lang = "de";
-} else {
-    include "lang/en.php";
-    $current_lang = "en";
-}
 if (isset($_POST['en'])) {
     $_SESSION['lang'] = 'en';
-    header("Refresh:0");
+//    header("Refresh:0");
 } else if (isset($_POST['de'])) {
     $_SESSION['lang'] = 'de';
-    header("Refresh:0");
+//    header("Refresh:0");
 } else if (isset($_POST['fa'])) {
     $_SESSION['lang'] = 'fa';
-    header("Refresh:0");
+//    header("Refresh:0");
 }
+
+$current_lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en';
+include "lang/".$current_lang.".php";
+//$current_lang = "";
+//if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') {
+//    include "lang/fa.php";
+//    $current_lang = "fa";
+//} else if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') {
+//    include "lang/de.php";
+//    $current_lang = "de";
+//} else {
+//    include "lang/en.php";
+//    $current_lang = "en";
+//}
 
 if (!isset($_SESSION['username'])) {
     include "config/config.php";
     if (isset($_POST['login'])) {
         if (isset($_POST['g-recaptcha-response'])) {
-            $secret = '6LesSsgbAAAAACK7XR1X4I73S-_H_79FwRjEVFmL';
+            $secret = '6LchKFMcAAAAAC--DIZveNroKXJlqDfmYqHQcpFF';
             $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
             $responseData = json_decode($verifyResponse, true);
             if ($responseData["success"]) {
@@ -47,7 +50,7 @@ if (!isset($_SESSION['username'])) {
         }
     }
     if (isset($_POST['signup'])) {
-        $secret = '6LesSsgbAAAAACK7XR1X4I73S-_H_79FwRjEVFmL';
+        $secret = '6LchKFMcAAAAAC--DIZveNroKXJlqDfmYqHQcpFF';
         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
         $responseData = json_decode($verifyResponse, true);
         if ($responseData["success"]) {
@@ -91,10 +94,8 @@ if (!isset($_SESSION['username'])) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content=""/>
-        <meta name="keywords" content=""/>
-        <title>login</title>
-        <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+        <title><?php echo $lang['site_title']; ?></title>
+        <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
 
         <link rel="stylesheet" href="css/main.min.css">
         <link rel="stylesheet" href="css/style.css">
@@ -115,7 +116,7 @@ if (!isset($_SESSION['username'])) {
                             <h1><?php echo $lang['login_aside_title']; ?></h1>
                             <p><?php echo $lang['login_aside_subtitle']; ?></p>
                             <div class="friend-logo">
-                                <span><img src="images/wink.png" alt=""></span>
+                                <img src="images/logo_square_white.png" alt="">
                             </div>
                             <a href="#" title="" class="folow-me"><?php echo $lang['login_aside_follow']; ?></a>
                         </div>
@@ -207,7 +208,7 @@ if (!isset($_SESSION['username'])) {
                                 <a href="#" title="" class="forgot-pwd"><?php echo $lang['Forgot_Password?']; ?></a>
                                 <div class="submit-btns">
                                     <div class="g-recaptcha"
-                                         data-sitekey="6LesSsgbAAAAAEda6Xw88TIrFZ-OTBe8GJYPgSpi"></div>
+                                         data-sitekey="6LchKFMcAAAAAF6k94l-dFEFnxVSlNM89IMUVzmy"></div>
                                     <button class="mtr-btn signin btn-loader rounded-0" name="login" type="submit">
                                         <span><?php echo $lang['login']; ?></span></button>
                                     <button class="mtr-btn signup rounded-0" type="button">
@@ -271,7 +272,7 @@ if (!isset($_SESSION['username'])) {
                                    class="already-have"><?php echo $lang['Already_have_an_account']; ?></a>
                                 <div class="submit-btns">
                                     <div class="g-recaptcha"
-                                         data-sitekey="6LesSsgbAAAAAEda6Xw88TIrFZ-OTBe8GJYPgSpi"></div>
+                                         data-sitekey="6LchKFMcAAAAAF6k94l-dFEFnxVSlNM89IMUVzmy"></div>
                                     <button class="mtr-btn btn-loader rounded-0" name="signup"><span><?php echo $lang['Register']; ?></span>
                                     </button>
                                 </div>

@@ -1,5 +1,8 @@
 <?php
 $lang = array(
+
+    'site_title' => 'Westtobest, Online social media for people with disabilities',
+
     'login' => 'login',
     'Register' => 'Register',
     'username' => 'user name',
@@ -13,8 +16,8 @@ $lang = array(
     'or' => '',
     'join' => 'join',
     'now' => 'now',
-    'login_aside_title' => 'Human',
-    'login_aside_subtitle' => 'for human',
+    'login_aside_title' => 'WesttoBest',
+    'login_aside_subtitle' => 'Online Social Media for people with special disabilities',
     'login_aside_follow' => 'Follow Us',
     'haven\'t_signed_up_yet' => 'Don’t use our social network Yet?',
     'read_terms_and_conditions' => 'Read terms',
@@ -169,11 +172,11 @@ $lang = array(
         ],
         'contact_info' => [
             'title' => 'Contact info',
-            'location' => 'Germany - Berlin',
-            'phone' => '+49 200 100300555',
-            'email' => 'info@delldate.com'
+            'location' => 'Germany - heilbronn',
+            'phone' => '+49 157 81140881',
+            'email' => 'info@westtobest.com'
         ],
-        'effected_text' => 'Delldate'
+        'effected_text' => 'westtobest'
     ],
 
     'delete_post' => [
@@ -190,8 +193,8 @@ $lang = array(
         'likes' => 'likes',
     ],
 
-    'Footer_description' => 'Delldate is a social media website dedicated to people all around the globe.',
-    'Footer_data_location' => 'Germany - Berlin',
+    'Footer_description' => 'westtobest is a social media website dedicated to people all around the globe.',
+    'Footer_data_location' => 'Germany - heilbronn',
     'Footer_title_links' => 'useful links',
     'Footer_title_location' => 'Our location',
 
@@ -203,7 +206,7 @@ $lang = array(
 
     'btn_save_profile_settings' => 'Save',
 
-    'footer_rights' => '© human 2021. All rights reserved.',
+    'footer_rights' => '© westtobest 2021. All rights reserved.',
 
     'onoff_option' => [
         'label_off' => 'off',
@@ -223,6 +226,3 @@ $lang = array(
         'undefined_sickness'=>'To find people your sickness, choose your sickness from setting.',
     ]
 );
-//require_once '../seeder.php';
-//$f = new seeder();
-//$f->run();

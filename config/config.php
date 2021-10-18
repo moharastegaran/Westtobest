@@ -1,7 +1,7 @@
 <?php
 const DB_HOST = 'localhost';
 const DB_USERNAME = 'root';
-const DB_PWD = '78188124';
+const DB_PWD = '';
 const DB_NAME = 'human';
 
 const UPLOAD_DIR = 'file/';

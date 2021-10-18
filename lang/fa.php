@@ -1,5 +1,8 @@
 <?php
 $lang = array(
+
+    'site_title' => 'Westtobest, شبکه اجتماعی آنلاین برای افراد با ناتوانی های خاص',
+
     'login' => 'ورود',
     'Register' => 'ثبت نام',
     'username' => 'نام کاربری',
@@ -13,13 +16,13 @@ $lang = array(
     'or' => '',
     'join' => 'بپیوندید',
     'now' => 'الان',
-    'login_aside_title' => 'انسان',
-    'login_aside_subtitle' => 'برای انسان',
+    'login_aside_title' => 'WesttoBest',
+    'login_aside_subtitle' => 'شبکه اجتماعی مخصوص افراد با ناتوانی های خاص',
     'login_aside_follow' => 'ما را دنبال کنید',
     'haven\'t_signed_up_yet' => 'هنوز در سایت حساب باز نکرده اید؟',
     'read_terms_and_conditions' => 'قوانین را بخوانید',
     'login_or' => 'یا',
-    'login_join_us_now' => 'به اینجا ملحق شوید',
+    'login_join_us_now' => 'به ما ملحق شوید',
 
     'gender'=>'جنسیت',
     'male' => 'مرد',
@@ -169,9 +172,9 @@ $lang = array(
         ],
         'contact_info' => [
             'title' => 'اطلاعات تماس',
-            'location' => 'آلمان, برلین',
-            'phone' => '+49 200 100300555',
-            'email' => 'info@delldate.com'
+            'location' => 'آلمان, هایلبرون',
+            'phone' => '+49 157 81140881',
+            'email' => 'info@westtobest.com'
         ],
         'effected_text' => 'دلداده'
     ],
@@ -191,8 +194,8 @@ $lang = array(
     ],
 
 
-    'Footer_description' => 'Delldate یک وب سایت رسانه های اجتماعی است که به مردم در سراسر جهان اختصاص داده شده است.',
-    'Footer_data_location' => 'آلمان - برلین',
+    'Footer_description' => 'westtobest یک وب سایت رسانه های اجتماعی است که به مردم در سراسر جهان اختصاص داده شده است.',
+    'Footer_data_location' => 'آلمان - هایلبرون',
     'Footer_title_links' => 'دسترسی سریع',
     'Footer_title_location' => 'موقعیت ما',
 
@@ -204,7 +207,7 @@ $lang = array(
 
     'btn_save_profile_settings' => 'ذخیره تغییرات',
 
-    'footer_rights' => '© انسان 1400. تمامی حقوق این سایت محفوظ می‌باشد.',
+    'footer_rights' => '© westtobest 1400. تمامی حقوق این سایت محفوظ می‌باشد.',
 
 
     'onoff_option' => [

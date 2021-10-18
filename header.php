@@ -1,22 +1,18 @@
 <?php
-if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') {
-    include "lang/fa.php";
-} else if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') {
-    include "lang/de.php";
-} else {
-    include "lang/en.php";
-    $_SESSION['lang'] = 'en';
-}
 if (isset($_POST['en'])) {
     $_SESSION['lang'] = 'en';
-    header("Refresh:0");
+//    header("Refresh:0");
 } else if (isset($_POST['de'])) {
     $_SESSION['lang'] = 'de';
-    header("Refresh:0");
+//    header("Refresh:0");
 } else if (isset($_POST['fa'])) {
     $_SESSION['lang'] = 'fa';
-    header("Refresh:0");
+//    header("Refresh:0");
 }
+
+
+$current_lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en';
+include "lang/".$current_lang.".php";
 
 //unset($_SESSION['night_mode']);
 
@@ -82,10 +78,8 @@ if (isset($_POST['cover_sub'])) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <title>human</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+    <title><?php echo $lang['site_title']; ?></title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/color.css">
