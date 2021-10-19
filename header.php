@@ -43,8 +43,14 @@ if (isset($_POST['cover_sub'])) {
     $filename = $_FILES['cover']['name'];
     $tmpname = $_FILES['cover']['tmp_name'];
     $img =data_now() . $filename;
-    $folder = 'images/resources/' . $img;
+    $folder = COVERS_DIR . $img;
     if (move_uploaded_file($tmpname, $folder)) {
+        // delete old cover
+        $result = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "' ");
+        $row = mysqli_fetch_assoc($result);
+        if(!empty($row['header_img'])){
+            unlink(COVERS_DIR.$row['header_img']);
+        }
         $msg = "Image uploaded successfully";
         header("Refresh:0");
         $conn->query("UPDATE user set header_img='" . $img . "' WHERE username='" . $_SESSION['username'] . "'");
