@@ -23,8 +23,14 @@ if (isset($_POST['avatar_sub'])) {
     $filename = $_FILES['avatar']['name'];
     $tmpname = $_FILES['avatar']['tmp_name'];
     $img = rand('100', '100000') . $filename;
-    $folder = 'images/resources/' . $img;
+    $folder = AVATAR_DIR . $img;
     if (move_uploaded_file($tmpname, $folder)) {
+        // delete old avatar
+        $result = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "' ");
+        $row = mysqli_fetch_assoc($result);
+        if(!empty($row['avatar'])){
+            unlink(AVATAR_DIR.$row['avatar']);
+        }
         header("Refresh:0");
         $msg = "Image uploaded successfully";
         $conn->query("UPDATE user set avatar='" . $img . "' WHERE username='" . $_SESSION['username'] . "'");
