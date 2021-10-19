@@ -36,10 +36,10 @@
                         $user = mysqli_fetch_assoc($userresult);
                             ?>
                             <li>
-                                <figure><img src="images/resources/<?php if (empty($user['avatar'])) {
-                                        echo 'avatar-default.png';
+                                <figure><img src="<?php if (empty($user['avatar'])) {
+                                        echo 'images/resources/avatar-default.png';
                                     } else {
-                                        echo $user['avatar'];
+                                        echo AVATAR_DIR.$user['avatar'];
                                     } ?>" alt=""></figure>
                                 <div class="friendz-meta">
                                     <a href="profile.php?p=<?php echo $user['username']; ?>"
