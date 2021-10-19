@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-if (isset($_POST['en'])) {
-    $_SESSION['lang'] = 'en';
+if (isset($_POST['fa'])) {
+    $_SESSION['lang'] = 'fa';
 //    header("Refresh:0");
 } else if (isset($_POST['de'])) {
     $_SESSION['lang'] = 'de';
 //    header("Refresh:0");
-} else if (isset($_POST['fa'])) {
-    $_SESSION['lang'] = 'fa';
+} else{
+    $_SESSION['lang'] = 'en';
 //    header("Refresh:0");
 }
 
