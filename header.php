@@ -22,7 +22,7 @@ if (isset($_POST['theme_dark'])) {
 if (isset($_POST['avatar_sub'])) {
     $filename = $_FILES['avatar']['name'];
     $tmpname = $_FILES['avatar']['tmp_name'];
-    $img = rand('100', '100000') . $filename;
+    $img = data_now() . $filename;
     $folder = AVATAR_DIR . $img;
     if (move_uploaded_file($tmpname, $folder)) {
         // delete old avatar
@@ -42,7 +42,7 @@ if (isset($_POST['avatar_sub'])) {
 if (isset($_POST['cover_sub'])) {
     $filename = $_FILES['cover']['name'];
     $tmpname = $_FILES['cover']['tmp_name'];
-    $img = rand('100', '100000') . $filename;
+    $img =data_now() . $filename;
     $folder = 'images/resources/' . $img;
     if (move_uploaded_file($tmpname, $folder)) {
         $msg = "Image uploaded successfully";
