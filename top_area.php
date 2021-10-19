@@ -5,10 +5,10 @@ while ($row = mysqli_fetch_assoc($result)) {
     <section>
         <div class="feature-photo">
             <div class="cover-photo-bg"
-                 style="background-image: url(images/resources/<?php if (trim($row['header_img']) === "") {
-                     echo "cover-default.jpg";
+                 style="background-image: url(<?php if (trim($row['header_img']) === "") {
+                     echo "images/resources/cover-default.jpg";
                  } else {
-                     echo $row['header_img'];
+                     echo AVATAR_DIR.$row['header_img'];
                  } ?>)">
             </div>
             <div class="add-btn">
@@ -122,11 +122,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <div class="col-lg-2 col-sm-3">
                         <div class="user-avatar">
                             <figure>
-                                <img id="avatar_profile" src="images/resources/<?php if ($row['avatar'] == 0) {
-                                    echo "avatar-default.png";
+                                <img id="avatar_profile" src="<?php if ($row['avatar'] == 0) {
+                                    echo "images/resources/avatar-default.png";
                                 } else {
-                                    echo $row['avatar'];
-                                } ?>" alt="" ">
+                                    echo AVATAR_DIR.$row['avatar'];
+                                } ?>" alt="" >
                                 <?php
                                 if ($_SESSION['username'] == $_GET['p']) {
                                     ?>
