@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
-    header("loction:login.php");
+    header("location:login.php");
 }else{
     include "config/config.php";
     include "header.php";
@@ -21,6 +21,8 @@ if(!isset($_SESSION['username'])){
                        include "mypost.php";
                             ?>
                             <!--end main -->
+
+                            <?php include "sidebar_suggestion.php";?>
 
                             </div>	
 					</div>

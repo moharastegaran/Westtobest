@@ -1,30 +1,17 @@
 <?php
 session_start();
 
+$current_lang = "";
 if (isset($_POST['fa'])) {
     $_SESSION['lang'] = 'fa';
-//    header("Refresh:0");
 } else if (isset($_POST['de'])) {
     $_SESSION['lang'] = 'de';
-//    header("Refresh:0");
-} else{
+} else if (isset($_POST['en']) || !isset($_SESSION['lang'])) {
     $_SESSION['lang'] = 'en';
-//    header("Refresh:0");
 }
 
-$current_lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en';
-include "lang/".$current_lang.".php";
-//$current_lang = "";
-//if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'fa') {
-//    include "lang/fa.php";
-//    $current_lang = "fa";
-//} else if (isset($_SESSION['lang']) && $_SESSION['lang'] === 'de') {
-//    include "lang/de.php";
-//    $current_lang = "de";
-//} else {
-//    include "lang/en.php";
-//    $current_lang = "en";
-//}
+include "lang/".$_SESSION['lang'].".php";
+$current_lang = $_SESSION['lang'];
 
 if (!isset($_SESSION['username'])) {
     include "config/config.php";
@@ -66,14 +53,9 @@ if (!isset($_SESSION['username'])) {
                         $sql = "INSERT INTO user (name,birthday,username,mail,password) values
                   ('" . $_POST['name'] . "','" . $_POST['birthday'] . "','" . $_POST['username'] . "','" . $_POST['mail'] . "'
                   ,'" . $password . "')";
-                  if ($conn->query($sql) === TRUE) {
-           
-                    $_SESSION['username'] = $_POST['username'];
-                    header("location:index.php");
-                  } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
-                  }
-                        
+                        $conn->query($sql);
+                        $_SESSION['username'] = $_POST['username'];
+                        header("location:index.php");
                     } else {
                         $error = $lang['errors']['accept_terms'];
                     }
@@ -94,35 +76,44 @@ if (!isset($_SESSION['username'])) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php echo $lang['site_title']; ?></title>
-        <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+        <title><?php echo $lang['web_title']; ?></title>
 
+        <link rel="icon" href="images/logo_square.png" type="image/png" sizes="16x16">
         <link rel="stylesheet" href="css/main.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/color.css">
         <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="css/loaders/custom-loader.css">
         <script src="https://www.google.com/recaptcha/api.js?hl=<?php echo $current_lang; ?>" async defer></script>
+        <style>
+            @media screen and (min-width: 768px){
+                body{
+                    overflow-y: hidden;
+                }
+            }
+        </style>
 
     </head>
-    <body <?php echo (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fa') ? 'class=\'rtl\'' : '' ?> style="overflow-y: hidden">
+    <body <?php echo (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fa') ? 'class=\'rtl\'' : '' ?>
+    onload="window.location.hash = 'auth_box'">
     <!--<div class="se-pre-con"></div>-->
     <div class="theme-layout">
         <div class="container-fluid pdng0">
             <div class="row merged">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
                     <div class="land-featurearea">
                         <div class="land-meta">
                             <h1><?php echo $lang['login_aside_title']; ?></h1>
                             <p><?php echo $lang['login_aside_subtitle']; ?></p>
-                            <div class="friend-logo">
-                                <img src="images/logo_square_white.png" alt="">
+                            <div class="friend-logo" style="width:220px;margin:auto">
+                                <img src="images/logo_square_light_medium.png" alt="">
                             </div>
+                            <br>
                             <a href="#" title="" class="folow-me"><?php echo $lang['login_aside_follow']; ?></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12" id="#auth_box">
                     <script>
                         window.setTimeout(function () {
                             $("#danger-alert").fadeTo(700, 0).slideUp(700, function () {
@@ -284,7 +275,6 @@ if (!isset($_SESSION['username'])) {
         </div>
     </div>
 
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="js/main.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/script.js"></script>

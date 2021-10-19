@@ -4,20 +4,14 @@ const DB_USERNAME = 'root';
 const DB_PWD = '';
 const DB_NAME = 'human';
 
-const UPLOAD_DIR = 'file/';
-const AVATAR_DIR = UPLOAD_DIR."profile_file/avatar/";
-const COVERS_DIR =  UPLOAD_DIR."profile_file/cover/";
-const IMAGE_POST_DIR=UPLOAD_DIR."post/images/";
+const UPLOAD_DIR = 'upload/';
+const AVATAR_DIR = UPLOAD_DIR."avatars/";
+const COVERS_DIR =  UPLOAD_DIR."covers/";
+const POSTS_DIR =  UPLOAD_DIR."posts/";
 
 $conn=new mysqli(DB_HOST,DB_USERNAME,DB_PWD,DB_NAME);
 if($conn->connect_error){
     die("connection error:".$conn->connect_error);
 }
 mysqli_set_charset($conn,"utf8mb4");
-function data_now(){
-    $now = DateTime::createFromFormat('U.u', microtime(true));
-   
-    return  $now->format("m_d_Y_H_i_s_u");
-}
-
 ?>

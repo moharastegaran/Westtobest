@@ -2,6 +2,8 @@
   "require": {
     "nesbot/carbon": "^2.52",
     "fzaninotto/faker": "^1.5",
-    "ext-mysqli": "*"
+    "ext-mysqli": "*",
+    "ext-json": "*",
+    "ext-pdo": "*"
   }
 }

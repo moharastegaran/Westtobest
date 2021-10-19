@@ -7,7 +7,7 @@ while ($user=mysqli_fetch_assoc($users)){
     ?>
 
     <div class="conversation-head" >
-        <figure><img src="<?php if($user['avatar']==0){ echo "images/resources/avatar-default.png";}else{ echo AVATAR_DIR.$user['avatar']; }?>" alt="" style="width: 50px;height: 50px"></figure>
+        <figure><img src="images/resources/<?php if($user['avatar']==0){ echo "avatar-default.png";}else{ echo $user['avatar']; }?>" alt="" style="width: 50px;height: 50px"></figure>
         <span><?php echo $user['name']?></span>
     </div>
     <ul class="chatting-area" id="massages" style="height: 400px">
@@ -15,7 +15,7 @@ while ($user=mysqli_fetch_assoc($users)){
     </ul>
     <div class="message-text-container">
         <form method="post">
-            <textarea id="massage_text"></textarea>
+            <textarea id="massage_text" data-emoji-input="unicode" data-emojiable="true" ></textarea>
             <button title="send" type="button" onclick="on_mass('<?php echo $user['username'];?>',document.getElementById('massage_text').value)"><i class="fa fa-paper-plane"></i></button>
         </form>
     </div>

@@ -1,8 +1,5 @@
 <?php
 $lang = array(
-
-    'site_title' => 'Westtobest, شبکه اجتماعی آنلاین برای افراد با ناتوانی های خاص',
-
     'login' => 'ورود',
     'Register' => 'ثبت نام',
     'username' => 'نام کاربری',
@@ -17,31 +14,35 @@ $lang = array(
     'join' => 'بپیوندید',
     'now' => 'الان',
     'login_aside_title' => 'WesttoBest',
-    'login_aside_subtitle' => 'شبکه اجتماعی مخصوص افراد با ناتوانی های خاص',
+    'login_aside_subtitle' => 'شبکه اجتماعی مخصوص افراد با ناتوانی خاص',
     'login_aside_follow' => 'ما را دنبال کنید',
     'haven\'t_signed_up_yet' => 'هنوز در سایت حساب باز نکرده اید؟',
     'read_terms_and_conditions' => 'قوانین را بخوانید',
     'login_or' => 'یا',
-    'login_join_us_now' => 'به ما ملحق شوید',
+    'login_join_us_now' => 'به اینجا ملحق شوید',
 
+    'web_title' => 'WesttoBest, شبکه اجتماعی توزیع‌شده مقایس‌پذیر برای افراد با ناتوانی‌های خاص ',
     'gender'=>'جنسیت',
     'male' => 'مرد',
     'female' => 'زن',
+    'likeness' => 'شباهت',
 
     'sickness_undefined'=>'مشخص نشده',
+    'no_results_found'=> 'نتیجه ای یافت نشد.',
+
     'Cancer' => 'سرطان',
     'AIDS' => 'ایدز',
     'Deaf' => 'ناشنوا',
     'physical_disability' => 'معلولیت جسمی',
     'Trans' => 'ترنس',
     'short' => 'قدکوتاه',
+
     'sickness' => 'بیماری',
     'email' => 'ایمیل',
     'Accept_Terms_&_Conditions_?' => 'شرایط و ضوابط را می‌پذیرید؟',
     'Already_have_an_account' => 'حساب کاربری دارم',
     'Search_Friend' => 'جستوجوی دوست',
     'view_profile' => 'نمایش پروفایل',
-    'logout' => 'خروج',
     'follow' => 'افزودن دوست',
     'unfollow' => 'لغو دوستی',
     'accept_request' => 'تایید دوستی',
@@ -65,8 +66,8 @@ $lang = array(
     'messages_title' => 'پیام‌ها',
     'old-password' => 'گذرواژه فعلی',
     'new-password' => 'گذرواژه جدید',
-    'old_password_invaild' => 'گذرواژه فعلی نامعتبر است',
     'comment' => 'نظر',
+    'more_comments' => 'نظرات بیشتر',
     'country' => 'کشور',
     'city' => 'شهر',
     'england' => 'انگلستان',
@@ -104,6 +105,19 @@ $lang = array(
 
         'invalid_usrnmpwd' => 'نام کاربری یا رمز عبور نادرست است',
 
+        'settings' => [
+            'name' => 'نام و نام خانوادگی الزامی است.',
+            'mail' => 'ایمیل الزامی است.',
+            'birthday' => 'تاریخ تولد الزامی است.',
+            'gender' => 'جنسیت الزامی است.',
+            'sickness' => 'نوع بیماری الزامی است.',
+            'bio' => 'توضیحات پروفایل نمیتواند خالی باشد.',
+            'country' => 'کشور مشخص نشده است.',
+            'city' => 'شهر مشخص نشده است.',
+            'latlng' => 'کشور و شهر به درستی مشخص نشده است..',
+            'old-password' => 'گذرواژه فعلی نامعتبر است.',
+        ]
+
     ],
 
     'languages' => [
@@ -124,8 +138,9 @@ $lang = array(
         'messages' => 'پیام‌ها',
         'explore' => 'جست‌وجو',
         'faq' => 'سوالات متداول',
-        'faq2' => 'پرسش و پاسخ'
-
+        'faq2' => 'پرسش و پاسخ',
+        'suggestions' => 'پیشنهاد ها',
+        'logout' => 'خروج'
     ],
 
     'faq' => [
@@ -174,7 +189,7 @@ $lang = array(
             'title' => 'اطلاعات تماس',
             'location' => 'آلمان, هایلبرون',
             'phone' => '+49 157 81140881',
-            'email' => 'info@westtobest.com'
+            'email' => 'info@delldate.com'
         ],
         'effected_text' => 'دلداده'
     ],
@@ -194,7 +209,7 @@ $lang = array(
     ],
 
 
-    'Footer_description' => 'westtobest یک وب سایت رسانه های اجتماعی است که به مردم در سراسر جهان اختصاص داده شده است.',
+    'Footer_description' => 'WesttoBest یک وب سایت رسانه های اجتماعی است که به مردم در سراسر جهان اختصاص داده شده است.',
     'Footer_data_location' => 'آلمان - هایلبرون',
     'Footer_title_links' => 'دسترسی سریع',
     'Footer_title_location' => 'موقعیت ما',
@@ -207,7 +222,7 @@ $lang = array(
 
     'btn_save_profile_settings' => 'ذخیره تغییرات',
 
-    'footer_rights' => '© westtobest 1400. تمامی حقوق این سایت محفوظ می‌باشد.',
+    'footer_rights' => '© انسان 1400. تمامی حقوق این سایت محفوظ می‌باشد.',
 
 
     'onoff_option' => [

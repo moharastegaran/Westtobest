@@ -3,8 +3,8 @@
 if (isset($_POST['post'])) {
     if (!empty($_POST['description']) || !empty($_FILES['file']['name'])) {
         if (!empty($_FILES['file']['name'])) {
-            $img = data_now() . $_FILES['file']['name'];
-            $path = IMAGE_POST_DIR . $img;
+            $img = rand('100', '10000') . $_FILES['file']['name'];
+            $path = 'upload/' . $img;
             $tmp = $_FILES['file']['tmp_name'];
             move_uploaded_file($tmp, $path);
         } else {
@@ -22,10 +22,10 @@ if (isset($_POST['post'])) {
             $result = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "'");
             while ($row = mysqli_fetch_assoc($result)) {
                 ?>
-                <img src="<?php if (empty($row['avatar'])) {
-                    echo 'images/resources/avatar-default.png';
+                <img src="images/resources/<?php if (empty($row['avatar'])) {
+                    echo 'avatar-default.png';
                 } else {
-                    echo AVATAR_DIR.$row['avatar'];
+                    echo $row['avatar'];
                 } ?>" alt="" style="width:50px;height:50px">
             <?php } ?>
         </figure>
@@ -51,12 +51,12 @@ if (isset($_POST['post'])) {
                 </div>
                 <div class="attachments">
                     <ul>
-                        <li>
-                            <i class="fa fa-video-camera"></i>
-                            <label class="fileContainer">
-                                <input type="file" accept="video/*" onchange="loadFile(event)">
-                            </label>
-                        </li>
+<!--                        <li>-->
+<!--                            <i class="fa fa-video-camera"></i>-->
+<!--                            <label class="fileContainer">-->
+<!--                                <input type="file" accept="video/*" onchange="loadFile(event)">-->
+<!--                            </label>-->
+<!--                        </li>-->
                         <li>
                             <i class="fa fa-image"></i>
                             <label class="fileContainer">

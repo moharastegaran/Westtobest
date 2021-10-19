@@ -1,12 +1,12 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
-    header("loction:login.php");
+    header("location:login.php");
 }else{
 
-    if(isset($_POST['submit'])){
-        header("Refresh:0");
-    }
+//    if(isset($_POST['submit'])){
+//        header("Refresh:0");
+//    }
     include "config/config.php";
     include "header.php";
     ?>

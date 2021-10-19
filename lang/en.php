@@ -1,8 +1,5 @@
 <?php
 $lang = array(
-
-    'site_title' => 'Westtobest, Online social media for people with disabilities',
-
     'login' => 'login',
     'Register' => 'Register',
     'username' => 'user name',
@@ -17,24 +14,29 @@ $lang = array(
     'join' => 'join',
     'now' => 'now',
     'login_aside_title' => 'WesttoBest',
-    'login_aside_subtitle' => 'Online Social Media for people with special disabilities',
+    'login_aside_subtitle' => 'Social Media for people with disablities',
     'login_aside_follow' => 'Follow Us',
     'haven\'t_signed_up_yet' => 'Don’t use our social network Yet?',
     'read_terms_and_conditions' => 'Read terms',
     'login_or' => 'or',
     'login_join_us_now' => 'join us now',
+    'web_title' => 'WesttoBest, Distributed social media for people with special disablities',
 
 
     'gender' => 'gender',
     'male' => 'Male',
     'female' => 'Female',
+    'likeness' => 'likeness',
+
     'sickness_undefined'=>'undefined',
+    'no_results_found'=> 'no results found.',
     'Cancer' => 'Cancer',
     'AIDS' => 'AIDS',
     'Deaf' => 'Deaf',
     'physical_disability' => 'physical disability',
     'Trans' => 'Trans',
     'short' => 'short',
+
     'sickness' => 'sickness',
     'email' => 'email',
     'Accept_Terms_&_Conditions_?' => 'Accept Terms & Conditions ?',
@@ -42,7 +44,6 @@ $lang = array(
     'Search_Friend' => 'Search Friend',
     'view_profile' => 'view profile',
     'setting' => 'setting',
-    'logout' => 'log out',
     'follow' => 'follow',
     'accept_request' => 'accept',
     'reject_request' => 'reject',
@@ -65,16 +66,17 @@ $lang = array(
     'profile' => 'profile',
     'info' => 'Info',
     'messages_title' => 'Messages',
-    'old-password' => 'old-password',
-    'new-password' => 'new-password',
+    'old-password' => 'old password',
+    'new-password' => 'new password',
     'old_password_invaild' => 'old password invaild',
     'comment' => 'comment',
+    'more_comments' => 'More Comments',
     'country' => 'country',
     'city' => 'city',
     'england' => 'england',
     'request' => 'request',
     'friend_request' => 'has asked you for friendship',
-    'comment_post' => 'commented your post',
+    'comment_post' => 'commented on your post',
     'all_notification' => 'all notification',
     'new_notification' => 'new notification',
     'New' => 'New',
@@ -106,6 +108,19 @@ $lang = array(
         'username_exists' => 'username is already taken',
 
         'invalid_usrnmpwd' => 'username or password is invalid',
+
+        'settings' => [
+            'name' => 'full name is required.',
+            'mail' => 'email address is required.',
+            'birthday' => 'birth date is required.',
+            'gender' => 'gender is required.',
+            'sickness' => 'sickness is required.',
+            'bio' => 'bio can not be empty.',
+            'country' => 'country is not specified.',
+            'city' => 'city is not specified.',
+            'latlng' => 'lat is required.',
+            'old-password' => 'current password is invalid.',
+        ]
     ],
 
     'languages' => [
@@ -126,7 +141,9 @@ $lang = array(
         'messages' => 'messages',
         'explore' => 'explore',
         'faq' => 'faq',
-        'faq2' => 'Frequently Asked Questions'
+        'faq2' => 'Frequently Asked Questions',
+        'suggestions' => 'Suggestions',
+        'logout' => 'log out'
     ],
 
     'faq' => [
@@ -172,11 +189,11 @@ $lang = array(
         ],
         'contact_info' => [
             'title' => 'Contact info',
-            'location' => 'Germany - heilbronn',
+            'location' => 'Germany - Heilbronn',
             'phone' => '+49 157 81140881',
-            'email' => 'info@westtobest.com'
+            'email' => 'info@delldate.com'
         ],
-        'effected_text' => 'westtobest'
+        'effected_text' => 'Delldate'
     ],
 
     'delete_post' => [
@@ -193,8 +210,8 @@ $lang = array(
         'likes' => 'likes',
     ],
 
-    'Footer_description' => 'westtobest is a social media website dedicated to people all around the globe.',
-    'Footer_data_location' => 'Germany - heilbronn',
+    'Footer_description' => 'WesttoBest is a social media website dedicated to people all around the globe.',
+    'Footer_data_location' => 'Germany - Heilbronn',
     'Footer_title_links' => 'useful links',
     'Footer_title_location' => 'Our location',
 
@@ -206,7 +223,7 @@ $lang = array(
 
     'btn_save_profile_settings' => 'Save',
 
-    'footer_rights' => '© westtobest 2021. All rights reserved.',
+    'footer_rights' => '© human 2021. All rights reserved.',
 
     'onoff_option' => [
         'label_off' => 'off',

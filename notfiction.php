@@ -1,10 +1,10 @@
 <?php
+session_start();
 
 require "vendor/autoload.php";
 
 use Carbon\Carbon;
 
-session_start();
 if (isset($_SESSION['username'])) {
 
     include "config/config.php";
@@ -31,114 +31,86 @@ if (isset($_SESSION['username'])) {
                                         <div class="notification-box">
                                             <ul>
                                                 <?php
-                                                $result = $conn->query("SELECT * FROM notfic where for_user='" . $_SESSION['username'] . "' order by id DESC");
+                                                $result = $conn->query("SELECT * FROM notfic WHERE for_user='" . $_SESSION['username'] . "' AND notfic!='4' ORDER BY id DESC");
                                                 if ($result->num_rows > 0) {
                                                     while ($row = mysqli_fetch_assoc($result)) {
-                                                        $user = $conn->query("SELECT * FROM user where username='" . $row['user'] . "'");
+                                                        $user = $conn->query("SELECT * FROM user WHERE username='" . $row['user'] . "'");
                                                         while ($us = mysqli_fetch_assoc($user)) {
                                                             ?>
 
                                                             <?php if ($row['user'] != $_SESSION['username']) { ?>
                                                                 <li>
-                                                                <figure>
-                                                                    <a href="profile.php?p=<?php echo $row['user']; ?>"><img
-                                                                                src="images/resources/<?php if ($us['avatar'] == 0) {
-                                                                                    echo "avatar-default.png";
-                                                                                } else {
-                                                                                    echo $us['avatar'];
-                                                                                } ?>" style="width: 50px;height: 50px"
-                                                                                alt="">
-                                                                    </a></figure>
-                                                            <?php } ?>
-                                                            <div class="notifi-meta">
-                                                                <p><?php
-                                                                    //                                                            if(isset($_POST['follow'])){
-                                                                    //                                                                if(mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='".$_SESSION['username']."'and user_2='".$row['user']."' and acc='1'"))==0){
-                                                                    //                                                                    $conn->query("INSERT INTO friend (user_1,user_2,acc) values ('".$_SESSION['username']."','".$row['user']."','1')");
-                                                                    //                                                                    $conn->query("UPDATE friend SET acc='1' where user_1='".$row['user']."' and user_2='".$_SESSION['username']."'");
-                                                                    //                                                                }else{
-                                                                    //                                                                    $conn->query("DELETE FROM friend where user_1='".$_SESSION['username']."' or user_2='".$_SESSION['username']."' and user_1='".$row['user']."' or user_2='".$row['user']."'");
-                                                                    //                                                                }
-                                                                    //                                                            }
-                                                                    switch ($row['notfic']) {
-                                                                        case "1":
-                                                                            echo '<a href="profile.php?p=' . $row['user'] . '"><strong><i>' . $us['name'] . '</i></strong></a> ' . $lang['friend_request'];
-                                                                            ?>
-                                                                            <script>
-                                                                                function follows(follow, follow_id) {
-                                                                                    $.ajax({
-                                                                                        type: 'post',
-                                                                                        url: 'ajax/follow.php',
-                                                                                        data: {
-                                                                                            follow: follow
-                                                                                        },
-                                                                                        success: function (response) {
-                                                                                            document.getElementById('follow_get' + follow_id).innerHTML = response;
-                                                                                        }
-                                                                                    });
-                                                                                }
-
-                                                                                function rejects(reject) {
-                                                                                    $.ajax({
-                                                                                        type: 'post',
-                                                                                        url: 'ajax/reject.php',
-                                                                                        data: {
-                                                                                            reject: reject
-                                                                                        },
-                                                                                        success: function (response) {
-                                                                                            console.log(response);
-                                                                                        }, error: function (error) {
-                                                                                            console.log(error);
-                                                                                        }
-                                                                                    });
-                                                                                }
-                                                                            </script>
-                                                                            <!--                                                                            <div class="d-inline" style="width: auto">-->
-                                                                            <a href="javascript:void(0)" type="button"
-                                                                               class="btn-acc-user add-butn"
-                                                                               id="follow_get<?php echo $us['id']; ?>"
-                                                                               data-ripple=""
-                                                                               onclick="follows('<?php echo $us['username']; ?>','<?php echo $us['id']; ?>')">
-                                                                                <?php if (mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='" . $_SESSION['username'] . "'and user_2='" . $us['username'] . "'")) == 0) {
-                                                                                    echo $lang['accept_request'];
-                                                                                } elseif (mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='" . $_SESSION['username'] . "'and user_2='" . $us['username'] . "' and acc='1'")) != 0) {
-                                                                                    echo $lang['unfollow'];
-                                                                                } else {
-                                                                                    echo $lang['accept_request'];
-                                                                                } ?></a>
-
-                                                                            <a href="javascript:void(0)" type="button"
-                                                                               class="btn-rej-user add-butn"
-                                                                               style="display: <?php echo (mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='" . $_SESSION['username'] . "'and user_2='" . $us['username'] . "' and acc='1'")) > 0) ? 'none' : '' ?>"
-                                                                               id="reject_get<?php echo $us['id']; ?>"
-                                                                               data-ripple=""
-                                                                               onclick="rejects('<?php echo $us['username']; ?>','<?php echo $us['id']; ?>')">
-                                                                                <?php echo $lang['reject_request']; ?>
-                                                                            </a>
-                                                                            <!--                                                                </div>-->
+                                                                    <figure>
+                                                                        <a href="profile.php?p=<?php echo $row['user']; ?>"><img
+                                                                                    src="images/resources/<?php if ($us['avatar'] == 0) {
+                                                                                        echo "avatar-default.png";
+                                                                                    } else {
+                                                                                        echo $us['avatar'];
+                                                                                    } ?>"
+                                                                                    style="width: 50px;height: 50px"
+                                                                                    alt="">
+                                                                        </a></figure>
+                                                                    <!--                --><?php //} ?>
+                                                                    <div class="notifi-meta">
+                                                                        <p>
                                                                             <?php
-                                                                            break;
+                                                                            switch ($row['notfic']) {
+                                                                                case "1": ?>
+                                                                                    <a href="profile.php?p=<?php echo $row['user']; ?>">
+                                                                                        <strong><i><?php echo $us['name']; ?></i></strong>
+                                                                                    </a> <?php echo $lang['friend_request']; ?>
+                                                                                    <a href="javascript:void(0)"
+                                                                                       type="button" data-ripple=""
+                                                                                       class="btn-acc-user add-butn mx-1"
+                                                                                       id="follow_get<?php echo $us['id']; ?>"
 
-                                                                        case "2":
-//                                                                            if ($row['user'] != $_SESSION['username']) {
-                                                                            echo '<a href="profile.php?p=' . $row['user'] . '"><strong><i>' . $us['name'] . '</i></strong></a>' . ' ' . $lang['comment_post'];
+                                                                                       onclick="follows('<?php echo $us['username']; ?>','<?php echo $us['id']; ?>')">
+                                                                                        <?php if (mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='" . $_SESSION['username'] . "'and user_2='" . $us['username'] . "'")) == 0) {
+                                                                                            echo $lang['accept_request'];
+                                                                                        } elseif (mysqli_num_rows($conn->query("SELECT * FROM friend where user_1='" . $_SESSION['username'] . "'and user_2='" . $us['username'] . "' and acc='1'")) != 0) {
+                                                                                            echo $lang['unfollow'];
+                                                                                        } else {
+                                                                                            echo $lang['accept_request'];
+                                                                                        } ?></a>
+                                                                                    <?php
+                                                                                    break;
+                                                                                case "2":
+                                                                                    ?>
+                                                                                    <a href="profile.php?p=<?php echo $row['user']; ?>">
+                                                                                        <strong><i><?php echo $us['name']; ?></i></strong>
+                                                                                    </a> <?php echo $lang['comment_post']; ?>
+                                                                                    <a href="post.php?id=<?php echo $row['pro']; ?>"
+                                                                                       type="button"
+                                                                                       class="add-butn more-action"
+                                                                                       data-ripple="">
+                                                                                        <?php echo $lang['go_to_post']; ?>
+                                                                                    </a>
+                                                                                    <?php
+                                                                                    break;
+                                                                                case
+                                                                                '3': ?>
 
-                                                                            echo '<a href="post.php?id=' . $row['pro'] . '" type="button" class="add-butn more-action" data-ripple="">' . $lang['go_to_post'] . '</a>';
-//                                                                            }
-                                                                            break;
-                                                                        case
-                                                                        '3':
-                                                                            echo '<a href="profile.php?p=' . $row['user'] . '"><strong><i>' . $us['name'] . '</i></strong></a>' . ' ' . $lang['like'];
+                                                                                    <a href="profile.php?p=<?php echo $row['user']; ?>">
+                                                                                        <strong><i><?php echo $us['name']; ?></i></strong>
+                                                                                    </a> <?php echo $lang['like']; ?>
+                                                                                    <a href="post.php?id=<?php echo $row['pro']; ?>"
+                                                                                       type="button"
+                                                                                       class="add-butn more-action"
+                                                                                       data-ripple="">
+                                                                                        <?php echo $lang['go_to_post']; ?>
+                                                                                    </a>
 
-                                                                            echo '<a href="post.php?id=' . $row['pro'] . '" type="button" class="add-butn more-action" data-ripple="">' . $lang['go_to_post'] . '</a>';
-                                                                            break;
-                                                                    }
-                                                                    ?></p>
-                                                                <?php date_default_timezone_set('UTC'); ?>
-                                                                <span><?php echo Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->translatedFormat('D j M, H:i'); ?></span>
-                                                            </div>
-                                                            </li>
-                                                        <?php }
+                                                                                    <?php
+                                                                                    break;
+                                                                            }
+                                                                            ?></p>
+                                                                        <span><?php echo Carbon::make($row['created_at'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en')->ago(); ?></span>
+                                                                    </div>
+                                                                    <i class="del fa fa-close"
+                                                                       onclick="deleteNotif(this,<?php echo $row['id'].',\''.$row['notfic'].'\',\''.$row['user'].'\''; ?>)"></i>
+                                                                </li>
+                                                            <?php }
+                                                        }
                                                     }
                                                 } else {
                                                     echo "<div class='alert alert-info'>" . $lang['Alert_no_notification'] . "</div>";
@@ -157,6 +129,58 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </section>
+    <script>
+        function follows(follow, follow_id) {
+            $.ajax({
+                type: 'post',
+                url: 'ajax/follow.php',
+                data: {
+                    follow: follow
+                },
+                success: function (response) {
+                    document.getElementById('follow_get' + follow_id).innerHTML = response;
+                }
+            });
+        }
+
+        function deleteNotif(_this,notid, typeid, username){
+            $.ajax({
+                type: 'post',
+                url: 'ajax/notification/delete.php',
+                data: {
+                    notid : notid,
+                    typeid : typeid,
+                    username : username
+                },
+                success: function (response) {
+                    $(_this).parent().slideUp("slow",function (){
+                        $(_this).parent().remove();
+                        const _ul=$(_this).closest("ul");
+                        if(_ul.children().length === 0 ){
+                            _ul.append("<div class='alert alert-info'><?php echo $lang['Alert_no_notification'] ?></div>")
+                        }
+                    });
+                }
+            });
+        }
+
+        function rejects(reject, usr_id) {
+            $.ajax({
+                type: 'post',
+                url: 'ajax/reject.php',
+                data: {
+                    reject: reject
+                },
+                success: function (response) {
+                    $("#reject_get" + usr_id).closest("li").remove();
+                    console.log(response);
+
+                }, error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
     <?php
     include "footer.php";
 

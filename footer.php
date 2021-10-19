@@ -5,7 +5,7 @@
                 <div class="widget">
                     <div class="foot-logo">
                         <div class="logo">
-                            <a href="index.php" title=""><img src="images/logo.png" alt=""></a>
+                            <a href="index.php" title=""><img src="images/logowb.png" alt=""></a>
                         </div>
                         <p><?php echo $lang['Footer_description']; ?></p>
                     </div>
@@ -16,7 +16,7 @@
                         </li>
                         <li>
                             <i class="ti-mobile"></i>
-                            <p>+49 157 81140881</p>
+                            <p>+49 200 100300555</p>
                         </li>
                     </ul>
                 </div>
@@ -64,6 +64,7 @@
         <li><a href="messages.php" title=""><i class="ti-comments-smiley"></i> <?php echo $lang['titles']['messages']; ?></a></li>
         <li><a href="setting.php" title=""><i class="ti-settings"></i> <?php echo $lang['titles']['setting']; ?></a></li>
         <li><a href="people.php" title=""><i class="ti-user"></i> <?php echo $lang['titles']['explore']; ?></a></li>
+        <li><a href="logout.php" title=""><i class="ti-power-off"></i><?php echo $lang['titles']['logout']?></a></li>
     </ul>
 
     <ul class="naves-bottom">

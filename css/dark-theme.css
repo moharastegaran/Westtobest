@@ -346,6 +346,9 @@ footer:before{
     border: medium none transparent !important;
     background: #393939 !important;
 }
+.emoji-picker-icon{
+    color : #eee !important;
+}
 
 /* search result */
 #search_result {

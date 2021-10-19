@@ -2,19 +2,6 @@
 
     <?php
 
-    function _formatDate($time)
-    {
-        if ($time >= strtotime("today 00:00") && $time < strtotime("tomorrow 00:00")) {
-            return date("G:i", $time) . " امروز";
-        } elseif ($time >= strtotime("yesterday 00:00")) {
-            return "Yesterday at " . date("g:i A", $time);
-        } elseif ($time >= strtotime("-6 day 00:00")) {
-            return date("l G:i", $time);
-        } else {
-            return date("M j, Y", $time);
-        }
-    }
-
     $result = $conn->query("SELECT * FROM user ORDER BY id DESC");
     ?>
 
@@ -27,11 +14,12 @@
                 </li>
             </ul>
             <ul class="nearby-contct">
-
                 <?php
+                $has_friends = false;
                 while ($row = mysqli_fetch_assoc($result)) {
                     $feed = $conn->query("SELECT * FROM friend where user_1='" . $_GET['p'] . "' and user_2='" . $row['username'] . "' and acc='1'");
                     if (mysqli_num_rows($feed) != 0) {
+                        $has_friends = true;
                         $feedrow = mysqli_fetch_assoc($feed);
                         ?>
                         <li>
@@ -52,10 +40,13 @@
                                         <h4><a href="profile.php?p=<?php echo $row['username']; ?>"
                                                title=""><?php echo $row['name']; ?></a></h4>
                                         <p>
-                                            <span>بیماری:</span><span> <?php echo empty(trim($row['sickness'])) ? 'تعیین نشده' : $row['sickness']; ?></span>
+                                            <span><?php echo $lang['sickness'] . ':'; ?></span><span> <?php echo empty(trim($row['sickness'])) ? $lang['sickness_undefined'] : $row['sickness']; ?></span>
                                         </p>
                                         <p>
-                                            <span>تاریخ درخواست:</span><span> <?php echo _formatDate(strtotime($feedrow['requested_at'])); ?></span>
+                                            <span><i class="fa fa-map-marker"></i></span>
+                                            <span>
+                                                <?php echo (empty($row['country']) && empty($row['city'])) ? $lang['sickness_undefined'] : $row['country'] . ',' . $row['city']; ?>
+                                            </span>
                                         </p>
                                     </div>
                                     <div class="col-3">
@@ -90,7 +81,13 @@
                         </li>
                         <?php
                     }
-                } ?>
+                }
+                if (!$has_friends){ ?>
+                    <div class="alert alert-info"><?php echo $lang['Alert_no_friends']; ?>
+                        <i><ins><a href="people.php"><?php echo $lang['Alert_no_friends_link']; ?></a></ins></i>
+                    </div>
+               <?php }
+                ?>
             </ul>
         </div>
     </div><!-- photos -->

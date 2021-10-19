@@ -2,10 +2,10 @@
 session_start();
 
 require "../vendor/autoload.php";
+include "../config/config.php";
 
 use Carbon\Carbon;
 
-include "../config/config.php";
 $comment = $_POST['comment'];
 $user = $_POST['user'];
 $post_id = $_POST['post_id'];

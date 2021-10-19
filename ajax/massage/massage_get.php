@@ -16,22 +16,22 @@ while ($row = mysqli_fetch_assoc($result)) {
     }
     ?>
  message">
-        <figure><img src="<?php
+        <figure><img src="images/resources/<?php
             if ($chat_side === 'me') {
                 $meres = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "'");
                 $merow = mysqli_fetch_assoc($meres);
                 if (empty($merow['avatar'])) {
-                    echo 'images/resources/avatar-default.png';
+                    echo 'avatar-default.png';
                 } else {
-                    echo AVATAR_DIR.$merow['avatar'];
+                    echo $merow['avatar'];
                 }
             } else if ($chat_side === 'you') {
                 $youres = $conn->query("SELECT * FROM user where username='" . $_POST['user'] . "'");
                 $yourow = mysqli_fetch_assoc($youres);
                 if (empty($yourow['avatar'])) {
-                    echo 'images/resources/avatar-default.png';
+                    echo 'avatar-default.png';
                 } else {
-                    echo AVATAR_DIR.$yourow['avatar'];
+                    echo $yourow['avatar'];
                 }
             } ?>" alt="" width="32" height="32" style="max-width: 32px;max-height: 32px"></figure>
         <p><?php echo $row['pm']; ?></p>

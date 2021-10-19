@@ -1,4 +1,10 @@
 <div class="col-lg-3">
+    <div class="advertisment-box">
+										<h4 class="">advertisment</h4>
+										<figure>
+											<a href="#" title="Advertisment"><img src="images/resources/ad-widget.gif" alt=""></a>
+										</figure>
+									</div>
     <aside class="sidebar static">
         <div class="widget stick-widget">
             <h4 class="widget-title"><?php echo $lang['titles']['suggestions']; ?></h4>

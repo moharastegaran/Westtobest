@@ -24,6 +24,9 @@ class seeder extends \Faker\Factory{
             'mail' => $this->faker->email,
             'password' => '$2a$12$fL1RGfcU6IWOlRlDE1eoVOUci8YmnUca8UQZ5Vks/I2pDFiC1pFja', // 11111111
             'bio' => $this->faker->text(200),
+            'lat' => $this->faker->latitude,
+            'lng' => $this->faker->longitude,
+            'city' =>$this->faker->address()->latitude,
             'sickness' => $this->sicks[rand(0,count($this->sicks))],
             'avatar' => 'photo'.rand(0,10).'.jpg'
         ];

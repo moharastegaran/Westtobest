@@ -1,4 +1,8 @@
 <?php
+require 'vendor/autoload.php';
+
+use Carbon\Carbon;
+
 $result = $conn->query("SELECT * FROM user where username='" . $_GET['p'] . "'");
 while ($row = mysqli_fetch_assoc($result)) {
     ?>
@@ -17,11 +21,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
                 <div class="d-flex flex-row mt-2">
                     <ul class="basics">
-                        <li><i class="ti-heart"></i><?php echo $row['sickness']; ?></li>
-                        <li><i class="ti-info"></i><?php echo $row['bio']; ?></li>
-                        <li><i class="ti-crown"></i><?php echo $row['birthday']; ?></li>
-                        <li><i class="ti-map-alt"></i><?php echo $row['country']; ?></li>
-                        <li><i class="ti-location-pin"></i><?php echo $row['city']; ?></li>
+                        <li><i class="ti-heart"></i><?php echo !empty($row['sickness']) ? $row['sickness'] : $lang['sickness_undefined']; ?></li>
+                        <li><i class="ti-info"></i><?php echo !empty($row['bio']) ? $row['bio'] : '-'; ?></li>
+                        <li><i class="ti-crown"></i><?php echo !empty($row['birthday']) ? Carbon::parse($row['birthday'])->locale(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'fa')->format("jS F Y") : '-'; ?></li>
+                        <li><i class="ti-map-alt"></i><?php echo !empty($row['country']) ? $row['country'] : $lang['sickness_undefined']; ?></li>
+                        <li><i class="ti-location-pin"></i><?php echo !empty($row['city']) ? $row['city'] : $lang['sickness_undefined']; ?></li>
                     </ul>
                 </div>
             </div>

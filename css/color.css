@@ -17,7 +17,7 @@
 .theme-light .friend-name > ins,
 .theme-light .description > p a,
 .theme-light .we-reply,
-.theme-light .sidebar .widget li:hover > a, .sidebar .widget li:hover > i,
+.theme-light .sidebar .widget li:not(.active):hover > a, .sidebar .widget li:not(.active):hover > i,
 .theme-light .friend-meta > a,
 .theme-light .user-setting > a:hover,
 .theme-light .we-comet li a.showmore,
@@ -82,8 +82,7 @@
 .theme-light .help-list > ul li a:hover,
 .theme-light .employer-info h2,
 .theme-light .job-detail > ul li i,
-.theme-light .company-intro > a,
-.theme-light .btn-rej-user
+.theme-light .company-intro > a
 {
 	color: #5451d7;
 }
@@ -177,7 +176,6 @@ path.icon{
 .theme-light .help-list > a:hover,
 .theme-light a.btn2:hover,
 .theme-light .single-btn > li > a.active
-.theme-light .btn-rej-user
 {
 	border-color: #5451d7;
 }
@@ -214,7 +212,7 @@ path.icon{
 .theme-dark .friend-name > ins,
 .theme-dark .description > p a,
 .theme-dark .we-reply,
-.theme-dark .sidebar .widget li:hover > a, .sidebar .widget li:hover > i,
+.theme-dark .sidebar .widget li:not(.active):hover > a, .sidebar .widget li:not(.active):hover > i,
 .theme-dark .friend-meta > a,
 .theme-dark .user-setting > a:hover,
 .theme-dark .we-comet li a.showmore,
@@ -285,9 +283,8 @@ path.icon{
 {
 	color: #088dcd;
 }
-.theme-dark .btn-rej-user{
-	color : #088dcd;
-}
+
+
 /*=========================
 	BACKGROUND COLOR
 =========================*/

@@ -1,6 +1,8 @@
 <?php
-include "../config/config.php";
 session_start();
+
+include "../config/config.php";
+
 global $conn;
 //    $secret='6LesSsgbAAAAACK7XR1X4I73S-_H_79FwRjEVFmL';
 //    $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['captcha']);

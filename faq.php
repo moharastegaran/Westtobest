@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("loction:login.php");
+    header("location:login.php");
 } else {
     include "config/config.php";
     include "header.php";
-//    include "top_area.php";
+    include "lang/".(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en').".php";
 
     $faqs = $lang['faq'];
 

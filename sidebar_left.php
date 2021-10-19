@@ -13,11 +13,6 @@ $current_page = substr($current_page, strrpos($current_page, '/') + 1);
                         <i class="ti-clipboard"></i>
                         <?php echo $lang['titles']['posts']; ?></a>
                 </li>
-                <!--											<li>-->
-                <!--												<i class="ti-rss-alt"></i>-->
-                <!--												<a href="post.php" title="">-->
-                <?php //echo $lang['People_post'];?><!--</a>-->
-                <!--											</li>-->
                 <li class="<?php echo strpos($current_page, 'profile.php') !== false ? 'active' : '' ?>">
                     <a href="profile.php?p=<?php echo $_SESSION['username']; ?>" title="">
                         <i class="ti-files"></i>
@@ -26,7 +21,9 @@ $current_page = substr($current_page, strrpos($current_page, '/') + 1);
                 <li class="<?php echo strpos($current_page, 'messages.php') !== false ? 'active' : '' ?>">
                     <a href="messages.php" title="">
                         <i class="ti-comments-smiley"></i>
-                        <?php echo $lang['titles']['messages']; ?></a>
+                        <?php echo $lang['titles']['messages']; ?>
+                        <span id="sidbar-notfiction_comment_get" class="badge badge-info mx-1"></span>
+                    </a>
                 </li>
                 <li class="<?php echo strpos($current_page, 'notfiction.php') !== false ? 'active' : '' ?>">
                     <a href="notfiction.php" onclick="notf()" title="">
@@ -43,6 +40,10 @@ $current_page = substr($current_page, strrpos($current_page, '/') + 1);
                 <li class="<?php echo strpos($current_page, 'people.php') !== false ? 'active' : '' ?>">
                     <a href="people.php" title="">
                         <i class="ti-search"></i><?php echo $lang['titles']['explore']; ?></a>
+                </li>
+                <li>
+                    <a href="logout.php" title="">
+                        <i class="ti-power-off"></i><?php echo $lang['titles']['logout']?></a>
                 </li>
             </ul>
         </div><!-- Shortcuts -->

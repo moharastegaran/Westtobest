@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("loction:login.php");
+    header("location:login.php");
 } else {
     include "config/config.php";
     include "header.php";
@@ -26,7 +26,7 @@ if (!isset($_SESSION['username'])) {
                                         while ($row = mysqli_fetch_assoc($user)) {
                                             ?>
                                             <script>
-                                                function filter() {
+                                                function change_filter() {
                                                     if (document.getElementById('country').checked) {
                                                         country = '<?php echo $row['country'];?>';
                                                     } else {
@@ -52,11 +52,12 @@ if (!isset($_SESSION['username'])) {
                                                         },
                                                         success: function (response) {
                                                             document.getElementById('people').innerHTML = response;
+                                                            $("#btn-load-more").attr('data-loader', 1)
                                                         }
                                                     });
                                                 }
 
-                                                function filter() {
+                                                function load_more_filter() {
                                                     blockUI();
                                                     if (document.getElementById('country').checked) {
                                                         country = '<?php echo $row['country'];?>';
@@ -69,7 +70,7 @@ if (!isset($_SESSION['username'])) {
                                                         city = 'off';
                                                     }
                                                     if (document.getElementById('sickness').checked) {
-                                                        sickness = '<?php echo $row['sickness'];?>';
+                                                        sickness = '<?php echo $row['sickness']; ?>';
                                                     } else {
                                                         sickness = 'off';
                                                     }
@@ -106,7 +107,7 @@ if (!isset($_SESSION['username'])) {
                                                 <?php if (empty($row['country'])) { ?>
                                                     <p><?php echo $lang['explore']['undefined_country']; ?></p>
                                                 <?php } ?>
-                                                <input type="checkbox" onclick="filter()" name="country" id="country"/>
+                                                <input type="checkbox" onclick="change_filter()" name="country" id="country"/>
                                                 <label for="country"
                                                        data-on-label="<?php echo $lang['onoff_option']['label_on'] ?>"
                                                        data-off-label="<?php echo $lang['onoff_option']['label_off'] ?>"></label>
@@ -118,7 +119,7 @@ if (!isset($_SESSION['username'])) {
                                                 <?php if (empty($row['city'])) { ?>
                                                     <p><?php echo $lang['explore']['undefined_city']; ?></p>
                                                 <?php } ?>
-                                                <input type="checkbox" onclick="filter()" name="city" id="city"/>
+                                                <input type="checkbox" onclick="change_filter()" name="city" id="city"/>
                                                 <label for="city"
                                                        data-on-label="<?php echo $lang['onoff_option']['label_on'] ?>"
                                                        data-off-label="<?php echo $lang['onoff_option']['label_off'] ?>"></label>
@@ -130,7 +131,7 @@ if (!isset($_SESSION['username'])) {
                                                 <?php if (empty($row['sickness'])) { ?>
                                                     <p><?php echo $lang['explore']['undefined_sickness']; ?></p>
                                                 <?php } ?>
-                                                <input type="checkbox" onclick="filter()" name="country" id="sickness"/>
+                                                <input type="checkbox" onclick="change_filter()" name="country" id="sickness"/>
                                                 <label for="sickness"
                                                        data-on-label="<?php echo $lang['onoff_option']['label_on'] ?>"
                                                        data-off-label="<?php echo $lang['onoff_option']['label_off'] ?>"></label>
@@ -140,7 +141,7 @@ if (!isset($_SESSION['username'])) {
 
 
                                     <button class="btn-view btn-load-more" id="btn-load-more" data-loader="1"
-                                            onclick="filter()">Load More
+                                            onclick="load_more_filter()">Load More
                                     </button>
 
 
@@ -168,18 +169,7 @@ if (!isset($_SESSION['username'])) {
             sickness = 'off';
 
             blockUI();
-            $.ajax({
-                type: 'post',
-                url: 'ajax/people.php',
-                data: {
-                    country: country,
-                    city: city,
-                    sickness: sickness
-                },
-                success: function (response) {
-                    document.getElementById('people').innerHTML = response;
-                }
-            });
+            change_filter()
         };
 
         function blockUI() {
@@ -211,7 +201,31 @@ if (!isset($_SESSION['username'])) {
                     follow: follow
                 },
                 success: function (response) {
-                    document.getElementById('follow_people' + follow_id).innerHTML = response;
+                    const btn = document.getElementById('follow_people' + follow_id);
+                    btn.innerHTML = response;
+                    btn.setAttribute('onclick','deleteRequest(\''+follow+'\',\''+follow_id+'\')');
+                    if(btn.innerHTML==='<?php echo $lang['reject_request'] ?>'){
+                        btn.classList.add("more-action");
+                    }else if(btn.innerHTML==='<?php echo $lang['follow'] ?>'){
+                        btn.classList.remove("more-action");
+                    }
+                }
+            });
+        }
+
+        function deleteRequest(reject, reject_id){
+            $.ajax({
+                type : 'post',
+                url : 'ajax/reject.php',
+                data: {
+                    reject : reject
+                },
+                success: function (response) {
+                    const btn = document.getElementById('follow_people' + reject_id);
+                    btn.innerHTML = response;
+                    btn.classList.remove("more-action");
+                    btn.setAttribute('onclick','followers(\''+reject+'\',\''+reject_id+'\')');
+                    // btn.onclick = function (){ followers(reject, reject_id)};
                 }
             });
         }

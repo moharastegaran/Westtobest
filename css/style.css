@@ -51,6 +51,11 @@ Last change:  26/August/19
     font-family: HoboStd;
     src: url('../fonts/HoboStd.ttf'), url('../fonts/HoboStd.eot');
 }
+@font-face {
+    font-family: opensans;
+    src: url('../fonts/opensans/OpenSans-Regular.ttf');
+    font-weight: 500;
+}
 
 @font-face {
     font-family: iransanse;
@@ -62,7 +67,7 @@ Last change:  26/August/19
 ***General Styling 
 ===============*/
 body {
-    font-family: "Roboto", "Segoe Ui";
+    font-family: opensans, "Roboto", "Segoe Ui";
 }
 
 body.rtl {
@@ -711,6 +716,13 @@ header.sticky {
     width: 100%;
 }
 
+.form-group > .txt-error{
+    font-size: 12px;
+    color: #f24756;
+    font-weight: 500;
+    margin-bottom: 1px;
+}
+
 .log-reg-area.reg {
     display: none;
 }
@@ -892,6 +904,11 @@ header.sticky {
     overflow-y: auto;
     max-height: 250px
 }
+#search_result > span{
+    color : #999;
+    font-weight: 400;
+    font-size: 13px;
+}
 #search_result::-webkit-scrollbar{
     width: 5px;
     background: rgba(142, 142, 142, 0.82);
@@ -1024,7 +1041,7 @@ header.sticky {
 
 .timeline-info > ul li a {
     display: inline-block;
-    font-size: 13.5px;
+    font-size: 15px;
     margin-right: 40px;
     position: relative;
     line-height: initial;
@@ -1445,6 +1462,10 @@ header.sticky {
     padding: 10px 25px;
 }
 
+.sidebar .widget #suggestions-list li{
+    padding: 10px;
+}
+
 .side-panel ul {
     padding-left: 0;
 }
@@ -1501,7 +1522,7 @@ header.sticky {
     flex-direction: row;
     align-items: center;
     position: relative;
-    font-weight: 400;
+    font-weight: 500;
     color: #797979;
     vertical-align: top;
 }
@@ -1646,11 +1667,11 @@ form button, .btn-acc-user {
 }
 
 .btn-rej-user {
-    border: .2px solid;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 4px 20px;
-    border-radius: 4px;
+    /*border: .2px solid;*/
+    /*font-size: 13px;*/
+    /*font-weight: 500;*/
+    /*padding: 4px 20px;*/
+    /*border-radius: 4px;*/
 }
 
 .attachments .fileContainer [type="file"] {
@@ -2084,8 +2105,10 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
 }
 
 .we-comet > li {
-    display: inline-block;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin-bottom: 9px;
     width: 100%;
 }
 
@@ -2095,9 +2118,9 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
 
 .comet-avatar {
     display: table-cell;
-    max-width: 7.6%;
+    /*max-width: 7.6%;*/
     vertical-align: top;
-    width: 7.6%;
+    /*width: 7.6%;*/
 }
 
 .comet-avatar > img {
@@ -2113,7 +2136,18 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
     padding: 10px;
     vertical-align: top;
     position: relative;
-    width: 65%;
+    min-width: 60%;
+}
+
+.peoples-mesg-box > span{
+    font-size: 12px;
+    color : #5f5d5d;
+    padding: 5px 12px;
+    border-radius: 25px;
+    background: #dedede;
+    opacity: .75;
+    text-align: center;
+    margin: auto;
 }
 
 .we-comment::before,
@@ -2248,6 +2282,9 @@ li.post-comment .comet-avatar {
     height: 40px;
     line-height: 16px;
 }
+.post-comt-box form > button i{
+    color : #eee;
+}
 
 .add-smiles {
     position: absolute;
@@ -2331,6 +2368,11 @@ li.post-comment .comet-avatar {
     margin-top: 20px;
     max-height: 450px;
     position: relative;
+}
+#people-list .alert{
+    font-size: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 #people-list figure {
@@ -2448,9 +2490,9 @@ footer::before {
 
 .ti-map-alt {
     display: inline-block;
-    margin-right: 10px;
+    /*margin-right: 10px;*/
     vertical-align: sub;
-    width: 20px;
+    /*width: 20px;*/
 }
 
 .location > li i {
@@ -2489,7 +2531,7 @@ footer::before {
 
 footer .widget-title h4 {
     color: #424242;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     text-transform: capitalize;
     position: relative;
@@ -2525,7 +2567,7 @@ footer .widget-title {
 
 .list-style > li {
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 12px;
     text-transform: capitalize;
     width: 100%;
@@ -2705,6 +2747,12 @@ footer .logo {
 }
 
 .friend-meta > a {
+    display: inline-block;
+    font-size: 12px;
+    position: relative;
+}
+.friend-meta > i{
+    color: #999 !important;
     display: inline-block;
     font-size: 12px;
     position: relative;
@@ -3945,8 +3993,11 @@ a.add-butn {
     font-size: 13px;
     text-transform: capitalize;
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 4px;
     line-height: initial;
+}
+.pepl-info p:last-child {
+    margin-bottom: 0;
 }
 
 .pepl-info p span:nth-child(1) {
@@ -4348,7 +4399,7 @@ form .form-group.half {
     margin-right: 0;
 }
 
-form .form-group.half:nth-child(2) {
+form .form-group.half:nth-child(2n) {
     margin-right: 0;
 }
 
@@ -4599,7 +4650,7 @@ a.forgot-pwd {
     color: #424242;
     font-size: 14px;
     margin-bottom: 0;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 .notifi-meta > span {
@@ -4610,7 +4661,7 @@ a.forgot-pwd {
 .notification-box > ul > li:last-child {
     border-bottom: 0 none;
     margin-bottom: 0;
-    padding-bottom: 0;
+    /*padding-bottom: 0;*/
 }
 
 .notification-box > ul li > i.del {
@@ -4619,8 +4670,8 @@ a.forgot-pwd {
     display: inline-block;
     opacity: 0;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 5px;
+    bottom: 8px;
     transition: all 0.2s linear 0s;
     visibility: hidden;
 }
@@ -4752,7 +4803,7 @@ a.forgot-pwd {
 .peoples-mesg-box > ul li {
     display: inline-block;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 7px;
 }
 
 .peoples-mesg-box > ul li > figure {

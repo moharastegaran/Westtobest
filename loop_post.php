@@ -73,7 +73,7 @@ if (!isset($accerr)) {
                                     for_user: for_user
                                 },
                             success: function (response) {
-                                document.getElementById("all_comments<?php echo $row['id'];?>").innerHTML = response + document.getElementById("all_comments<?php echo $row['id'];?>").innerHTML;
+                                document.getElementById("all_comments<?php echo $row['id'];?>").innerHTML =document.getElementById("all_comments<?php echo $row['id'];?>").innerHTML + response ;
                                 document.getElementById("comment<?php echo $row['id'];?>").value = "";
 
                             }
@@ -119,10 +119,10 @@ if (!isset($accerr)) {
                                 $results = $conn->query("SELECT * FROM user where username='" . $row['user'] . "'");
                                 while ($rosw = mysqli_fetch_assoc($results)){
                                 ?>
-                                <img src="<?php if (empty($rosw['avatar'])) {
-                                    echo 'images/resources/avatar-default.png';
+                                <img src="images/resources/<?php if (empty($rosw['avatar'])) {
+                                    echo 'avatar-default.png';
                                 } else {
-                                    echo AVATAR_DIR.$rosw['avatar'];
+                                    echo $rosw['avatar'];
                                 } ?>" alt="" style="width:50px;height:50px">
                             </figure>
                             <div class="friend-name">
@@ -133,17 +133,17 @@ if (!isset($accerr)) {
                             </div>
                             <div class="post-meta">
                                 <?php if (!empty(trim($row['cover']))) { ?>
-                                    <img width="" height="285" src="<?php echo IMAGE_POST_DIR.$row['cover']; ?>"/>
+                                    <img width="" height="285" src="upload/<?php echo $row['cover']; ?>"/>
                                 <?php } ?>
                                 <div class="we-video-info">
                                     <ul>
 
-                                        <li style="display: none;">
-																<span class="views" data-toggle="tooltip" title="views">
-																	<i class="fa fa-eye"></i>
-																	<ins>1.2k</ins>
-																</span>
-                                        </li>
+<!--                                        <li style="display: none;">-->
+<!--																<span class="views" data-toggle="tooltip" title="views">-->
+<!--																	<i class="fa fa-eye"></i>-->
+<!--																	<ins>1.2k</ins>-->
+<!--																</span>-->
+<!--                                        </li>-->
                                         <li>
 																<span class="comment" data-toggle="tooltip"
                                                                       title="<?php echo $lang['tooltip']['comments']; ?>">
@@ -176,29 +176,29 @@ if (!isset($accerr)) {
                                                 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
                                                 $share_link = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . "?p=" . $row['id'];
                                                 ?>
-                                                                                                <div class="rotater">
-                                                                                                    <div class="btn btn-icon">
-                                                                                                        <a href="#"><i class="fa fa-clipboard"></i></a>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="rotater">
-                                                                                                    <div class="btn btn-icon">
-                                                                                                        <a target="_blank"
-                                                                                                           href="http://www.facebook.com/share.php?u=
+                                                <div class="rotater">
+                                                    <div class="btn btn-icon">
+                                                        <a href="#"><i class="fa fa-clipboard"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="rotater">
+                                                    <div class="btn btn-icon">
+                                                        <a target="_blank"
+                                                           href="http://www.facebook.com/share.php?u=
                                                 <?php echo $share_link; ?>">
-                                                                                                            <i class="fa fa-facebook"></i>
-                                                                                                        </a>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="rotater">
-                                                                                                    <div class="btn btn-icon">
-                                                                                                        <a target="_blank"
-                                                                                                           href="http://twitter.com/share?text=title&url=
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="rotater">
+                                                    <div class="btn btn-icon">
+                                                        <a target="_blank"
+                                                           href="http://twitter.com/share?text=title&url=
                                                 <?php echo $share_link; ?>">
-                                                                                                            <i class="fa fa-twitter"></i>
-                                                                                                        </a>
-                                                                                                    </div>
-                                                                                                </div>
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </li>
                                         <?php if ($row['user'] == $_SESSION['username']) { ?>
@@ -221,18 +221,22 @@ if (!isset($accerr)) {
                         <div class="coment-area">
                             <ul class="we-comet" id="all_comments<?php echo $row['id']; ?>">
                                 <?php
-                                $comment = $conn->query("SELECT * FROM comment where post_id='" . $row['id'] . "' order by id DESC");
-                                while ($comm = mysqli_fetch_assoc($comment)) {
+                                $comments = $conn->query("SELECT * FROM comment where post_id='" . $row['id'] . "' order by id DESC");
+                                $comments_num = mysqli_num_rows($comments);
+                                $i = 0;
+                                $imax = isset($_GET['id']) && !empty($_GET['id']) ? $comments_num : ($comments_num<4 ? $comments_num : 4);
+                                while ($i<$imax) {
+                                    $i++;
+                                    $comm = mysqli_fetch_assoc($comments);
                                     $user = $conn->query("SELECT * FROM user where username='" . $comm['user'] . "'");
                                     while ($us = mysqli_fetch_assoc($user)) {
                                         ?>
-
                                         <li>
                                             <div class="comet-avatar">
-                                                <img src="<?php if (empty($us['avatar'])) {
-                                                    echo 'images/resources/avatar-default.png';
+                                                <img src="images/resources/<?php if (empty($us['avatar'])) {
+                                                    echo 'avatar-default.png';
                                                 } else {
-                                                    echo AVATAR_DIR.$us['avatar'];
+                                                    echo $us['avatar'];
                                                 } ?>" alt="">
                                             </div>
                                             <div class="we-comment">
@@ -243,25 +247,27 @@ if (!isset($accerr)) {
                                                 </div>
                                                 <p><?php echo $comm['description']; ?></p>
                                             </div>
-
                                         </li>
                                     <?php }
+
                                 } ?>
-                                <div class="post-comt-box">
-                                    <form method="post" action="" id="myform">
-                                        <input type="hidden" id="post_id<?php echo $row['id']; ?>"
-                                               value="<?php echo $row['id']; ?>"/>
-                                        <textarea data-emoji-input="unicode" data-emojiable="true"
-                                                  placeholder="<?php echo $lang['comment']; ?>"
-                                                  id="comment<?php echo $row['id']; ?>">
-                                                                </textarea>
-                                        <button type="button" style="top:0;color:#000;bottom: 0"
-                                                onclick="return post<?php echo $row['id']; ?>();" value="sub"><i
-                                                    class="fa fa-paper-plane"></i></button>
-                                    </form>
-                                </div>
+                                <li style="display: <?php echo isset($_GET['id']) || mysqli_num_rows($comments)<=4 ? 'none' : ''; ?>">
+                                    <a href="post.php?id=<?php echo $row['id']; ?>" class="showmore underline"><?php echo $lang['more_comments']; ?></a>
                                 </li>
                             </ul>
+                            <div class="post-comt-box">
+                                <form method="post" action="" id="myform">
+                                    <input type="hidden" id="post_id<?php echo $row['id']; ?>"
+                                           value="<?php echo $row['id']; ?>"/>
+                                    <textarea data-emoji-input="unicode" data-emojiable="true"
+                                              placeholder="<?php echo $lang['comment']; ?>" name="comment"
+                                              id="comment<?php echo $row['id']; ?>">
+                                                                </textarea>
+                                    <button type="button" style="top:0;color:#000;bottom: 0"
+                                            onclick="return post<?php echo $row['id']; ?>();" value="sub"><i
+                                                class="fa fa-paper-plane"></i></button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
