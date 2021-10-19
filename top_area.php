@@ -8,7 +8,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                  style="background-image: url(<?php if (trim($row['header_img']) === "") {
                      echo "images/resources/cover-default.jpg";
                  } else {
-                     echo AVATAR_DIR.$row['header_img'];
+                     echo COVERS_DIR.$row['header_img'];
                  } ?>)">
             </div>
             <div class="add-btn">
