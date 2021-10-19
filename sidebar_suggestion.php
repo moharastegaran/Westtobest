@@ -37,10 +37,10 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                         ?>
                         <li>
-                            <figure><img src="images/resources/<?php if (empty($row['avatar'])) {
-                                    echo 'avatar-default.png';
+                            <figure><img src="<?php if (empty($row['avatar'])) {
+                                    echo 'images/resources/avatar-default.png';
                                 } else {
-                                    echo $row['avatar'];
+                                    echo AVATAR_DIR.$row['avatar'];
                                 } ?>" alt=""></figure>
                             <div class="friend-meta">
 
