@@ -22,10 +22,10 @@ if (isset($_POST['post'])) {
             $result = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "'");
             while ($row = mysqli_fetch_assoc($result)) {
                 ?>
-                <img src="images/resources/<?php if (empty($row['avatar'])) {
-                    echo 'avatar-default.png';
+                <img src="<?php if (empty($row['avatar'])) {
+                    echo 'images/resources/avatar-default.png';
                 } else {
-                    echo $row['avatar'];
+                    echo AVATAR_DIR.$row['avatar'];
                 } ?>" alt="" style="width:50px;height:50px">
             <?php } ?>
         </figure>
