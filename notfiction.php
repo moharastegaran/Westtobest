@@ -42,10 +42,10 @@ if (isset($_SESSION['username'])) {
                                                                 <li>
                                                                     <figure>
                                                                         <a href="profile.php?p=<?php echo $row['user']; ?>"><img
-                                                                                    src="images/resources/<?php if ($us['avatar'] == 0) {
-                                                                                        echo "avatar-default.png";
+                                                                                    src="<?php if ($us['avatar'] == 0) {
+                                                                                        echo "images/resources/avatar-default.png";
                                                                                     } else {
-                                                                                        echo $us['avatar'];
+                                                                                        echo AVATAR_DIR.$us['avatar'];
                                                                                     } ?>"
                                                                                     style="width: 50px;height: 50px"
                                                                                     alt="">
