@@ -191,9 +191,9 @@ $lang = array(
             'title' => 'Contact info',
             'location' => 'Germany - Heilbronn',
             'phone' => '+49 157 81140881',
-            'email' => 'info@delldate.com'
+            'email' => 'info@westtobest.com'
         ],
-        'effected_text' => 'Delldate'
+        'effected_text' => 'Westtobest'
     ],
 
     'delete_post' => [
@@ -223,7 +223,7 @@ $lang = array(
 
     'btn_save_profile_settings' => 'Save',
 
-    'footer_rights' => '© human 2021. All rights reserved.',
+    'footer_rights' => '© westtobest 2021. All rights reserved.',
 
     'onoff_option' => [
         'label_off' => 'off',

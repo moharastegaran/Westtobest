@@ -189,7 +189,7 @@ $lang = array(
             'title' => 'اطلاعات تماس',
             'location' => 'آلمان, هایلبرون',
             'phone' => '+49 157 81140881',
-            'email' => 'info@delldate.com'
+            'email' => 'info@westtobest.com'
         ],
         'effected_text' => 'دلداده'
     ],
@@ -222,7 +222,7 @@ $lang = array(
 
     'btn_save_profile_settings' => 'ذخیره تغییرات',
 
-    'footer_rights' => '© انسان 1400. تمامی حقوق این سایت محفوظ می‌باشد.',
+    'footer_rights' => '© WESTTOBEST 1400. تمامی حقوق این سایت محفوظ می‌باشد.',
 
 
     'onoff_option' => [

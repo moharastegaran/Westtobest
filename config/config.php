@@ -4,10 +4,10 @@ const DB_USERNAME = 'root';
 const DB_PWD = '';
 const DB_NAME = 'human';
 
-const UPLOAD_DIR = 'file/';
-const AVATAR_DIR = UPLOAD_DIR."profile_file/avatar/";
-const COVERS_DIR =  UPLOAD_DIR."profile_file/cover_header/";
-const IMAGE_POST_DIR=UPLOAD_DIR."post_file/cover_images/";
+const UPLOAD_DIR = 'uploads/';
+const AVATAR_DIR = UPLOAD_DIR."users/avatars/";
+const COVERS_DIR =  UPLOAD_DIR."users/covers/";
+const IMAGE_POST_DIR=UPLOAD_DIR."posts/";
 
 $conn=new mysqli(DB_HOST,DB_USERNAME,DB_PWD,DB_NAME);
 if($conn->connect_error){
