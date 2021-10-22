@@ -36,6 +36,7 @@ $lang = array(
     'physical_disability' => 'معلولیت جسمی',
     'Trans' => 'ترنس',
     'short' => 'قدکوتاه',
+    'others' => 'سایر',
 
     'sickness' => 'بیماری',
     'email' => 'ایمیل',

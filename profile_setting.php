@@ -5,8 +5,6 @@ $result=$conn->query("SELECT * FROM user where username='".$_SESSION['username']
 $user = mysqli_fetch_assoc($result);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    var_dump($_POST);
-    var_dump("hello\n");
     if (!empty($_POST['new-password'])) {
         if (password_verify($_POST['old-password'], $user['password'])) {
             $password = password_hash($_POST['new-password'], PASSWORD_DEFAULT);
@@ -52,20 +50,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         if (!empty($_POST['lng']) && !empty($_POST['lat'])){
             $url = 'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=' . trim($_POST['lat']) . '&longitude=' . trim($_POST['lng']) . '&localityLanguage=en';
-            var_dump("\n".$url."\n");
             $json = file_get_contents($url);
             $data = json_decode($json);
             $sql.="country='" . $data->countryName . "', city='".$data->city."', ";
         }
 
-//        if (!empty($password)){
-            $sql.="password='".$password."' WHERE username='".$_SESSION['username']."'";
-//        }
+        $sql.="password='".$password."' WHERE username='".$_SESSION['username']."'";
 
-//        "gender='" . $_POST['gender'] . "', birthday='" . $_POST['birthday'] . "' , sickness='" . $_POST['sickness'] . "' , bio='" . $_POST['bio'] . "', password='" . $password . "',country='" . $data->countryName . "',city='" . $data->city . "'
-//                                         , lng='" . $_POST['lng'] . "' , lat='" . $_POST['lat'] . "' WHERE username='" . $_SESSION['username'] . "'";
-        var_dump($sql);
-        var_dump($conn->query($sql));
+        $conn->query($sql);
 //        if ($conn->query($sql)) {
 ////            $user['name'] = $_POST['name'];
 ////            $user['mail'] = $_POST['mail'];
@@ -220,6 +212,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <option value="physical_disability" <?php echo $user['sickness']==='physical_disability' ? 'selected' : ''?>><?php echo $lang['physical_disability']; ?></option>
                         <option value="Trans" <?php echo $user['sickness']==='Trans' ? 'selected' : ''?>><?php echo $lang['Trans']; ?></option>
                         <option value="short" <?php echo $user['sickness']==='short' ? 'selected' : ''?>><?php echo $lang['short']; ?></option>
+                        <option value="others" <?php echo $user['sickness']==='others' ? 'selected' : ''?>><?php echo $lang['others']; ?></option>
                     </select>
                     <label class="control-label" for="input"><?php echo $lang['sickness']; ?></label><i
                             class="mtrl-select"></i>

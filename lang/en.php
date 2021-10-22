@@ -36,6 +36,7 @@ $lang = array(
     'physical_disability' => 'physical disability',
     'Trans' => 'Trans',
     'short' => 'short',
+    'others' => 'others',
 
     'sickness' => 'sickness',
     'email' => 'email',

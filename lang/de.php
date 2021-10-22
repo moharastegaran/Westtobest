@@ -36,6 +36,7 @@ $lang = array(
     'physical_disability' => 'physical disability',
     'Trans' => 'Trans',
     'short' => 'short',
+    'others' => 'others',
 
     'sickness' => 'sickness',
     'email' => 'email',
@@ -193,7 +194,7 @@ $lang = array(
             'phone' => '+49 157 81140881',
             'email' => 'info@westtobest.com'
         ],
-        'effected_text' => 'westtobest'
+        'effected_text' => 'Westtobest'
     ],
 
     'delete_post' => [
@@ -238,8 +239,8 @@ $lang = array(
     ],
 
     'explore'=>[
-        'undefined_city'=> 'To search people, select city from setting map.',
-        'undefined_country'=> 'To search people, select country from setting map.',
-        'undefined_sickness'=> 'To find people your sickness, choose your sickness from setting.',
+        'undefined_city'=>'To search people, select city from setting map.',
+        'undefined_country'=>'To search people, select country from setting map.',
+        'undefined_sickness'=>'To find people your sickness, choose your sickness from setting.',
     ]
 );

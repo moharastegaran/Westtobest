@@ -106,7 +106,7 @@ if (!isset($_SESSION['username'])) {
                             <h1><?php echo $lang['login_aside_title']; ?></h1>
                             <p><?php echo $lang['login_aside_subtitle']; ?></p>
                             <div class="friend-logo" style="width:220px;margin:auto">
-                                <img src="images/logo_square_light_medium.png" alt="">
+                                <img src="images/logo.png" alt="">
                             </div>
                             <br>
                             <a href="#" title="" class="folow-me"><?php echo $lang['login_aside_follow']; ?></a>
