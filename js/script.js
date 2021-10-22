@@ -450,3 +450,94 @@ window.emojiPicker = new EmojiPicker({
     popupButtonClasses: 'fa fa-smile-o'
 });
 window.emojiPicker.discover();
+
+/* image cropper */
+let canvasX = 400, canvasY = 400, is_post = false;
+$(".edit-phto [name='cover'], .edit-phto [name='avatar'], .newpst-input [name='file']").on('change', function (event) {
+
+    // if ($(this).is($(".edit-phto [name='cover']"))) {
+    //     canvasY = 400;
+    //     canvasX = 850;
+    // }
+    if ($(this).is(".newpst-input [name='file']")) {
+        is_post = true;
+    }
+
+    const files = event.target.files;
+
+    const done = function (url) {
+        $('#image-tobe-cropped').attr('src', url);
+        $('#cropmodal').modal('show');
+    };
+
+    if (files && files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            done(reader.result);
+        };
+        reader.readAsDataURL(files[0]);
+    }
+});
+
+let cropper = null;
+$('#cropmodal').on('shown.bs.modal', function () {
+    const image = document.getElementById("image-tobe-cropped");
+    cropper = new Cropper(image, {
+        aspectRatio: 1,
+        viewMode: 3,
+    });
+}).on('hidden.bs.modal', function () {
+    cropper.destroy();
+    cropper = null;
+});
+
+$('#cropmodal #btn-crop').on('click', function () {
+    const canvas = cropper.getCroppedCanvas({
+        width: canvasX,
+        height: canvasY
+    });
+
+    canvas.toBlob(function (blob) {
+        const url = URL.createObjectURL(blob);
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = function () {
+            const base64data = reader.result;
+            if (!is_post) {
+                $.ajax({
+                    url: 'ajax/file_upload/avatar.php',
+                    method: 'POST',
+                    data: {avatar: base64data},
+                    success: function (response) {
+                        $('#cropmodal').modal('hide');
+                        $(location).attr('href', $(location).attr('href'));
+                    },
+                    error: function (error) {
+                        console.log("error : " + JSON.stringify(error));
+                    }
+                });
+            }else{
+                $(".newpst-input #post-image-preview").attr("src",base64data);
+                $("#cropmodal").modal("hide");
+            }
+        };
+    });
+});
+
+$('#newpst-form').on('submit',function (e){
+    const base64data = $(this).find('#post-image-preview').attr('src');
+    const description = $(this).find('#newpst-description').val();
+    e.preventDefault();
+    $.ajax(({
+        url : 'ajax/file_upload/post.php',
+        method : 'POST',
+        data :{
+            cover : base64data,
+            description : description
+        },
+        success : function (response){
+            $(location).attr('href',$(location).attr('href'));
+        }, error : function (error){
+        }
+    }))
+})

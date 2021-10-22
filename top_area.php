@@ -135,7 +135,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                         <i class="fa fa-camera-retro"></i>
                                         <label class="fileContainer">
                                             <?php echo $lang['Edit_avatar_Photo']; ?>
-                                            <input type="file" name="avatar" onchange="this.form.submit()"
+                                            <input type="file" name="avatar"
                                                    accept=".jpg,.png,"/>
                                         </label>
                                     </form>

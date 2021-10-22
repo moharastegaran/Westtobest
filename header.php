@@ -8,7 +8,7 @@ if (isset($_POST['fa'])) {
     $_SESSION['lang'] = 'en';
 }
 
-include "lang/".$_SESSION['lang'].".php";
+include "lang/" . $_SESSION['lang'] . ".php";
 
 if (!isset($_SESSION['night_mode']))
     $_SESSION['night_mode'] = "false";
@@ -19,37 +19,17 @@ if (isset($_POST['theme_dark'])) {
 }
 
 
-if (isset($_POST['avatar_sub'])) {
-    $filename = $_FILES['avatar']['name'];
-    $tmpname = $_FILES['avatar']['tmp_name'];
-    $img = data_now() . $filename;
-    $folder = AVATAR_DIR . $img;
-    if (move_uploaded_file($tmpname, $folder)) {
-        // delete old avatar
-        $result = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "' ");
-        $row = mysqli_fetch_assoc($result);
-        if(!empty($row['avatar'])){
-            unlink(AVATAR_DIR.$row['avatar']);
-        }
-        header("Refresh:0");
-        $msg = "Image uploaded successfully";
-        $conn->query("UPDATE user set avatar='" . $img . "' WHERE username='" . $_SESSION['username'] . "'");
-    } else {
-        $msg = "Failed to upload image";
-
-    }
-}
 if (isset($_POST['cover_sub'])) {
     $filename = $_FILES['cover']['name'];
     $tmpname = $_FILES['cover']['tmp_name'];
-    $img =data_now() . $filename;
+    $img = data_now() . $filename;
     $folder = COVERS_DIR . $img;
     if (move_uploaded_file($tmpname, $folder)) {
         // delete old cover
         $result = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "' ");
         $row = mysqli_fetch_assoc($result);
-        if(!empty($row['header_img'])){
-            unlink(COVERS_DIR.$row['header_img']);
+        if (!empty($row['header_img'])) {
+            unlink(COVERS_DIR . $row['header_img']);
         }
         $msg = "Image uploaded successfully";
         header("Refresh:0");
@@ -83,6 +63,8 @@ if (isset($_POST['cover_sub'])) {
     <link rel="stylesheet" href="css/animate/animate.css">
     <link rel="stylesheet" href="css/emoji-picker/font-awesome.min.css">
     <link rel="stylesheet" href="css/emoji-picker/emoji.css">
+    <link rel="stylesheet" href="css/dropzone.css">
+    <link rel="stylesheet" href="css/cropper.css">
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/sweetalert.js"></script>
 </head>
@@ -125,7 +107,8 @@ if (isset($_POST['cover_sub'])) {
                     </a></li>
                 <li><a href="people.php" title=""><i class="ti-user"></i> <?php echo $lang['titles']['explore']; ?></a>
                 </li>
-                <li><a href="logout.php" title=""><i class="ti-power-off"></i><?php echo $lang['titles']['logout']?></a>
+                <li><a href="logout.php" title=""><i class="ti-power-off"></i><?php echo $lang['titles']['logout'] ?>
+                    </a>
                 </li>
                 <li class="setting-row text-center mt-5">
                     <?php echo $lang['onoff_option']['night_mode'] ?>
@@ -202,7 +185,7 @@ if (isset($_POST['cover_sub'])) {
                             $.ajax({
                                 type: 'post',
                                 url: 'ajax/notfi.php',
-                                success : function (response){
+                                success: function (response) {
                                     console.log(response)
                                 }
                             });
@@ -248,20 +231,21 @@ if (isset($_POST['cover_sub'])) {
                             $.ajax({
                                 type: 'post',
                                 url: 'ajax/notfi.php',
-                                data : {
-                                    notfic : '4'
+                                data: {
+                                    notfic: '4'
                                 },
                             });
 
                         }
+
                         setInterval(function () {
                                 if (!$('div.dropdowns').hasClass('active')) {
 
                                     $.ajax({
                                         type: 'post',
                                         url: 'ajax/notification/notification.php',
-                                        data : {
-                                            notfic : '4'
+                                        data: {
+                                            notfic: '4'
                                         },
                                         success: function (response) {
                                             document.getElementById("notcommentint").innerHTML = response;
@@ -271,8 +255,8 @@ if (isset($_POST['cover_sub'])) {
                                     $.ajax({
                                         type: 'post',
                                         url: 'ajax/notification/get_comment.php',
-                                        data : {
-                                            notfic : '4'
+                                        data: {
+                                            notfic: '4'
                                         },
                                         success: function (response) {
                                             document.getElementById("comment_notfiction_get").innerHTML = response;
@@ -350,7 +334,7 @@ if (isset($_POST['cover_sub'])) {
                     <img src="<?php if (empty($row['avatar'])) {
                         echo 'images/resources/avatar-default.png';
                     } else {
-                        echo AVATAR_DIR.$row['avatar'];
+                        echo AVATAR_DIR . $row['avatar'];
                     } ?>" alt="" style="width:60px;height:60px">
                 <?php } ?>
                 <span class="status f-online"></span>
@@ -359,7 +343,8 @@ if (isset($_POST['cover_sub'])) {
                                 class="ti-user"></i> <?php echo $lang['view_profile']; ?></a>
                     <a href="setting.php" title=""><i class="ti-settings"></i><?php echo $lang['titles']['setting']; ?>
                     </a>
-                    <a href="logout.php" title=""><i class="ti-power-off"></i><?php echo $lang['titles']['logout']; ?></a>
+                    <a href="logout.php" title=""><i class="ti-power-off"></i><?php echo $lang['titles']['logout']; ?>
+                    </a>
                 </div>
             </div>
 

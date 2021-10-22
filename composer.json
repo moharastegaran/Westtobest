@@ -4,6 +4,7 @@
     "fzaninotto/faker": "^1.5",
     "ext-mysqli": "*",
     "ext-json": "*",
-    "ext-pdo": "*"
+    "ext-pdo": "*",
+    "ext-gd": "*"
   }
 }

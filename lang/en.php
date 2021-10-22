@@ -242,5 +242,10 @@ $lang = array(
         'undefined_city'=>'To search people, select city from setting map.',
         'undefined_country'=>'To search people, select country from setting map.',
         'undefined_sickness'=>'To find people your sickness, choose your sickness from setting.',
+    ],
+
+    'cropmodal' =>[
+        'btn_crop' => 'crop',
+        'btn_cancel' => 'cancel'
     ]
 );

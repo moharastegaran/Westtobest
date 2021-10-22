@@ -133,7 +133,7 @@ if (!isset($accerr)) {
                             </div>
                             <div class="post-meta">
                                 <?php if (!empty(trim($row['cover']))) { ?>
-                                    <img width="" height="285" src="<?php echo IMAGE_POST_DIR.$row['cover']; ?>"/>
+                                    <img src="<?php echo IMAGE_POST_DIR.$row['cover']; ?>" class="img-fluid"/>
                                 <?php } ?>
                                 <div class="we-video-info">
                                     <ul>

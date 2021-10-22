@@ -58,22 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql.="password='".$password."' WHERE username='".$_SESSION['username']."'";
 
         $conn->query($sql);
-//        if ($conn->query($sql)) {
-////            $user['name'] = $_POST['name'];
-////            $user['mail'] = $_POST['mail'];
-////            $user['gender'] = $_POST['gender'];
-////            $user['sickness'] = $_POST['sickness'];
-////            $user['bio'] = $_POST['bio'];
-////            $user['lat'] = $_POST['lat'];
-////            $user['lng'] = $_POST['lng'];
-////            $user['country'] = $data->countryName;
-////            $user['city'] = $data->city;
-//        }else{
-//            var_dump(mysqli_error($conn));
-//        }
-        ?>
-
-        <?php
     }
 }
 

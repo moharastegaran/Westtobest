@@ -18,6 +18,6 @@ mysqli_set_charset($conn,"utf8mb4");
 function data_now(){
     $now = DateTime::createFromFormat('U.u', microtime(true));
    
-    return  $now->format("m_d_Y_H_i_s_u");
+    return  $now->format("mdYHisu");
 }
 ?>

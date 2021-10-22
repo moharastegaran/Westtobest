@@ -42,6 +42,37 @@
 
     </div>
 </footer><!-- footer -->
+
+
+<!-- crop modal -->
+<div class="modal fade" id="cropmodal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+<!--            <div class="modal-header">-->
+<!--                <h5 class="modal-title">Crop Image Before Upload</h5>-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                    <span aria-hidden="true">×</span>-->
+<!--                </button>-->
+<!--            </div>-->
+            <div class="modal-body">
+                <div class="img-container">
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <img src="" id="image-tobe-cropped" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-crop" class="btn btn-primary"><?php echo $lang['cropmodal']['btn_crop']; ?></button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['cropmodal']['btn_cancel'] ?></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end crop modal -->
+
+
 <div class="bottombar">
     <div class="container">
         <div class="row">
@@ -79,7 +110,7 @@
 
 </div>
 
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<!--<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>-->
 <script src="js/main.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/block-ui/jQuery.blockui.min.js"></script>
@@ -87,6 +118,8 @@
 <script src="js/emoji-picker/util.js"></script>
 <script src="js/emoji-picker/jquery.emojiarea.js"></script>
 <script src="js/emoji-picker/emoji-picker.js"></script>
+<script src="js/dropzone.min.js"></script>
+<script src="js/cropper.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 
