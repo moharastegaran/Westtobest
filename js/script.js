@@ -452,19 +452,42 @@ window.emojiPicker = new EmojiPicker({
 window.emojiPicker.discover();
 
 /* image cropper */
-let canvasX = 400, canvasY = 400, is_post = false;
+let canvasX = 400, canvasY = 400, aspect_ratio = 1, is_post = false;
 $(".edit-phto [name='cover'], .edit-phto [name='avatar'], .newpst-input [name='file']").on('change', function (event) {
 
-    // if ($(this).is($(".edit-phto [name='cover']"))) {
-    //     canvasY = 400;
-    //     canvasX = 850;
-    // }
+    if ($(this).is($(".edit-phto [name='cover']"))) {
+        canvasY = 350;
+        canvasX = 1366;
+        aspect_ratio = 3;
+
+        const _URL = window.URL || window.webkitURL;
+        $(this).change(function (e) {
+            let file, coverimg, has_quality = true;
+            if (this.files.length>0) {
+                coverimg = new Image();
+                coverimg.onload = function () {
+                    if (this.width < 1366) {
+                        has_quality = false;
+                    }
+                };
+                coverimg.onerror = function () {
+                    has_quality = false;
+                };
+
+                if (!has_quality) {
+                    return;
+                }
+            }
+        });
+    }
+
+    console.log("cont");
+
     if ($(this).is(".newpst-input [name='file']")) {
         is_post = true;
     }
 
     const files = event.target.files;
-
     const done = function (url) {
         $('#image-tobe-cropped').attr('src', url);
         $('#cropmodal').modal('show');
@@ -483,7 +506,7 @@ let cropper = null;
 $('#cropmodal').on('shown.bs.modal', function () {
     const image = document.getElementById("image-tobe-cropped");
     cropper = new Cropper(image, {
-        aspectRatio: 1,
+        aspectRatio: aspect_ratio,
         viewMode: 3,
     });
 }).on('hidden.bs.modal', function () {
@@ -498,16 +521,24 @@ $('#cropmodal #btn-crop').on('click', function () {
     });
 
     canvas.toBlob(function (blob) {
-        const url = URL.createObjectURL(blob);
+        let _url = "";
+        // const formData = new FormData();
         const reader = new FileReader();
         reader.readAsDataURL(blob);
         reader.onloadend = function () {
             const base64data = reader.result;
             if (!is_post) {
+                if(aspect_ratio>1){
+                    _url = 'ajax/file_upload/cover.php';
+                    // formData.append('avatar',base64data);
+                }else{
+                    _url = 'ajax/file_upload/avatar.php';
+                    // formData.append('cover',base64data);
+                }
                 $.ajax({
-                    url: 'ajax/file_upload/avatar.php',
                     method: 'POST',
-                    data: {avatar: base64data},
+                    url: _url,
+                    data: {image: base64data},
                     success: function (response) {
                         $('#cropmodal').modal('hide');
                         $(location).attr('href', $(location).attr('href'));
@@ -516,28 +547,28 @@ $('#cropmodal #btn-crop').on('click', function () {
                         console.log("error : " + JSON.stringify(error));
                     }
                 });
-            }else{
-                $(".newpst-input #post-image-preview").attr("src",base64data);
+            } else {
+                $(".newpst-input #post-image-preview").attr("src", base64data);
                 $("#cropmodal").modal("hide");
             }
         };
     });
 });
 
-$('#newpst-form').on('submit',function (e){
+$('#newpst-form').on('submit', function (e) {
     const base64data = $(this).find('#post-image-preview').attr('src');
     const description = $(this).find('#newpst-description').val();
     e.preventDefault();
     $.ajax(({
-        url : 'ajax/file_upload/post.php',
-        method : 'POST',
-        data :{
-            cover : base64data,
-            description : description
+        url: 'ajax/file_upload/post.php',
+        method: 'POST',
+        data: {
+            cover: base64data,
+            description: description
         },
-        success : function (response){
-            $(location).attr('href',$(location).attr('href'));
-        }, error : function (error){
+        success: function (response) {
+            $(location).attr('href', $(location).attr('href'));
+        }, error: function (error) {
         }
     }))
-})
+});

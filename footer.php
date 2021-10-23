@@ -58,14 +58,16 @@
                 <div class="img-container">
                     <div class="row">
                         <div class="col-md-8 mx-auto">
-                            <img src="" id="image-tobe-cropped" />
+                            <img src="" id="image-tobe-cropped" class="img-fluid"/>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" id="btn-crop" class="btn btn-primary"><?php echo $lang['cropmodal']['btn_crop']; ?></button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $lang['cropmodal']['btn_cancel'] ?></button>
+                <a href="javascript:void(0)" id="btn-crop" type="button" data-ripple=""
+                   class="btn-acc-user add-butn mx-1"><?php echo $lang['cropmodal']['btn_crop']; ?></a>
+                <a href="javascript:void(0)" type="button" class="add-butn more-action" data-dismiss="modal" data-ripple="">
+                    <?php echo $lang['cropmodal']['btn_cancel'] ?></a>
             </div>
         </div>
     </div>

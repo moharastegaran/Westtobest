@@ -79,7 +79,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <?php
             if ($_SESSION['username'] == $_GET['p']) {
                 ?>
-                <form class="edit-phto" id="form-cover-send" enctype="multipart/form-data" method="POST" action="">
+                <form class="edit-phto" id="form-cover-send" enctype="multipart/form-data" method="POST">
                     <input type="hidden" name="cover_sub">
                     <i class="fa fa-camera-retro"></i>
                     <label class="fileContainer">
@@ -87,35 +87,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <input type="file" name="cover" id="cover-send"/>
                     </label>
                 </form>
-                <script>
-                    var _URL = window.URL || window.webkitURL;
-
-                    $("#cover-send").change(function (e) {
-                        var file, img;
-
-
-                        if ((file = this.files[0])) {
-                            img = new Image();
-                            img.onload = function () {
-                                // alert(this.width + " " + this.height);
-                                var width = this.width;
-                                if (this.width >= 1600 && this.width <= 2000) {
-                                    document.getElementById('form-cover-send').submit();
-                                } else {
-                                    alert('Please select a photo with a width of 1600 to 2000 pixels');
-                                }
-                            };
-                            img.onerror = function () {
-                                alert("not a valid file: " + file.type);
-                            };
-                            img.src = _URL.createObjectURL(file);
-
-
-                        }
-
-                    });
-                </script>
-
             <?php } ?>
             <div class="container-fluid">
                 <div class="row merged">

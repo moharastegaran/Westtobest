@@ -6,14 +6,14 @@ global $conn;
 
 if (isset($_POST['image'])) {
 
-    $img = optimize_image($_POST['image'],AVATAR_DIR);
+    $img = optimize_image($_POST['image'],COVERS_DIR,1366);
 
     $result = $conn->query("SELECT * FROM user where username='" . $_SESSION['username'] . "' ");
     $row = mysqli_fetch_assoc($result);
-    if(!empty($row['avatar'])){
-        unlink('../../'.AVATAR_DIR.$row['avatar']);
+    if(!empty($row['header_img'])){
+        unlink('../../'.COVERS_DIR.$row['header_img']);
     }
-    $conn->query("UPDATE user set avatar='" . $img . "' WHERE username='" . $_SESSION['username'] . "'");
+    $conn->query("UPDATE user set header_img='" . $img . "' WHERE username='" . $_SESSION['username'] . "'");
 
 }
 
