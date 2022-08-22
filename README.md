@@ -16,4 +16,5 @@ Social Network platform for people with special disabilities to help them find o
 
 ## Run
 Open localhost application to run -Apache- and -MySQL- database in the background, Open a browser and navigate to the directory where you have cloned current repository.
+
 More details and screenshots available [here](https://mohammadrezarastegaran.ir/portfolio/westtobest)
